@@ -15,7 +15,7 @@ Future<Database> _getDatabase() async {
     path.join(dbPath, 'pantry.db'),
     onCreate: (db, version) {
       return db.execute(
-        'CREATE TABLE user_pantry(id TEXT PRIMARY KEY, storage TEXT, name TEXT, quantity INTEGER, unit TEXT)',
+        'CREATE TABLE user_pantry(id TEXT PRIMARY KEY, name TEXT, storage TEXT, quantity INTEGER, unit TEXT)',
       );
     },
     version: 1,
@@ -28,16 +28,16 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
   UserPantryNotifier() : super(const []);
 
   Future<bool> addItem(
-      Storage storage, String name, int quantity, Unit unit) async {
+      String name, Storage storage, int quantity, Unit unit) async {
     final newItem = PantryItem(
-        storage: storage, name: name, quantity: quantity, unit: unit);
+        name: name, storage: storage, quantity: quantity, unit: unit);
 
     final db = await _getDatabase();
 
     final result = await db.insert('user_pantry', {
       'id': newItem.id,
-      'place': newItem.storage.name,
       'name': newItem.name,
+      'storage': newItem.storage.name,
       'quantity': newItem.quantity,
       'unit': newItem.unit.name,
     });
@@ -57,10 +57,10 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
         .map(
           (row) => PantryItem(
             id: row['id'] as String,
+            name: row['name'] as String,
             storage: storages.values.firstWhere(
               (storage) => storage.name == row['storage'],
             ),
-            name: row['name'] as String,
             quantity: row['quantity'] as int,
             unit: units.values.firstWhere(
               (unit) => unit.name == row['unit'],
@@ -70,6 +70,19 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
         .toList();
 
     state = items;
+  }
+
+  Future<bool> removeItem(PantryItem item) async {
+    final db = await _getDatabase();
+    final result =
+        await db.delete('user_pantry', where: 'id = ?', whereArgs: [item.id]);
+
+    if (result == 1) {
+      state = state.where((element) => element.id != item.id).toList();
+      return true;
+    }
+
+    return false;
   }
 }
 
