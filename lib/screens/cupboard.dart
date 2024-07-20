@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:smart_pantry/providers/user_pantry.dart';
-import 'package:smart_pantry/widgets/items_list.dart';
+import 'package:smart_pantry/widgets/pantry_items_list.dart';
 import 'package:smart_pantry/data/storages.dart';
 import 'package:smart_pantry/models/storage.dart';
 
@@ -36,7 +36,7 @@ class _CupboardScreenState extends ConsumerState<CupboardScreen> {
           builder: (context, snapshot) =>
               snapshot.connectionState == ConnectionState.waiting
                   ? const Center(child: CircularProgressIndicator())
-                  : ItemsList(items: cupboardItems),
+                  : PantryItemsList(items: cupboardItems),
         ),
       ),
     );

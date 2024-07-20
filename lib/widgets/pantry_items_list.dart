@@ -5,18 +5,18 @@ import 'package:smart_pantry/models/pantry_item.dart';
 import 'package:smart_pantry/providers/user_pantry.dart';
 import 'package:smart_pantry/widgets/pantry_item_form.dart';
 
-class ItemsList extends ConsumerStatefulWidget {
-  const ItemsList(
+class PantryItemsList extends ConsumerStatefulWidget {
+  const PantryItemsList(
       {super.key, required this.items, this.isAllPantryItems = false});
 
   final List<PantryItem> items;
   final bool isAllPantryItems;
 
   @override
-  ConsumerState<ItemsList> createState() => _ItemsListState();
+  ConsumerState<PantryItemsList> createState() => _PantryItemsListState();
 }
 
-class _ItemsListState extends ConsumerState<ItemsList> {
+class _PantryItemsListState extends ConsumerState<PantryItemsList> {
   List<PantryItem> get items => widget.items;
   bool get isAllPantryItems => widget.isAllPantryItems;
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:smart_pantry/providers/user_pantry.dart';
-import 'package:smart_pantry/widgets/items_list.dart';
+import 'package:smart_pantry/widgets/pantry_items_list.dart';
 
 class AllItemsScreen extends ConsumerStatefulWidget {
   const AllItemsScreen({super.key});
@@ -32,7 +32,7 @@ class _AllItemsScreenState extends ConsumerState<AllItemsScreen> {
           builder: (context, snapshot) =>
               snapshot.connectionState == ConnectionState.waiting
                   ? const Center(child: CircularProgressIndicator())
-                  : ItemsList(items: allItems, isAllPantryItems: true),
+                  : PantryItemsList(items: allItems, isAllPantryItems: true),
         ),
       ),
     );
