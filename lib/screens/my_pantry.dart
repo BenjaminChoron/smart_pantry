@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:smart_pantry/screens/add_item.dart';
 import 'package:smart_pantry/screens/all_items.dart';
 
 class MyPantryScreen extends StatelessWidget {
@@ -18,7 +20,11 @@ class MyPantryScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (ctx) => const AddItemScreen()),
+              );
+            },
             icon: Icon(
               Icons.add,
               color: Theme.of(context).colorScheme.onPrimary,
