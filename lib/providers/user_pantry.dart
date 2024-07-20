@@ -50,6 +50,19 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
     return true;
   }
 
+  Future<bool> removeItem(PantryItem item) async {
+    final db = await _getDatabase();
+    final result =
+        await db.delete('user_pantry', where: 'id = ?', whereArgs: [item.id]);
+
+    if (result == 1) {
+      state = state.where((element) => element.id != item.id).toList();
+      return true;
+    }
+
+    return false;
+  }
+
   Future<void> loadItems() async {
     final db = await _getDatabase();
     final data = await db.query('user_pantry');
@@ -72,17 +85,27 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
     state = items;
   }
 
-  Future<bool> removeItem(PantryItem item) async {
+  Future<void> loadFridgeItems() async {
     final db = await _getDatabase();
-    final result =
-        await db.delete('user_pantry', where: 'id = ?', whereArgs: [item.id]);
+    final data = await db
+        .query('user_pantry', where: 'storage = ?', whereArgs: ['Fridge']);
+    final items = data
+        .map(
+          (row) => PantryItem(
+            id: row['id'] as String,
+            name: row['name'] as String,
+            storage: storages.values.firstWhere(
+              (storage) => storage.name == row['storage'],
+            ),
+            quantity: row['quantity'] as int,
+            unit: units.values.firstWhere(
+              (unit) => unit.name == row['unit'],
+            ),
+          ),
+        )
+        .toList();
 
-    if (result == 1) {
-      state = state.where((element) => element.id != item.id).toList();
-      return true;
-    }
-
-    return false;
+    state = items;
   }
 }
 
