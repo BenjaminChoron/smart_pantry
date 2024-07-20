@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:smart_pantry/models/pantry_item.dart';
 import 'package:smart_pantry/providers/user_pantry.dart';
-import 'package:smart_pantry/widgets/item_form.dart';
+import 'package:smart_pantry/widgets/pantry_item_form.dart';
 
 class ItemsList extends ConsumerStatefulWidget {
   const ItemsList(
@@ -50,7 +50,7 @@ class _ItemsListState extends ConsumerState<ItemsList> {
       builder: (context) {
         return Padding(
           padding: const EdgeInsets.all(20),
-          child: ItemForm(
+          child: PantryItemForm(
             isUpdate: true,
             item: item,
           ),

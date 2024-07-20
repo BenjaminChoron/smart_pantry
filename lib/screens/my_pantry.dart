@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/data/storages.dart';
 
-import 'package:smart_pantry/screens/add_item.dart';
+import 'package:smart_pantry/screens/add_pantry_item.dart';
+import 'package:smart_pantry/screens/add_shopping_item.dart';
 import 'package:smart_pantry/screens/all_items.dart';
+import 'package:smart_pantry/screens/shopping_list.dart';
 
-class MyPantryScreen extends StatelessWidget {
+class MyPantryScreen extends StatefulWidget {
   const MyPantryScreen({super.key});
+
+  @override
+  State<MyPantryScreen> createState() => _MyPantryScreenState();
+}
+
+class _MyPantryScreenState extends State<MyPantryScreen> {
+  bool _isShoppingList = false;
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +40,34 @@ class MyPantryScreen extends StatelessWidget {
       ...storages.entries.map((entry) => entry.value.screen),
     ];
 
+    Widget content = DefaultTabController(
+      length: tabs.length,
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 80,
+          actions: [
+            Expanded(
+              child: TabBar(
+                tabs: tabs,
+              ),
+            )
+          ],
+        ),
+        body: TabBarView(
+          children: tabViews,
+        ),
+      ),
+    );
+
+    if (_isShoppingList) {
+      content = const ShoppingListScreen();
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          'My Pantry',
+          _isShoppingList ? 'Shopping List' : 'My Pantry',
           style: Theme.of(context)
               .textTheme
               .titleLarge!
@@ -44,8 +76,23 @@ class MyPantryScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
+              setState(() {
+                _isShoppingList = !_isShoppingList;
+              });
+            },
+            icon: Icon(
+              _isShoppingList ? Icons.kitchen : Icons.shopping_cart,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (ctx) => const AddItemScreen()),
+                MaterialPageRoute(
+                  builder: (ctx) => _isShoppingList
+                      ? const AddShoppingItemScreen()
+                      : const AddPantryItemScreen(),
+                ),
               );
             },
             icon: Icon(
@@ -55,24 +102,7 @@ class MyPantryScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: DefaultTabController(
-        length: tabs.length,
-        child: Scaffold(
-          appBar: AppBar(
-            toolbarHeight: 80,
-            actions: [
-              Expanded(
-                child: TabBar(
-                  tabs: tabs,
-                ),
-              )
-            ],
-          ),
-          body: TabBarView(
-            children: tabViews,
-          ),
-        ),
-      ),
+      body: content,
     );
   }
 }

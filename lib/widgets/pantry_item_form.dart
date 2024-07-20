@@ -12,8 +12,8 @@ import 'package:smart_pantry/widgets/storage_dropdown_form_input.dart';
 import 'package:smart_pantry/widgets/text_form_input.dart';
 import 'package:smart_pantry/widgets/unit_dropdown_form_input.dart';
 
-class ItemForm extends ConsumerStatefulWidget {
-  const ItemForm({
+class PantryItemForm extends ConsumerStatefulWidget {
+  const PantryItemForm({
     super.key,
     this.isUpdate = false,
     this.item,
@@ -23,10 +23,10 @@ class ItemForm extends ConsumerStatefulWidget {
   final bool isUpdate;
 
   @override
-  ConsumerState<ItemForm> createState() => _ItemFormState();
+  ConsumerState<PantryItemForm> createState() => _PantryItemFormState();
 }
 
-class _ItemFormState extends ConsumerState<ItemForm> {
+class _PantryItemFormState extends ConsumerState<PantryItemForm> {
   bool get isUpdate => widget.isUpdate;
   PantryItem? get item => widget.item;
 
