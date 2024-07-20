@@ -10,13 +10,19 @@ class MyPantryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Tab> tabs = [
-      const Tab(
+      Tab(
         text: 'All',
-        icon: Icon(Icons.list),
+        icon: Icon(
+          Icons.list,
+          color: Theme.of(context).colorScheme.primary,
+        ),
       ),
       ...storages.entries.map((entry) => Tab(
             text: entry.value.name,
-            icon: Icon(entry.value.icon),
+            icon: Icon(
+              entry.value.icon,
+              color: entry.value.color,
+            ),
           )),
     ];
 

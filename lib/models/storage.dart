@@ -16,6 +16,6 @@ class Storage {
 
   final String name;
   final IconData icon;
-  final String color;
+  final Color color;
   final Widget screen;
 }
