@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:smart_pantry/models/category.dart';
 
 const categories = {
-  Categories.fruit: Category(
-    name: 'Fruit',
+  Categories.fruits: Category(
+    name: 'Fruits',
     icon: Icons.local_florist,
     color: Color(0xFFF44336),
     screen: Placeholder(),
   ),
-  Categories.vegetable: Category(
-    name: 'Vegetable',
+  Categories.vegetables: Category(
+    name: 'Vegetables',
     icon: Icons.eco,
     color: Color(0xFF4CAF50),
     screen: Placeholder(),

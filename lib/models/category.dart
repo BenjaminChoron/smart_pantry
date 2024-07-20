@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 enum Categories {
-  fruit,
-  vegetable,
+  fruits,
+  vegetables,
   meat,
   seafood,
   dairy,
