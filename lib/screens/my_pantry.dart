@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/data/categories.dart';
 import 'package:smart_pantry/data/storages.dart';
 
 import 'package:smart_pantry/screens/add_pantry_item.dart';
@@ -18,7 +19,7 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<Tab> tabs = [
+    List<Tab> pantryTabs = [
       Tab(
         text: 'All',
         icon: Icon(
@@ -35,33 +36,33 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
           )),
     ];
 
-    List<Widget> tabViews = [
+    List<Widget> pantryTabViews = [
       const AllItemsScreen(),
       ...storages.entries.map((entry) => entry.value.screen),
     ];
 
-    Widget content = DefaultTabController(
-      length: tabs.length,
-      child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 80,
-          actions: [
-            Expanded(
-              child: TabBar(
-                tabs: tabs,
-              ),
-            )
-          ],
-        ),
-        body: TabBarView(
-          children: tabViews,
+    List<Tab> shoppingTabs = [
+      Tab(
+        text: 'All',
+        icon: Icon(
+          Icons.list,
+          color: Theme.of(context).colorScheme.primary,
         ),
       ),
-    );
+      ...categories.entries.map((entry) => Tab(
+            text: entry.value.name,
+            icon: Icon(
+              entry.value.icon,
+              color: entry.value.color,
+            ),
+          )),
+    ];
 
-    if (_isShoppingList) {
-      content = const ShoppingListScreen();
-    }
+    List<Widget> shoppingTabViews = [
+      const ShoppingListScreen(),
+      ...categories.entries
+          .map((entry) => ShoppingListScreen(category: entry.value)),
+    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -102,7 +103,26 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
           ),
         ],
       ),
-      body: content,
+      body: DefaultTabController(
+        length: _isShoppingList ? shoppingTabs.length : pantryTabs.length,
+        child: Scaffold(
+          appBar: AppBar(
+            toolbarHeight: 80,
+            actions: [
+              Expanded(
+                child: TabBar(
+                  isScrollable: _isShoppingList,
+                  tabAlignment: _isShoppingList ? TabAlignment.start : null,
+                  tabs: _isShoppingList ? shoppingTabs : pantryTabs,
+                ),
+              )
+            ],
+          ),
+          body: TabBarView(
+            children: _isShoppingList ? shoppingTabViews : pantryTabViews,
+          ),
+        ),
+      ),
     );
   }
 }

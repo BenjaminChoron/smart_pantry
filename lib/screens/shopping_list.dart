@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:smart_pantry/models/category.dart';
 import 'package:smart_pantry/providers/user_shopping_list.dart';
 import 'package:smart_pantry/widgets/shopping_items_list.dart';
 
 class ShoppingListScreen extends ConsumerStatefulWidget {
-  const ShoppingListScreen({super.key});
+  const ShoppingListScreen({
+    super.key,
+    this.category,
+  });
+
+  final Category? category;
 
   @override
   ConsumerState<ShoppingListScreen> createState() => _ShoppingListScreenState();
@@ -17,7 +23,13 @@ class _ShoppingListScreenState extends ConsumerState<ShoppingListScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _allItems = ref.watch(userShoppingListProvider.notifier).loadItems();
+    if (widget.category == null) {
+      _allItems = ref.watch(userShoppingListProvider.notifier).loadItems();
+    } else {
+      _allItems = ref
+          .watch(userShoppingListProvider.notifier)
+          .loadItemsByCategory(widget.category!);
+    }
   }
 
   @override
