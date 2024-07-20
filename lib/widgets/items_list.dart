@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:smart_pantry/models/pantry_item.dart';
 import 'package:smart_pantry/providers/user_pantry.dart';
+import 'package:smart_pantry/widgets/item_form.dart';
 
 class ItemsList extends ConsumerStatefulWidget {
-  const ItemsList({super.key, required this.items});
+  const ItemsList(
+      {super.key, required this.items, this.isAllPantryItems = false});
 
   final List<PantryItem> items;
+  final bool isAllPantryItems;
 
   @override
   ConsumerState<ItemsList> createState() => _ItemsListState();
@@ -38,6 +42,21 @@ class _ItemsListState extends ConsumerState<ItemsList> {
         items.insert(index, item);
       });
     }
+  }
+
+  void _showBottomSheet(PantryItem item) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(20),
+          child: ItemForm(
+            isUpdate: true,
+            item: item,
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -74,7 +93,9 @@ class _ItemsListState extends ConsumerState<ItemsList> {
             ),
           ),
           child: ListTile(
-            onTap: () {},
+            onTap: () {
+              _showBottomSheet(item);
+            },
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
             leading: CircleAvatar(

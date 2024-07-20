@@ -5,14 +5,17 @@ class NumberFormInput extends StatelessWidget {
     super.key,
     required this.label,
     required this.onSaved,
+    this.initialValue = 0,
   });
 
   final String label;
   final Function(int) onSaved;
+  final int initialValue;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue.toString(),
       decoration: InputDecoration(
         label: Text(label),
         border: OutlineInputBorder(
@@ -25,7 +28,7 @@ class NumberFormInput extends StatelessWidget {
         color: Theme.of(context).colorScheme.onSurface,
       ),
       keyboardType: TextInputType.number,
-      maxLength: 3,
+      maxLength: 4,
       validator: (value) {
         if (value == null ||
             value.isEmpty ||

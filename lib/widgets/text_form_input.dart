@@ -5,14 +5,17 @@ class TextFormInput extends StatelessWidget {
     super.key,
     required this.label,
     required this.onSaved,
+    this.initialValue = '',
   });
 
   final String label;
   final Function(String) onSaved;
+  final String initialValue;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue,
       maxLength: 30,
       decoration: InputDecoration(
         label: Text(label),

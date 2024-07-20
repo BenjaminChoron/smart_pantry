@@ -50,6 +50,35 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
     return true;
   }
 
+  Future<bool> updateItem(PantryItem item) async {
+    final db = await _getDatabase();
+    final result = await db.update(
+      'user_pantry',
+      {
+        'name': item.name,
+        'storage': item.storage.name,
+        'quantity': item.quantity,
+        'unit': item.unit.name,
+      },
+      where: 'id = ?',
+      whereArgs: [item.id],
+    );
+
+    if (result == 0) {
+      return false;
+    }
+
+    state = state.map((element) {
+      if (element.id == item.id) {
+        return item;
+      }
+
+      return element;
+    }).toList();
+
+    return true;
+  }
+
   Future<bool> removeItem(PantryItem item) async {
     final db = await _getDatabase();
     final result =
