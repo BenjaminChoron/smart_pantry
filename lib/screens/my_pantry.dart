@@ -3,28 +3,26 @@ import 'package:smart_pantry/data/storages.dart';
 
 import 'package:smart_pantry/screens/add_item.dart';
 import 'package:smart_pantry/screens/all_items.dart';
-import 'package:smart_pantry/screens/cupboard.dart';
-import 'package:smart_pantry/screens/freezer.dart';
-import 'package:smart_pantry/screens/fridge.dart';
 
 class MyPantryScreen extends StatelessWidget {
   const MyPantryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<Tab> dynamicTabs = storages.entries
-        .map((entry) => Tab(
-              text: entry.value.name,
-              icon: Icon(entry.value.icon),
-            ))
-        .toList();
-
     List<Tab> tabs = [
       const Tab(
         text: 'All',
         icon: Icon(Icons.list),
       ),
-      ...dynamicTabs,
+      ...storages.entries.map((entry) => Tab(
+            text: entry.value.name,
+            icon: Icon(entry.value.icon),
+          )),
+    ];
+
+    List<Widget> tabViews = [
+      const AllItemsScreen(),
+      ...storages.entries.map((entry) => entry.value.screen),
     ];
 
     return Scaffold(
@@ -64,13 +62,8 @@ class MyPantryScreen extends StatelessWidget {
               )
             ],
           ),
-          body: const TabBarView(
-            children: [
-              AllItemsScreen(),
-              FridgeScreen(),
-              FreezerScreen(),
-              CupboardScreen(),
-            ],
+          body: TabBarView(
+            children: tabViews,
           ),
         ),
       ),
