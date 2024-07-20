@@ -102,7 +102,7 @@ class UserShoppingListNotifier extends StateNotifier<List<ShoppingItem>> {
 
   Future<void> loadItems() async {
     final db = await _getDatabase();
-    final data = await db.query('user_shopping_list');
+    final data = await db.query('user_shopping_list', orderBy: 'category');
     final items = data
         .map(
           (row) => ShoppingItem(
