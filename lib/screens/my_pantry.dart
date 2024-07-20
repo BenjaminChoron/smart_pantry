@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:smart_pantry/screens/add_item.dart';
 import 'package:smart_pantry/screens/all_items.dart';
+import 'package:smart_pantry/screens/cupboard.dart';
+import 'package:smart_pantry/screens/freezer.dart';
+import 'package:smart_pantry/screens/fridge.dart';
 
 class MyPantryScreen extends StatelessWidget {
   const MyPantryScreen({super.key});
@@ -32,8 +35,33 @@ class MyPantryScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(
-        child: AllItemsScreen(),
+      body: DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          appBar: AppBar(
+            toolbarHeight: 80,
+            actions: const [
+              Expanded(
+                child: TabBar(
+                  tabs: [
+                    Tab(text: 'All', icon: Icon(Icons.list)),
+                    Tab(text: 'Fridge', icon: Icon(Icons.kitchen)),
+                    Tab(text: 'Freezer', icon: Icon(Icons.ac_unit)),
+                    Tab(text: 'Cupboard', icon: Icon(Icons.local_cafe)),
+                  ],
+                ),
+              )
+            ],
+          ),
+          body: const TabBarView(
+            children: [
+              AllItemsScreen(),
+              FridgeScreen(),
+              FreezerScreen(),
+              CupboardScreen(),
+            ],
+          ),
+        ),
       ),
     );
   }
