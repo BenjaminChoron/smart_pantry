@@ -18,6 +18,7 @@ class ItemsList extends ConsumerStatefulWidget {
 
 class _ItemsListState extends ConsumerState<ItemsList> {
   List<PantryItem> get items => widget.items;
+  bool get isAllPantryItems => widget.isAllPantryItems;
 
   void _onRemoveItem(PantryItem item) async {
     final index = items.indexOf(item);
@@ -98,12 +99,14 @@ class _ItemsListState extends ConsumerState<ItemsList> {
             },
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
-            leading: CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primary,
-                child: Icon(
-                  item.storage.icon,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                )),
+            leading: isAllPantryItems
+                ? CircleAvatar(
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    child: Icon(
+                      item.storage.icon,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ))
+                : null,
             title: Text(
               item.name,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(

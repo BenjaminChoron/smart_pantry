@@ -32,7 +32,7 @@ class _AllItemsScreenState extends ConsumerState<AllItemsScreen> {
           builder: (context, snapshot) =>
               snapshot.connectionState == ConnectionState.waiting
                   ? const Center(child: CircularProgressIndicator())
-                  : ItemsList(items: allItems),
+                  : ItemsList(items: allItems, isAllPantryItems: true),
         ),
       ),
     );
