@@ -19,6 +19,6 @@ const units = {
   ),
   Units.piece: Unit(
     name: 'Piece',
-    symbol: 'pc',
+    symbol: 'pcs',
   ),
 };
