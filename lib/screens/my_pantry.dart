@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/data/storages.dart';
 
 import 'package:smart_pantry/screens/add_item.dart';
 import 'package:smart_pantry/screens/all_items.dart';
@@ -11,6 +12,21 @@ class MyPantryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Tab> dynamicTabs = storages.entries
+        .map((entry) => Tab(
+              text: entry.value.name,
+              icon: Icon(entry.value.icon),
+            ))
+        .toList();
+
+    List<Tab> tabs = [
+      const Tab(
+        text: 'All',
+        icon: Icon(Icons.list),
+      ),
+      ...dynamicTabs,
+    ];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
@@ -36,19 +52,14 @@ class MyPantryScreen extends StatelessWidget {
         ],
       ),
       body: DefaultTabController(
-        length: 4,
+        length: tabs.length,
         child: Scaffold(
           appBar: AppBar(
             toolbarHeight: 80,
-            actions: const [
+            actions: [
               Expanded(
                 child: TabBar(
-                  tabs: [
-                    Tab(text: 'All', icon: Icon(Icons.list)),
-                    Tab(text: 'Fridge', icon: Icon(Icons.kitchen)),
-                    Tab(text: 'Freezer', icon: Icon(Icons.ac_unit)),
-                    Tab(text: 'Cupboard', icon: Icon(Icons.local_cafe)),
-                  ],
+                  tabs: tabs,
                 ),
               )
             ],
