@@ -22,7 +22,7 @@ class _AllItemsScreenState extends ConsumerState<AllItemsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final allItemsItems = ref.watch(userPantryProvider);
+    final allItems = ref.watch(userPantryProvider);
 
     return Scaffold(
       body: Padding(
@@ -32,7 +32,7 @@ class _AllItemsScreenState extends ConsumerState<AllItemsScreen> {
           builder: (context, snapshot) =>
               snapshot.connectionState == ConnectionState.waiting
                   ? const Center(child: CircularProgressIndicator())
-                  : ItemsList(items: allItemsItems),
+                  : ItemsList(items: allItems),
         ),
       ),
     );
