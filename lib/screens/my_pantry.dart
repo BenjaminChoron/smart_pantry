@@ -59,7 +59,7 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
     ];
 
     List<Widget> shoppingTabViews = [
-      const ShoppingListScreen(),
+      const ShoppingListScreen(isAllItems: true),
       ...categories.entries
           .map((entry) => ShoppingListScreen(category: entry.value)),
     ];

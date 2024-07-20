@@ -9,9 +9,11 @@ class ShoppingListScreen extends ConsumerStatefulWidget {
   const ShoppingListScreen({
     super.key,
     this.category,
+    this.isAllItems = false,
   });
 
   final Category? category;
+  final bool isAllItems;
 
   @override
   ConsumerState<ShoppingListScreen> createState() => _ShoppingListScreenState();
@@ -19,6 +21,7 @@ class ShoppingListScreen extends ConsumerStatefulWidget {
 
 class _ShoppingListScreenState extends ConsumerState<ShoppingListScreen> {
   late Future<void> _allItems;
+  bool get isAllItems => widget.isAllItems;
 
   @override
   void didChangeDependencies() {
@@ -44,7 +47,7 @@ class _ShoppingListScreenState extends ConsumerState<ShoppingListScreen> {
           builder: (context, snapshot) =>
               snapshot.connectionState == ConnectionState.waiting
                   ? const Center(child: CircularProgressIndicator())
-                  : ShoppingItemsList(items: allItems),
+                  : ShoppingItemsList(items: allItems, isAllItems: isAllItems),
         ),
       ),
     );

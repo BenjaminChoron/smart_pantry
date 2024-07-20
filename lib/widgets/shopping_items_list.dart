@@ -5,9 +5,11 @@ import 'package:smart_pantry/providers/user_shopping_list.dart';
 import 'package:smart_pantry/widgets/shopping_item_form.dart';
 
 class ShoppingItemsList extends ConsumerStatefulWidget {
-  const ShoppingItemsList({super.key, required this.items});
+  const ShoppingItemsList(
+      {super.key, required this.items, this.isAllItems = false});
 
   final List<ShoppingItem> items;
+  final bool isAllItems;
 
   @override
   ConsumerState<ShoppingItemsList> createState() => _ShoppingItemsListState();
@@ -15,6 +17,7 @@ class ShoppingItemsList extends ConsumerStatefulWidget {
 
 class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
   List<ShoppingItem> get items => widget.items;
+  bool get isAllItems => widget.isAllItems;
 
   void _onRemoveItem(ShoppingItem item) async {
     final index = items.indexOf(item);
@@ -94,7 +97,26 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
             onTap: () {
               _showBottomSheet(item);
             },
-            title: Text('${item.quantity} ${item.unit.symbol} of ${item.name}'),
+            leading: isAllItems
+                ? CircleAvatar(
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    child: Icon(
+                      item.category.icon,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ))
+                : null,
+            title: Text(
+              item.name,
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+            ),
+            trailing: Text(
+              '${item.quantity.toString()} ${item.unit.symbol}',
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+            ),
           ),
         );
       },
