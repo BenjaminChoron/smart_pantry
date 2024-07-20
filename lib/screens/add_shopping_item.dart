@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:smart_pantry/widgets/shopping_item_form.dart';
 
 class AddShoppingItemScreen extends ConsumerStatefulWidget {
   const AddShoppingItemScreen({super.key});
@@ -18,8 +19,7 @@ class _AddShoppingItemScreenState extends ConsumerState<AddShoppingItemScreen> {
       ),
       body: const Padding(
         padding: EdgeInsets.all(16),
-        child: Text('Add Shopping Item Form',
-            style: TextStyle(color: Colors.white)),
+        child: ShoppingItemForm(),
       ),
     );
   }
