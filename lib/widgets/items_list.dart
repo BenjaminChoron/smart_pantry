@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_pantry/models/pantry_item.dart';
+import 'package:smart_pantry/providers/user_pantry.dart';
 
 class ItemsList extends ConsumerStatefulWidget {
   const ItemsList({super.key, required this.items});
@@ -13,6 +14,31 @@ class ItemsList extends ConsumerStatefulWidget {
 
 class _ItemsListState extends ConsumerState<ItemsList> {
   List<PantryItem> get items => widget.items;
+
+  void _onRemoveItem(PantryItem item) async {
+    final index = items.indexOf(item);
+
+    setState(() {
+      items.remove(item);
+    });
+
+    final pantry = ref.read(userPantryProvider.notifier);
+    final result = await pantry.removeItem(item);
+
+    if (!result) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content:
+              const Text('Failed to remove item... Please try again later.'),
+          backgroundColor: Theme.of(context).colorScheme.error,
+          duration: const Duration(seconds: 2),
+        ),
+      );
+      setState(() {
+        items.insert(index, item);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +59,9 @@ class _ItemsListState extends ConsumerState<ItemsList> {
         final item = widget.items[index];
         return Dismissible(
           key: ValueKey(item.id),
-          onDismissed: (_) {},
+          onDismissed: (_) {
+            _onRemoveItem(item);
+          },
           direction: DismissDirection.endToStart,
           background: Container(
             color: Theme.of(context).colorScheme.error,
@@ -62,7 +90,7 @@ class _ItemsListState extends ConsumerState<ItemsList> {
                   ),
             ),
             trailing: Text(
-              '${item.quantity.toString()} ${item.unit}',
+              '${item.quantity.toString()} ${item.unit.symbol}',
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
