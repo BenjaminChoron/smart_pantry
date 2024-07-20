@@ -58,6 +58,35 @@ class UserShoppingListNotifier extends StateNotifier<List<ShoppingItem>> {
     return true;
   }
 
+  Future<bool> updateItem(ShoppingItem item) async {
+    final db = await _getDatabase();
+    final result = await db.update(
+      'user_shopping_list',
+      {
+        'name': item.name,
+        'category': item.category.name,
+        'quantity': item.quantity,
+        'unit': item.unit.name,
+      },
+      where: 'id = ?',
+      whereArgs: [item.id],
+    );
+
+    if (result == 0) {
+      return false;
+    }
+
+    state = state.map((element) {
+      if (element.id == item.id) {
+        return item;
+      }
+
+      return element;
+    }).toList();
+
+    return true;
+  }
+
   Future<void> loadItems() async {
     final db = await _getDatabase();
     final data = await db.query('user_shopping_list');
