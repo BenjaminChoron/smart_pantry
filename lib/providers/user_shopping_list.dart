@@ -121,6 +121,29 @@ class UserShoppingListNotifier extends StateNotifier<List<ShoppingItem>> {
 
     state = items;
   }
+
+  Future<void> loadItemsByCategory(Category category) async {
+    final db = await _getDatabase();
+    final data = await db.query('user_shopping_list',
+        where: 'category = ?', whereArgs: [category.name]);
+    final items = data
+        .map(
+          (row) => ShoppingItem(
+            id: row['id'] as String,
+            name: row['name'] as String,
+            category: categories.values.firstWhere(
+              (category) => category.name == row['category'],
+            ),
+            quantity: row['quantity'] as int,
+            unit: units.values.firstWhere(
+              (unit) => unit.name == row['unit'],
+            ),
+          ),
+        )
+        .toList();
+
+    state = items;
+  }
 }
 
 final userShoppingListProvider =
