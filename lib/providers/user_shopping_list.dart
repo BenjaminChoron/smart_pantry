@@ -87,6 +87,19 @@ class UserShoppingListNotifier extends StateNotifier<List<ShoppingItem>> {
     return true;
   }
 
+  Future<bool> removeItem(ShoppingItem item) async {
+    final db = await _getDatabase();
+    final result = await db
+        .delete('user_shopping_list', where: 'id = ?', whereArgs: [item.id]);
+
+    if (result == 1) {
+      state = state.where((element) => element.id != item.id).toList();
+      return true;
+    }
+
+    return false;
+  }
+
   Future<void> loadItems() async {
     final db = await _getDatabase();
     final data = await db.query('user_shopping_list');
