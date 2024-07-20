@@ -14,6 +14,6 @@ class Storage {
   });
 
   final String name;
-  final Icon icon;
+  final IconData icon;
   final String color;
 }

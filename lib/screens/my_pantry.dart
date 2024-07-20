@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/screens/all_items.dart';
 
 class MyPantryScreen extends StatelessWidget {
   const MyPantryScreen({super.key});
@@ -26,7 +27,7 @@ class MyPantryScreen extends StatelessWidget {
         ],
       ),
       body: const Center(
-        child: Text('Hello World!'),
+        child: AllItemsScreen(),
       ),
     );
   }
