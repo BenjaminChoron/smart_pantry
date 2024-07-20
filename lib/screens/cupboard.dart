@@ -6,37 +6,37 @@ import 'package:smart_pantry/widgets/items_list.dart';
 import 'package:smart_pantry/data/storages.dart';
 import 'package:smart_pantry/models/storage.dart';
 
-class FridgeScreen extends ConsumerStatefulWidget {
-  const FridgeScreen({super.key});
+class CupboardScreen extends ConsumerStatefulWidget {
+  const CupboardScreen({super.key});
 
   @override
-  ConsumerState<FridgeScreen> createState() => _FridgeScreenState();
+  ConsumerState<CupboardScreen> createState() => _CupboardScreenState();
 }
 
-class _FridgeScreenState extends ConsumerState<FridgeScreen> {
-  late Future<void> _fridgeItems;
+class _CupboardScreenState extends ConsumerState<CupboardScreen> {
+  late Future<void> _cupboardItems;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _fridgeItems = ref
+    _cupboardItems = ref
         .watch(userPantryProvider.notifier)
-        .loadStorageItems(storages[Storages.fridge]!);
+        .loadStorageItems(storages[Storages.cupboard]!);
   }
 
   @override
   Widget build(BuildContext context) {
-    final fridgeItems = ref.watch(userPantryProvider);
+    final cupboardItems = ref.watch(userPantryProvider);
 
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: FutureBuilder(
-          future: _fridgeItems,
+          future: _cupboardItems,
           builder: (context, snapshot) =>
               snapshot.connectionState == ConnectionState.waiting
                   ? const Center(child: CircularProgressIndicator())
-                  : ItemsList(items: fridgeItems),
+                  : ItemsList(items: cupboardItems),
         ),
       ),
     );
