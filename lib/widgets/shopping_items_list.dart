@@ -73,6 +73,7 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
       itemCount: widget.items.length,
       itemBuilder: (context, index) {
         final item = widget.items[index];
+
         return Dismissible(
           key: ValueKey(item.id),
           onDismissed: (_) {
@@ -93,9 +94,6 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
             onTap: () {
               _showBottomSheet(item);
             },
-            leading: CircleAvatar(
-              child: Text(item.category.name),
-            ),
             title: Text('${item.quantity} ${item.unit.symbol} of ${item.name}'),
           ),
         );
