@@ -16,11 +16,13 @@ class ShoppingItemForm extends ConsumerStatefulWidget {
   const ShoppingItemForm({
     super.key,
     this.isUpdate = false,
+    this.isAddToShoppingAfterRemovedFromPantry = false,
     this.item,
   });
 
   final ShoppingItem? item;
   final bool isUpdate;
+  final bool isAddToShoppingAfterRemovedFromPantry;
 
   @override
   ConsumerState<ShoppingItemForm> createState() => _ShoppingItemFormState();
@@ -28,6 +30,8 @@ class ShoppingItemForm extends ConsumerStatefulWidget {
 
 class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
   bool get isUpdate => widget.isUpdate;
+  bool get isAddToShoppingAfterRemovedFromPantry =>
+      widget.isAddToShoppingAfterRemovedFromPantry;
   ShoppingItem? get item => widget.item;
 
   final _formKey = GlobalKey<FormState>();
@@ -124,6 +128,11 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
       _selectedUnit = item!.unit;
     }
 
+    if (isAddToShoppingAfterRemovedFromPantry) {
+      _enteredName = item!.name;
+      _selectedUnit = item!.unit;
+    }
+
     return Form(
       key: _formKey,
       child: Column(
@@ -179,14 +188,16 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              TextButton(
-                onPressed: _isSending
-                    ? null
-                    : () {
-                        _formKey.currentState!.reset();
-                      },
-                child: const Text('Reset'),
-              ),
+              (isAddToShoppingAfterRemovedFromPantry || isUpdate)
+                  ? const SizedBox()
+                  : TextButton(
+                      onPressed: _isSending
+                          ? null
+                          : () {
+                              _formKey.currentState!.reset();
+                            },
+                      child: const Text('Reset'),
+                    ),
               const SizedBox(width: 12),
               ElevatedButton(
                 onPressed:

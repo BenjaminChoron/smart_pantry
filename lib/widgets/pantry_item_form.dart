@@ -178,14 +178,16 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              TextButton(
-                onPressed: _isSending
-                    ? null
-                    : () {
-                        _formKey.currentState!.reset();
-                      },
-                child: const Text('Reset'),
-              ),
+              isUpdate
+                  ? const SizedBox()
+                  : TextButton(
+                      onPressed: _isSending
+                          ? null
+                          : () {
+                              _formKey.currentState!.reset();
+                            },
+                      child: const Text('Reset'),
+                    ),
               const SizedBox(width: 12),
               ElevatedButton(
                 onPressed:
