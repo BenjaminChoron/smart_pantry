@@ -3,11 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:smart_pantry/settings/settings_view.dart';
-import 'generated/l10n.dart';
+import 'localization/generated/l10n.dart';
 
 import 'package:smart_pantry/settings/settings_controller.dart';
 import 'package:smart_pantry/settings/settings_service.dart';
-import 'package:smart_pantry/screens/my_pantry.dart';
+import 'package:smart_pantry/pantry/my_pantry.dart';
 
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.light,

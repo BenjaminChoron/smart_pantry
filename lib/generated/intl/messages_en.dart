@@ -20,52 +20,6 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(name) => "${Intl.select(name, {
-            'All': 'All',
-            'Fruits': 'Fruits',
-            'Vegetables': 'Vegetables',
-            'Meat': 'Meat',
-            'Seafood': 'Seafood',
-            'Dairy': 'Dairy',
-            'Bakery': 'Bakery',
-            'Snacks': 'Snacks',
-            'Drinks': 'Drinks',
-            'Frozen': 'Frozen',
-            'Other': 'Other',
-          })}";
-
-  static String m1(name) => "${Intl.select(name, {
-            'All': 'All',
-            'Fridge': 'Fridge',
-            'Freezer': 'Freezer',
-            'Cupboard': 'Cupboard',
-          })}";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "add": MessageLookupByLibrary.simpleMessage("Add"),
-        "addPantryItem":
-            MessageLookupByLibrary.simpleMessage("Add Pantry Item"),
-        "addShoppingListItem":
-            MessageLookupByLibrary.simpleMessage("Add Shopping List Item"),
-        "categoryName": m0,
-        "darkTheme": MessageLookupByLibrary.simpleMessage("Dark"),
-        "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),
-        "mustBePositive":
-            MessageLookupByLibrary.simpleMessage("Must be a positive number"),
-        "mustHaveCharacters": MessageLookupByLibrary.simpleMessage(
-            "Must be between 1 and 30 characters"),
-        "nameLabel": MessageLookupByLibrary.simpleMessage("Name"),
-        "noItems": MessageLookupByLibrary.simpleMessage("No items added yet."),
-        "pantryTitle": MessageLookupByLibrary.simpleMessage("Pantry"),
-        "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantity"),
-        "reset": MessageLookupByLibrary.simpleMessage("Reset"),
-        "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
-        "shoppingListTitle":
-            MessageLookupByLibrary.simpleMessage("Shopping List"),
-        "storageName": m1,
-        "systemTheme": MessageLookupByLibrary.simpleMessage("System"),
-        "theme": MessageLookupByLibrary.simpleMessage("Theme"),
-        "update": MessageLookupByLibrary.simpleMessage("Update")
-      };
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_pantry/generated/l10n.dart';
+import 'package:smart_pantry/localization/generated/l10n.dart';
 
 import 'settings_controller.dart';
 
