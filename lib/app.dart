@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'localization/generated/l10n.dart';
+import 'generated/l10n.dart';
 
 import 'package:smart_pantry/configs/color_schemes.dart';
 import 'package:smart_pantry/settings/settings_view.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:smart_pantry/localization/generated/l10n.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 
 import 'package:smart_pantry/shopping_list/models/shopping_item.dart';
 import 'package:smart_pantry/shopping_list/widgets/shopping_item_form.dart';

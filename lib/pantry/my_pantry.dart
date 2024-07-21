@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/globals/data/categories.dart';
 import 'package:smart_pantry/globals/data/storages.dart';
-import 'package:smart_pantry/localization/generated/l10n.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 
 import 'package:smart_pantry/pantry/add_pantry_item.dart';
 import 'package:smart_pantry/shopping_list/add_shopping_item.dart';

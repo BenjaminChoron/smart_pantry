@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:smart_pantry/globals/data/categories.dart';
 import 'package:smart_pantry/globals/data/units.dart';
-import 'package:smart_pantry/localization/generated/l10n.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/models/category.dart';
 import 'package:smart_pantry/shopping_list/models/shopping_item.dart';
 import 'package:smart_pantry/globals/models/unit.dart';

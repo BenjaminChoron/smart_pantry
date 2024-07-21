@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_pantry/globals/data/categories.dart';
-import 'package:smart_pantry/localization/generated/l10n.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/models/category.dart';
 
 import 'package:smart_pantry/pantry/models/pantry_item.dart';
