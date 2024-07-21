@@ -16,7 +16,7 @@ class _AddPantryItemScreenState extends ConsumerState<AddPantryItemScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Item'),
+        title: const Text('Add Pantry Item'),
       ),
       body: const Padding(
         padding: EdgeInsets.all(16),

@@ -202,13 +202,19 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
               ElevatedButton(
                 onPressed:
                     _isSending ? null : (isUpdate ? _updateItem : _saveItem),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                ),
                 child: _isSending
                     ? const SizedBox(
                         width: 16,
                         height: 16,
                         child: CircularProgressIndicator(),
                       )
-                    : Text(isUpdate ? 'Update' : 'Add'),
+                    : Text(
+                        isUpdate ? 'Update' : 'Add',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
               ),
             ],
           ),
