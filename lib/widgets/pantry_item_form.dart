@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:smart_pantry/data/storages.dart';
 import 'package:smart_pantry/data/units.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/models/pantry_item.dart';
 import 'package:smart_pantry/models/storage.dart';
 import 'package:smart_pantry/models/unit.dart';
@@ -134,7 +135,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
                 flex: 2,
                 child: TextFormInput(
                     initialValue: _enteredName,
-                    label: 'Name',
+                    label: S.of(context).nameLabel,
                     onSaved: (value) {
                       _enteredName = value;
                     }),
@@ -158,7 +159,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
                 flex: 3,
                 child: NumberFormInput(
                     initialValue: _enteredQuantity,
-                    label: 'Quantity',
+                    label: S.of(context).quantityLabel,
                     onSaved: (value) {
                       _enteredQuantity = value;
                     }),
@@ -186,7 +187,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
                           : () {
                               _formKey.currentState!.reset();
                             },
-                      child: const Text('Reset'),
+                      child: Text(S.of(context).reset),
                     ),
               const SizedBox(width: 12),
               ElevatedButton(
@@ -202,7 +203,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
                         child: CircularProgressIndicator(),
                       )
                     : Text(
-                        isUpdate ? 'Update' : 'Add',
+                        isUpdate ? S.of(context).update : S.of(context).add,
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
                               color: Theme.of(context).colorScheme.onPrimary,
                             ),

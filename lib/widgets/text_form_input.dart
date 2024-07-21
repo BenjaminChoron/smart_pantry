@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 
 class TextFormInput extends StatelessWidget {
   const TextFormInput({
@@ -33,7 +34,7 @@ class TextFormInput extends StatelessWidget {
             value.isEmpty ||
             value.trim().length <= 1 ||
             value.trim().length > 30) {
-          return 'Must be between 1 and 30 characters';
+          return S.of(context).mustHaveCharacters;
         }
         return null;
       },

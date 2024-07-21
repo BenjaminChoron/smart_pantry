@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 
 class NumberFormInput extends StatelessWidget {
   const NumberFormInput({
@@ -34,7 +35,7 @@ class NumberFormInput extends StatelessWidget {
             value.isEmpty ||
             int.tryParse(value) == null ||
             int.tryParse(value)! <= 0) {
-          return 'Must be a valid positive number';
+          return S.of(context).mustBePositive;
         }
         return null;
       },

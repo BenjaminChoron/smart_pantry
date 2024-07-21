@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:smart_pantry/data/storages.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/models/storage.dart';
 
 class StorageDropdownFormInput extends StatefulWidget {
@@ -41,7 +42,7 @@ class _StorageDropdownFormInputState extends State<StorageDropdownFormInput> {
       items: storages.entries
           .map((entry) => DropdownMenuItem(
                 value: entry.value,
-                child: Text(entry.value.name),
+                child: Text(S.of(context).storageName(entry.value.name)),
               ))
           .toList(),
       onChanged: (value) {

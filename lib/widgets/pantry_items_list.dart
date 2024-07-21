@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_pantry/data/categories.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/models/category.dart';
 
 import 'package:smart_pantry/models/pantry_item.dart';
@@ -173,7 +174,7 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
     if (widget.items.isEmpty) {
       return Center(
         child: Text(
-          'No items added yet.',
+          S.of(context).noItems,
           style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 color: Theme.of(context).colorScheme.onSurface,
               ),

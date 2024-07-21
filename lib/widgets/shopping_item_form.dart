@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:smart_pantry/data/categories.dart';
 import 'package:smart_pantry/data/units.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/models/category.dart';
 import 'package:smart_pantry/models/shopping_item.dart';
 import 'package:smart_pantry/models/unit.dart';
@@ -141,17 +142,17 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: TextFormInput(
                     initialValue: _enteredName,
-                    label: 'Name',
+                    label: S.of(context).nameLabel,
                     onSaved: (value) {
                       _enteredName = value;
                     }),
               ),
               const SizedBox(width: 20),
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: CategoryDropdownFormInput(
                     category: _selectedCategory,
                     onChanged: (value) {
@@ -168,7 +169,7 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
                 flex: 3,
                 child: NumberFormInput(
                     initialValue: _enteredQuantity,
-                    label: 'Quantity',
+                    label: S.of(context).quantityLabel,
                     onSaved: (value) {
                       _enteredQuantity = value;
                     }),
@@ -196,7 +197,7 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
                           : () {
                               _formKey.currentState!.reset();
                             },
-                      child: const Text('Reset'),
+                      child: Text(S.of(context).reset),
                     ),
               const SizedBox(width: 12),
               ElevatedButton(
@@ -212,7 +213,7 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
                         child: CircularProgressIndicator(),
                       )
                     : Text(
-                        isUpdate ? 'Update' : 'Add',
+                        isUpdate ? S.of(context).update : S.of(context).add,
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
                               color: Theme.of(context).colorScheme.onPrimary,
                             ),

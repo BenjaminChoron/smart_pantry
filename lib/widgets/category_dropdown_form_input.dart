@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:smart_pantry/data/categories.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/models/category.dart';
 
 class CategoryDropdownFormInput extends StatefulWidget {
@@ -41,7 +42,7 @@ class _CategoryDropdownFormInputState extends State<CategoryDropdownFormInput> {
       items: categories.entries
           .map((entry) => DropdownMenuItem(
                 value: entry.value,
-                child: Text(entry.value.name),
+                child: Text(S.of(context).categoryName(entry.value.name)),
               ))
           .toList(),
       onChanged: (value) {

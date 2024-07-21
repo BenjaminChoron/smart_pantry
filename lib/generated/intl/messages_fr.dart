@@ -43,10 +43,25 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add": MessageLookupByLibrary.simpleMessage("Ajouter"),
+        "addPantryItem":
+            MessageLookupByLibrary.simpleMessage("Ajouter au garde-manger"),
+        "addShoppingListItem": MessageLookupByLibrary.simpleMessage(
+            "Ajouter à la liste de courses"),
         "categoryName": m0,
+        "mustBePositive":
+            MessageLookupByLibrary.simpleMessage("Doit être un nombre positif"),
+        "mustHaveCharacters": MessageLookupByLibrary.simpleMessage(
+            "Doit contenir entre 1 et 30 caractères"),
+        "nameLabel": MessageLookupByLibrary.simpleMessage("Nom"),
+        "noItems": MessageLookupByLibrary.simpleMessage(
+            "Aucun élément ajouté pour le moment."),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Garde-manger"),
+        "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantité"),
+        "reset": MessageLookupByLibrary.simpleMessage("Réinitialiser"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Liste de courses"),
-        "storageName": m1
+        "storageName": m1,
+        "update": MessageLookupByLibrary.simpleMessage("Mettre à jour")
       };
 }

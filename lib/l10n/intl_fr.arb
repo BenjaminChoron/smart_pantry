@@ -1,6 +1,16 @@
 {
   "pantryTitle": "Garde-manger",
+  "add": "Ajouter",
+  "update": "Mettre à jour",
+  "reset": "Réinitialiser",
+  "nameLabel": "Nom",
+  "quantityLabel": "Quantité",
+  "mustBePositive": "Doit être un nombre positif",
+  "mustHaveCharacters": "Doit contenir entre 1 et 30 caractères",
+  "addPantryItem": "Ajouter au garde-manger",
   "shoppingListTitle": "Liste de courses",
+  "addShoppingListItem": "Ajouter à la liste de courses",
+  "noItems": "Aucun élément ajouté pour le moment.",
   "storageName": "{name, select, All {Tous} Fridge {Frigo} Freezer {Congélateur} Cupboard {Placard}}",
   "categoryName": "{name, select, All {Tous} Fruits {Fruits} Vegetables {Légumes} Meat {Viande} Seafood {Fruits de mer} Dairy {Produits laitiers} Bakery {Boulangerie} Snacks {Collations} Drinks {Boissons} Frozen {Surgelés} Other {Autre}}"
 }

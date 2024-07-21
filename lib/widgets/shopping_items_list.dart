@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/models/shopping_item.dart';
 import 'package:smart_pantry/providers/user_shopping_list.dart';
 import 'package:smart_pantry/widgets/shopping_item_form.dart';
@@ -65,7 +66,7 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
     if (widget.items.isEmpty) {
       return Center(
         child: Text(
-          'No items added yet.',
+          S.of(context).noItems,
           style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 color: Theme.of(context).colorScheme.onSurface,
               ),

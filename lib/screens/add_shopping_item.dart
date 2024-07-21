@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 
 import 'package:smart_pantry/models/shopping_item.dart';
 import 'package:smart_pantry/widgets/shopping_item_form.dart';
@@ -20,8 +21,6 @@ class AddShoppingItemScreen extends ConsumerStatefulWidget {
 }
 
 class _AddShoppingItemScreenState extends ConsumerState<AddShoppingItemScreen> {
-  final routeName = '/add-shopping-item';
-
   bool get isAddToShoppingAfterRemovedFromPantry =>
       widget.isAddToShoppingAfterRemovedFromPantry!;
   ShoppingItem? get item => widget.item;
@@ -30,7 +29,7 @@ class _AddShoppingItemScreenState extends ConsumerState<AddShoppingItemScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Shopping Item'),
+        title: Text(S.of(context).addShoppingListItem),
       ),
       body: Padding(
           padding: const EdgeInsets.all(16),

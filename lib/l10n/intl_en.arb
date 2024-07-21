@@ -1,6 +1,16 @@
 {
   "pantryTitle": "Pantry",
+  "add": "Add",
+  "update": "Update",
+  "reset": "Reset",
+  "nameLabel": "Name",
+  "quantityLabel": "Quantity",
+  "mustBePositive": "Must be a positive number",
+  "mustHaveCharacters": "Must be between 1 and 30 characters",
+  "addPantryItem": "Add Pantry Item",
   "shoppingListTitle": "Shopping List",
+  "addShoppingListItem": "Add Shopping List Item",
+  "noItems": "No items added yet.",
   "storageName": "{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}",
   "categoryName": "{name, select, All {All} Fruits {Fruits} Vegetables {Vegetables} Meat {Meat} Seafood {Seafood} Dairy {Dairy} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Other {Other}}"
 }

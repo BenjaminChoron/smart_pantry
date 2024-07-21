@@ -60,11 +60,111 @@ class S {
     );
   }
 
+  /// `Add`
+  String get add {
+    return Intl.message(
+      'Add',
+      name: 'add',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get reset {
+    return Intl.message(
+      'Reset',
+      name: 'reset',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get nameLabel {
+    return Intl.message(
+      'Name',
+      name: 'nameLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quantity`
+  String get quantityLabel {
+    return Intl.message(
+      'Quantity',
+      name: 'quantityLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must be a positive number`
+  String get mustBePositive {
+    return Intl.message(
+      'Must be a positive number',
+      name: 'mustBePositive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must be between 1 and 30 characters`
+  String get mustHaveCharacters {
+    return Intl.message(
+      'Must be between 1 and 30 characters',
+      name: 'mustHaveCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Pantry Item`
+  String get addPantryItem {
+    return Intl.message(
+      'Add Pantry Item',
+      name: 'addPantryItem',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Shopping List`
   String get shoppingListTitle {
     return Intl.message(
       'Shopping List',
       name: 'shoppingListTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Shopping List Item`
+  String get addShoppingListItem {
+    return Intl.message(
+      'Add Shopping List Item',
+      name: 'addShoppingListItem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No items added yet.`
+  String get noItems {
+    return Intl.message(
+      'No items added yet.',
+      name: 'noItems',
       desc: '',
       args: [],
     );
