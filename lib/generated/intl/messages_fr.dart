@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addShoppingListItem": MessageLookupByLibrary.simpleMessage(
             "Ajouter à la liste de courses"),
         "categoryName": m0,
+        "darkTheme": MessageLookupByLibrary.simpleMessage("Sombre"),
+        "lightTheme": MessageLookupByLibrary.simpleMessage("Clair"),
         "mustBePositive":
             MessageLookupByLibrary.simpleMessage("Doit être un nombre positif"),
         "mustHaveCharacters": MessageLookupByLibrary.simpleMessage(
@@ -59,9 +61,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Garde-manger"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantité"),
         "reset": MessageLookupByLibrary.simpleMessage("Réinitialiser"),
+        "settingsTitle": MessageLookupByLibrary.simpleMessage("Paramètres"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Liste de courses"),
         "storageName": m1,
+        "systemTheme": MessageLookupByLibrary.simpleMessage("Système"),
+        "theme": MessageLookupByLibrary.simpleMessage("Thème"),
         "update": MessageLookupByLibrary.simpleMessage("Mettre à jour")
       };
 }

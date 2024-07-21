@@ -54,5 +54,25 @@
   "categoryName": "{name, select, All {All} Fruits {Fruits} Vegetables {Vegetables} Meat {Meat} Seafood {Seafood} Dairy {Dairy} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Other {Other}}",
   "@categoryName": {
     "description": "Name of the category"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Title for the settings page"
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Label for the theme setting"
+  },
+  "darkTheme": "Dark",
+  "@darkTheme": {
+    "description": "Label for the dark theme"
+  },
+  "lightTheme": "Light",
+  "@lightTheme": {
+    "description": "Label for the light theme"
+  },
+  "systemTheme": "System",
+  "@systemTheme": {
+    "description": "Label for the system theme"
   }
 }

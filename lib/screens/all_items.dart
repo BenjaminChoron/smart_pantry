@@ -7,6 +7,8 @@ import 'package:smart_pantry/widgets/pantry_items_list.dart';
 class AllItemsScreen extends ConsumerStatefulWidget {
   const AllItemsScreen({super.key});
 
+  static const routeName = '/all_items';
+
   @override
   ConsumerState<AllItemsScreen> createState() => _AllItemsScreenState();
 }

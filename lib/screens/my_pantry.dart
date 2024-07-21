@@ -11,6 +11,8 @@ import 'package:smart_pantry/screens/shopping_list.dart';
 class MyPantryScreen extends StatefulWidget {
   const MyPantryScreen({super.key});
 
+  static const routeName = '/';
+
   @override
   State<MyPantryScreen> createState() => _MyPantryScreenState();
 }
@@ -78,6 +80,15 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
               .copyWith(color: Theme.of(context).colorScheme.onPrimary),
         ),
         actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed('/settings');
+            },
+            icon: Icon(
+              Icons.settings,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+          ),
           IconButton(
             onPressed: () {
               setState(() {

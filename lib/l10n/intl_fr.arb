@@ -12,5 +12,10 @@
   "addShoppingListItem": "Ajouter à la liste de courses",
   "noItems": "Aucun élément ajouté pour le moment.",
   "storageName": "{name, select, All {Tous} Fridge {Frigo} Freezer {Congélateur} Cupboard {Placard}}",
-  "categoryName": "{name, select, All {Tous} Fruits {Fruits} Vegetables {Légumes} Meat {Viande} Seafood {Fruits de mer} Dairy {Produits laitiers} Bakery {Boulangerie} Snacks {Collations} Drinks {Boissons} Frozen {Surgelés} Other {Autre}}"
+  "categoryName": "{name, select, All {Tous} Fruits {Fruits} Vegetables {Légumes} Meat {Viande} Seafood {Fruits de mer} Dairy {Produits laitiers} Bakery {Boulangerie} Snacks {Collations} Drinks {Boissons} Frozen {Surgelés} Other {Autre}}",
+  "settingsTitle": "Paramètres",
+  "theme": "Thème",
+  "darkTheme": "Sombre",
+  "lightTheme": "Clair",
+  "systemTheme": "Système"
 }

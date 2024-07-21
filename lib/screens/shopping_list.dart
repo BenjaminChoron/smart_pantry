@@ -12,6 +12,8 @@ class ShoppingListScreen extends ConsumerStatefulWidget {
     this.isAllItems = false,
   });
 
+  static const routeName = '/shopping_list';
+
   final Category? category;
   final bool isAllItems;
 
