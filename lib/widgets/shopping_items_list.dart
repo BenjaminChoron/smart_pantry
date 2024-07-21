@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_pantry/models/shopping_item.dart';
@@ -83,6 +84,57 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
             _onRemoveItem(item);
           },
           direction: DismissDirection.endToStart,
+          confirmDismiss: (_) async {
+            return await showDialog(
+              context: context,
+              builder: (context) {
+                bool isCupertino =
+                    Theme.of(context).platform == TargetPlatform.iOS;
+
+                if (isCupertino) {
+                  return CupertinoAlertDialog(
+                    title: const Text('Are you sure?'),
+                    content: const Text(
+                        'Do you really want to remove this item from the list?'),
+                    actions: [
+                      CupertinoDialogAction(
+                        textStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.error),
+                        onPressed: () {
+                          Navigator.of(context).pop(true);
+                        },
+                        child: const Text('Yes'),
+                      ),
+                      CupertinoDialogAction(
+                        onPressed: () {
+                          Navigator.of(context).pop(false);
+                        },
+                        child: const Text('No'),
+                      ),
+                    ],
+                  );
+                }
+
+                return AlertDialog(
+                  title: const Text('Are you sure?'),
+                  content: const Text(
+                      'Do you want to remove this item from the list?'),
+                  actions: [
+                    TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(true);
+                        },
+                        child: const Text('Yes')),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(false);
+                        },
+                        child: const Text('No')),
+                  ],
+                );
+              },
+            );
+          },
           background: Container(
             color: Theme.of(context).colorScheme.error,
             alignment: Alignment.centerRight,
