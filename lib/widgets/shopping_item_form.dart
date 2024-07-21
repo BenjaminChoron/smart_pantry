@@ -213,7 +213,9 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
                       )
                     : Text(
                         isUpdate ? 'Update' : 'Add',
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                              color: Theme.of(context).colorScheme.onPrimary,
+                            ),
                       ),
               ),
             ],

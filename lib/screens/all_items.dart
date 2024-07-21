@@ -25,15 +25,12 @@ class _AllItemsScreenState extends ConsumerState<AllItemsScreen> {
     final allItems = ref.watch(userPantryProvider);
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FutureBuilder(
-          future: _allItems,
-          builder: (context, snapshot) =>
-              snapshot.connectionState == ConnectionState.waiting
-                  ? const Center(child: CircularProgressIndicator())
-                  : PantryItemsList(items: allItems, isAllPantryItems: true),
-        ),
+      body: FutureBuilder(
+        future: _allItems,
+        builder: (context, snapshot) =>
+            snapshot.connectionState == ConnectionState.waiting
+                ? const Center(child: CircularProgressIndicator())
+                : PantryItemsList(items: allItems, isAllPantryItems: true),
       ),
     );
   }

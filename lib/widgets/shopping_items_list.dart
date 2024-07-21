@@ -124,7 +124,11 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
                         onPressed: () {
                           Navigator.of(context).pop(true);
                         },
-                        child: const Text('Yes')),
+                        child: Text(
+                          'Yes',
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.error),
+                        )),
                     TextButton(
                         onPressed: () {
                           Navigator.of(context).pop(false);
@@ -136,7 +140,9 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
             );
           },
           background: Container(
-            color: Theme.of(context).colorScheme.error,
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.error,
+            ),
             alignment: Alignment.centerRight,
             padding: const EdgeInsets.only(right: 16),
             child: Icon(

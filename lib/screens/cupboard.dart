@@ -29,15 +29,12 @@ class _CupboardScreenState extends ConsumerState<CupboardScreen> {
     final cupboardItems = ref.watch(userPantryProvider);
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FutureBuilder(
-          future: _cupboardItems,
-          builder: (context, snapshot) =>
-              snapshot.connectionState == ConnectionState.waiting
-                  ? const Center(child: CircularProgressIndicator())
-                  : PantryItemsList(items: cupboardItems),
-        ),
+      body: FutureBuilder(
+        future: _cupboardItems,
+        builder: (context, snapshot) =>
+            snapshot.connectionState == ConnectionState.waiting
+                ? const Center(child: CircularProgressIndicator())
+                : PantryItemsList(items: cupboardItems),
       ),
     );
   }

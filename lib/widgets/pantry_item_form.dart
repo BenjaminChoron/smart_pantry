@@ -203,7 +203,9 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
                       )
                     : Text(
                         isUpdate ? 'Update' : 'Add',
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                              color: Theme.of(context).colorScheme.onPrimary,
+                            ),
                       ),
               ),
             ],

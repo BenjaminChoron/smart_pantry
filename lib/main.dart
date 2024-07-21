@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smart_pantry/screens/my_pantry.dart';
 
 final colorScheme = ColorScheme.fromSeed(
-  brightness: Brightness.dark,
-  seedColor: const Color.fromARGB(255, 10, 191, 211),
+  brightness: Brightness.light,
+  seedColor: Color.fromARGB(255, 87, 44, 2),
 );
 
 final theme = ThemeData().copyWith(

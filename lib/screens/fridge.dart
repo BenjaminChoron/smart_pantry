@@ -29,15 +29,12 @@ class _FridgeScreenState extends ConsumerState<FridgeScreen> {
     final fridgeItems = ref.watch(userPantryProvider);
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FutureBuilder(
-          future: _fridgeItems,
-          builder: (context, snapshot) =>
-              snapshot.connectionState == ConnectionState.waiting
-                  ? const Center(child: CircularProgressIndicator())
-                  : PantryItemsList(items: fridgeItems),
-        ),
+      body: FutureBuilder(
+        future: _fridgeItems,
+        builder: (context, snapshot) =>
+            snapshot.connectionState == ConnectionState.waiting
+                ? const Center(child: CircularProgressIndicator())
+                : PantryItemsList(items: fridgeItems),
       ),
     );
   }

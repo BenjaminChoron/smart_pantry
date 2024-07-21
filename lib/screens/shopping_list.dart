@@ -40,15 +40,12 @@ class _ShoppingListScreenState extends ConsumerState<ShoppingListScreen> {
     final allItems = ref.watch(userShoppingListProvider);
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FutureBuilder(
-          future: _allItems,
-          builder: (context, snapshot) =>
-              snapshot.connectionState == ConnectionState.waiting
-                  ? const Center(child: CircularProgressIndicator())
-                  : ShoppingItemsList(items: allItems, isAllItems: isAllItems),
-        ),
+      body: FutureBuilder(
+        future: _allItems,
+        builder: (context, snapshot) =>
+            snapshot.connectionState == ConnectionState.waiting
+                ? const Center(child: CircularProgressIndicator())
+                : ShoppingItemsList(items: allItems, isAllItems: isAllItems),
       ),
     );
   }

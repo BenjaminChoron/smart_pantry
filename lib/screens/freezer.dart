@@ -29,15 +29,12 @@ class _FreezerScreenState extends ConsumerState<FreezerScreen> {
     final freezerItems = ref.watch(userPantryProvider);
 
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FutureBuilder(
-          future: _freezerItems,
-          builder: (context, snapshot) =>
-              snapshot.connectionState == ConnectionState.waiting
-                  ? const Center(child: CircularProgressIndicator())
-                  : PantryItemsList(items: freezerItems),
-        ),
+      body: FutureBuilder(
+        future: _freezerItems,
+        builder: (context, snapshot) =>
+            snapshot.connectionState == ConnectionState.waiting
+                ? const Center(child: CircularProgressIndicator())
+                : PantryItemsList(items: freezerItems),
       ),
     );
   }

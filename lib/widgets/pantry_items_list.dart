@@ -90,7 +90,10 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
             Navigator.of(context).pop();
             _onRemoveItem(item);
           },
-          child: Text(dialogTexts['remove']!),
+          child: Text(
+            dialogTexts['remove']!,
+            style: TextStyle(color: Theme.of(context).colorScheme.error),
+          ),
         ),
         TextButton(
           onPressed: () {
@@ -230,7 +233,11 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
                         onPressed: () {
                           Navigator.of(context).pop(true);
                         },
-                        child: const Text('Yes')),
+                        child: Text(
+                          'Yes',
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.error),
+                        )),
                     TextButton(
                         onPressed: () {
                           Navigator.of(context).pop(false);
@@ -246,7 +253,9 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
           },
           direction: DismissDirection.endToStart,
           background: Container(
-            color: Theme.of(context).colorScheme.error,
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.error,
+            ),
             alignment: Alignment.centerRight,
             padding: const EdgeInsets.only(right: 16),
             child: Icon(
