@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/data/categories.dart';
 import 'package:smart_pantry/data/storages.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 
 import 'package:smart_pantry/screens/add_pantry_item.dart';
 import 'package:smart_pantry/screens/add_shopping_item.dart';
@@ -68,7 +69,7 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          _isShoppingList ? 'Shopping List' : 'My Pantry',
+          _isShoppingList ? 'Shopping List' : S.of(context).pantryTitle,
           style: Theme.of(context)
               .textTheme
               .titleLarge!
