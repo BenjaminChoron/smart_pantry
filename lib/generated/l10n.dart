@@ -55,7 +55,7 @@ class S {
     return Intl.message(
       'Pantry',
       name: 'pantryTitle',
-      desc: '',
+      desc: 'Title for the pantry page',
       args: [],
     );
   }
@@ -65,7 +65,7 @@ class S {
     return Intl.message(
       'Add',
       name: 'add',
-      desc: '',
+      desc: 'Button text to add an item',
       args: [],
     );
   }
@@ -75,7 +75,7 @@ class S {
     return Intl.message(
       'Update',
       name: 'update',
-      desc: '',
+      desc: 'Button text to update an item',
       args: [],
     );
   }
@@ -85,7 +85,7 @@ class S {
     return Intl.message(
       'Reset',
       name: 'reset',
-      desc: '',
+      desc: 'Button text to reset the form',
       args: [],
     );
   }
@@ -95,7 +95,7 @@ class S {
     return Intl.message(
       'Name',
       name: 'nameLabel',
-      desc: '',
+      desc: 'Label for the name input field',
       args: [],
     );
   }
@@ -105,7 +105,7 @@ class S {
     return Intl.message(
       'Quantity',
       name: 'quantityLabel',
-      desc: '',
+      desc: 'Label for the quantity input field',
       args: [],
     );
   }
@@ -115,7 +115,7 @@ class S {
     return Intl.message(
       'Must be a positive number',
       name: 'mustBePositive',
-      desc: '',
+      desc: 'Error message when the quantity is not a positive number',
       args: [],
     );
   }
@@ -125,7 +125,7 @@ class S {
     return Intl.message(
       'Must be between 1 and 30 characters',
       name: 'mustHaveCharacters',
-      desc: '',
+      desc: 'Error message when the name is not between 1 and 30 characters',
       args: [],
     );
   }
@@ -135,7 +135,7 @@ class S {
     return Intl.message(
       'Add Pantry Item',
       name: 'addPantryItem',
-      desc: '',
+      desc: 'Button text to add an item to the pantry',
       args: [],
     );
   }
@@ -145,7 +145,7 @@ class S {
     return Intl.message(
       'Shopping List',
       name: 'shoppingListTitle',
-      desc: '',
+      desc: 'Title for the shopping list page',
       args: [],
     );
   }
@@ -155,7 +155,7 @@ class S {
     return Intl.message(
       'Add Shopping List Item',
       name: 'addShoppingListItem',
-      desc: '',
+      desc: 'Button text to add an item to the shopping list',
       args: [],
     );
   }
@@ -165,7 +165,7 @@ class S {
     return Intl.message(
       'No items added yet.',
       name: 'noItems',
-      desc: '',
+      desc: 'Message displayed when there are no items in the list',
       args: [],
     );
   }
@@ -181,7 +181,7 @@ class S {
         'Cupboard': 'Cupboard',
       },
       name: 'storageName',
-      desc: '',
+      desc: 'Name of the storage location',
       args: [name],
     );
   }
@@ -204,7 +204,7 @@ class S {
         'Other': 'Other',
       },
       name: 'categoryName',
-      desc: '',
+      desc: 'Name of the category',
       args: [name],
     );
   }
