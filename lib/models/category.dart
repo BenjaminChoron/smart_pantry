@@ -8,6 +8,9 @@ enum Categories {
   dairy,
   bakery,
   drinks,
+  snacks,
+  frozen,
+  other
 }
 
 class Category {

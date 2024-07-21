@@ -1,3 +1,6 @@
 {
-  "pantryTitle": "Pantry"
+  "pantryTitle": "Pantry",
+  "shoppingListTitle": "Shopping List",
+  "storageName": "{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}",
+  "categoryName": "{name, select, All {All} Fruits {Fruits} Vegetables {Vegetables} Meat {Meat} Seafood {Seafood} Dairy {Dairy} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Other {Other}}"
 }

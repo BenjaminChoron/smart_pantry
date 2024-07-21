@@ -45,4 +45,22 @@ const categories = {
     icon: Icons.local_drink,
     screen: Placeholder(),
   ),
+  Categories.snacks: Category(
+    name: 'Snacks',
+    color: Color(0xFF607D8B),
+    icon: Icons.fastfood,
+    screen: Placeholder(),
+  ),
+  Categories.frozen: Category(
+    name: 'Frozen',
+    color: Color(0xFF2196F3),
+    icon: Icons.ac_unit,
+    screen: Placeholder(),
+  ),
+  Categories.other: Category(
+    name: 'Other',
+    color: Color(0xFFE91E63),
+    icon: Icons.category,
+    screen: Placeholder(),
+  ),
 };

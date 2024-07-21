@@ -1,3 +1,6 @@
 {
-  "pantryTitle": "Garde Manger"
+  "pantryTitle": "Garde-manger",
+  "shoppingListTitle": "Liste de courses",
+  "storageName": "{name, select, All {Tous} Fridge {Frigo} Freezer {Congélateur} Cupboard {Placard}}",
+  "categoryName": "{name, select, All {Tous} Fruits {Fruits} Vegetables {Légumes} Meat {Viande} Seafood {Fruits de mer} Dairy {Produits laitiers} Bakery {Boulangerie} Snacks {Collations} Drinks {Boissons} Frozen {Surgelés} Other {Autre}}"
 }

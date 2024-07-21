@@ -22,14 +22,14 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
   Widget build(BuildContext context) {
     List<Tab> pantryTabs = [
       Tab(
-        text: 'All',
+        text: S.of(context).storageName('All'),
         icon: Icon(
           Icons.list,
           color: Theme.of(context).colorScheme.primary,
         ),
       ),
       ...storages.entries.map((entry) => Tab(
-            text: entry.value.name,
+            text: S.of(context).storageName(entry.value.name),
             icon: Icon(
               entry.value.icon,
               color: entry.value.color,
@@ -44,14 +44,14 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
 
     List<Tab> shoppingTabs = [
       Tab(
-        text: 'All',
+        text: S.of(context).categoryName('All'),
         icon: Icon(
           Icons.list,
           color: Theme.of(context).colorScheme.primary,
         ),
       ),
       ...categories.entries.map((entry) => Tab(
-            text: entry.value.name,
+            text: S.of(context).categoryName(entry.value.name),
             icon: Icon(
               entry.value.icon,
               color: entry.value.color,
@@ -69,7 +69,9 @@ class _MyPantryScreenState extends State<MyPantryScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          _isShoppingList ? 'Shopping List' : S.of(context).pantryTitle,
+          _isShoppingList
+              ? S.of(context).shoppingListTitle
+              : S.of(context).pantryTitle,
           style: Theme.of(context)
               .textTheme
               .titleLarge!

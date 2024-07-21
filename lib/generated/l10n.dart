@@ -59,6 +59,55 @@ class S {
       args: [],
     );
   }
+
+  /// `Shopping List`
+  String get shoppingListTitle {
+    return Intl.message(
+      'Shopping List',
+      name: 'shoppingListTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}`
+  String storageName(Object name) {
+    return Intl.select(
+      name,
+      {
+        'All': 'All',
+        'Fridge': 'Fridge',
+        'Freezer': 'Freezer',
+        'Cupboard': 'Cupboard',
+      },
+      name: 'storageName',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `{name, select, All {All} Fruits {Fruits} Vegetables {Vegetables} Meat {Meat} Seafood {Seafood} Dairy {Dairy} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Other {Other}}`
+  String categoryName(Object name) {
+    return Intl.select(
+      name,
+      {
+        'All': 'All',
+        'Fruits': 'Fruits',
+        'Vegetables': 'Vegetables',
+        'Meat': 'Meat',
+        'Seafood': 'Seafood',
+        'Dairy': 'Dairy',
+        'Bakery': 'Bakery',
+        'Snacks': 'Snacks',
+        'Drinks': 'Drinks',
+        'Frozen': 'Frozen',
+        'Other': 'Other',
+      },
+      name: 'categoryName',
+      desc: '',
+      args: [name],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

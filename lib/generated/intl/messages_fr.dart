@@ -20,8 +20,33 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
+  static String m0(name) => "${Intl.select(name, {
+            'All': 'Tous',
+            'Fruits': 'Fruits',
+            'Vegetables': 'Légumes',
+            'Meat': 'Viande',
+            'Seafood': 'Fruits de mer',
+            'Dairy': 'Produits laitiers',
+            'Bakery': 'Boulangerie',
+            'Snacks': 'Collations',
+            'Drinks': 'Boissons',
+            'Frozen': 'Surgelés',
+            'Other': 'Autre',
+          })}";
+
+  static String m1(name) => "${Intl.select(name, {
+            'All': 'Tous',
+            'Fridge': 'Frigo',
+            'Freezer': 'Congélateur',
+            'Cupboard': 'Placard',
+          })}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "pantryTitle": MessageLookupByLibrary.simpleMessage("Garde Manger")
+        "categoryName": m0,
+        "pantryTitle": MessageLookupByLibrary.simpleMessage("Garde-manger"),
+        "shoppingListTitle":
+            MessageLookupByLibrary.simpleMessage("Liste de courses"),
+        "storageName": m1
       };
 }
