@@ -1,25 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:smart_pantry/globals/models/storage.dart';
 import 'package:smart_pantry/pantry/providers/user_pantry.dart';
 import 'package:smart_pantry/pantry/widgets/pantry_items_list.dart';
 
-class AllItemsScreen extends ConsumerStatefulWidget {
-  const AllItemsScreen({super.key});
+class PantryItems extends ConsumerStatefulWidget {
+  const PantryItems({
+    super.key,
+    this.isAllItems = false,
+    this.storage,
+  });
 
-  static const routeName = '/all_items';
+  final bool isAllItems;
+  final Storage? storage;
 
   @override
-  ConsumerState<AllItemsScreen> createState() => _AllItemsScreenState();
+  ConsumerState<PantryItems> createState() => _PantryItemsState();
 }
 
-class _AllItemsScreenState extends ConsumerState<AllItemsScreen> {
+class _PantryItemsState extends ConsumerState<PantryItems> {
   late Future<void> _allItems;
+  bool get isAllItems => widget.isAllItems;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _allItems = ref.watch(userPantryProvider.notifier).loadItems();
+    if (widget.storage == null) {
+      _allItems = ref.watch(userPantryProvider.notifier).loadItems();
+    } else {
+      _allItems = ref
+          .watch(userPantryProvider.notifier)
+          .loadItemsByStorage(widget.storage!);
+    }
   }
 
   @override
@@ -32,7 +44,7 @@ class _AllItemsScreenState extends ConsumerState<AllItemsScreen> {
         builder: (context, snapshot) =>
             snapshot.connectionState == ConnectionState.waiting
                 ? const Center(child: CircularProgressIndicator())
-                : PantryItemsList(items: allItems, isAllPantryItems: true),
+                : PantryItemsList(items: allItems, isAllItems: isAllItems),
       ),
     );
   }

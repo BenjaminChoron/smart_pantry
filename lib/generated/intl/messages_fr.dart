@@ -58,6 +58,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "nameLabel": MessageLookupByLibrary.simpleMessage("Nom"),
         "noItems": MessageLookupByLibrary.simpleMessage(
             "Aucun élément ajouté pour le moment."),
+        "pantryDialogActionNo": MessageLookupByLibrary.simpleMessage("Non"),
+        "pantryDialogActionYes": MessageLookupByLibrary.simpleMessage("Oui"),
+        "pantryDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
+            "Voulez-vous vraiment supprimer cet élément de votre garde-manger ?"),
+        "pantryDialogDismissContent": MessageLookupByLibrary.simpleMessage(
+            "Voulez-vous ajouter cet élément à votre liste de courses ?"),
+        "pantryDialogTitle": MessageLookupByLibrary.simpleMessage(
+            "Suppression d\'un élément du garde-manger"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Garde-manger"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantité"),
         "reset": MessageLookupByLibrary.simpleMessage("Réinitialiser"),

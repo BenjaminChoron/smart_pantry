@@ -114,7 +114,7 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
     state = items;
   }
 
-  Future<void> loadStorageItems(Storage storage) async {
+  Future<void> loadItemsByStorage(Storage storage) async {
     final db = await _getDatabase();
     final data = await db
         .query('user_pantry', where: 'storage = ?', whereArgs: [storage.name]);

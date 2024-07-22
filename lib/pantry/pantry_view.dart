@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/data/storages.dart';
-import 'package:smart_pantry/pantry/add_pantry_item.dart';
-import 'package:smart_pantry/pantry/widgets/all_items.dart';
+import 'package:smart_pantry/pantry/add_pantry_item_view.dart';
+import 'package:smart_pantry/pantry/widgets/pantry_items.dart';
+import 'package:smart_pantry/settings/settings_view.dart';
+import 'package:smart_pantry/shopping_list/shopping_list_view.dart';
 
 class PantryView extends StatefulWidget {
   const PantryView({super.key});
@@ -34,8 +36,8 @@ class _PantryViewState extends State<PantryView> {
     ];
 
     List<Widget> pantryTabViews = [
-      const AllItemsScreen(),
-      ...storages.entries.map((entry) => entry.value.screen),
+      const PantryItems(isAllItems: true),
+      ...storages.entries.map((entry) => PantryItems(storage: entry.value)),
     ];
 
     return Scaffold(
@@ -53,7 +55,7 @@ class _PantryViewState extends State<PantryView> {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (ctx) => const AddPantryItemScreen(),
+                  builder: (context) => const AddPantryItemView(),
                 ),
               );
             },
@@ -64,7 +66,8 @@ class _PantryViewState extends State<PantryView> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/shopping_list');
+              Navigator.of(context)
+                  .pushReplacementNamed(ShoppingListView.routeName);
             },
             icon: Icon(
               Icons.shopping_cart,
@@ -73,7 +76,7 @@ class _PantryViewState extends State<PantryView> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/settings');
+              Navigator.of(context).pushNamed(SettingsView.routeName);
             },
             icon: Icon(
               Icons.settings,

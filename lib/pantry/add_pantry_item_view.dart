@@ -4,15 +4,14 @@ import 'package:smart_pantry/generated/l10n.dart';
 
 import 'package:smart_pantry/pantry/widgets/pantry_item_form.dart';
 
-class AddPantryItemScreen extends ConsumerStatefulWidget {
-  const AddPantryItemScreen({super.key});
+class AddPantryItemView extends ConsumerStatefulWidget {
+  const AddPantryItemView({super.key});
 
   @override
-  ConsumerState<AddPantryItemScreen> createState() =>
-      _AddPantryItemScreenState();
+  ConsumerState<AddPantryItemView> createState() => _AddPantryItemViewState();
 }
 
-class _AddPantryItemScreenState extends ConsumerState<AddPantryItemScreen> {
+class _AddPantryItemViewState extends ConsumerState<AddPantryItemView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

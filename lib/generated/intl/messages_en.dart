@@ -57,6 +57,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "Must be between 1 and 30 characters"),
         "nameLabel": MessageLookupByLibrary.simpleMessage("Name"),
         "noItems": MessageLookupByLibrary.simpleMessage("No items added yet."),
+        "pantryDialogActionNo": MessageLookupByLibrary.simpleMessage("No"),
+        "pantryDialogActionYes": MessageLookupByLibrary.simpleMessage("Yes"),
+        "pantryDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
+            "Do you really want to remove this item from your pantry?"),
+        "pantryDialogDismissContent": MessageLookupByLibrary.simpleMessage(
+            "Do you want to add this item to your shopping list?"),
+        "pantryDialogTitle":
+            MessageLookupByLibrary.simpleMessage("Pantry Item Removal"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Pantry"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantity"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),

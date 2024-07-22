@@ -60,6 +60,56 @@ class S {
     );
   }
 
+  /// `Pantry Item Removal`
+  String get pantryDialogTitle {
+    return Intl.message(
+      'Pantry Item Removal',
+      name: 'pantryDialogTitle',
+      desc: 'Title for the dialog to remove pantry item',
+      args: [],
+    );
+  }
+
+  /// `Do you really want to remove this item from your pantry?`
+  String get pantryDialogConfirmContent {
+    return Intl.message(
+      'Do you really want to remove this item from your pantry?',
+      name: 'pantryDialogConfirmContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to add this item to your shopping list?`
+  String get pantryDialogDismissContent {
+    return Intl.message(
+      'Do you want to add this item to your shopping list?',
+      name: 'pantryDialogDismissContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get pantryDialogActionYes {
+    return Intl.message(
+      'Yes',
+      name: 'pantryDialogActionYes',
+      desc: 'Button text to confirm the action',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get pantryDialogActionNo {
+    return Intl.message(
+      'No',
+      name: 'pantryDialogActionNo',
+      desc: 'Button text to cancel the action',
+      args: [],
+    );
+  }
+
   /// `Add`
   String get add {
     return Intl.message(

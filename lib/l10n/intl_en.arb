@@ -3,6 +3,23 @@
   "@pantryTitle": {
     "description": "Title for the pantry page"
   },
+  "pantryDialogTitle": "Pantry Item Removal",
+  "@pantryDialogTitle": {
+    "description": "Title for the dialog to remove pantry item"
+  },
+  "pantryDialogConfirmContent": "Do you really want to remove this item from your pantry?",
+  "@pantryDialogContent": {
+    "description": "Content for the dialog to remove a pantry item"
+  },
+  "pantryDialogDismissContent": "Do you want to add this item to your shopping list?",
+  "pantryDialogActionYes": "Yes",
+  "@pantryDialogActionYes": {
+    "description": "Button text to confirm the action"
+  },
+  "pantryDialogActionNo": "No",
+  "@pantryDialogActionNo": {
+    "description": "Button text to cancel the action"
+  },
   "add": "Add",
   "@add": {
     "description": "Button text to add an item"
