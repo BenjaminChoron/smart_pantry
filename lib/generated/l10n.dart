@@ -143,6 +143,16 @@ class S {
     );
   }
 
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: 'Label for the language setting',
+      args: [],
+    );
+  }
+
   /// `Light`
   String get lightTheme {
     return Intl.message(

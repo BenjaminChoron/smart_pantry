@@ -23,6 +23,9 @@
   "@failedToUpdateItem": {
     "description": "Error message when an item cannot be updated"
   },
+  "@language": {
+    "description": "Label for the language setting"
+  },
   "@lightTheme": {
     "description": "Label for the light theme"
   },
@@ -100,6 +103,7 @@
   "failedToAddItem": "Failed to add item... Please try again later.",
   "failedToRemoveItem": "Failed to remove item... Please try again later.",
   "failedToUpdateItem": "Failed to update item... Please try again later.",
+  "language": "Language",
   "lightTheme": "Light",
   "mustBePositive": "Must be a positive number",
   "mustHaveCharacters": "Must be between 1 and 30 characters",

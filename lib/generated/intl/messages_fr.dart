@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Impossible de supprimer l\'élément... Veuillez réessayer plus tard."),
         "failedToUpdateItem": MessageLookupByLibrary.simpleMessage(
             "Impossible de mettre à jour l\'élément... Veuillez réessayer plus tard."),
+        "language": MessageLookupByLibrary.simpleMessage("Langue"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Clair"),
         "mustBePositive":
             MessageLookupByLibrary.simpleMessage("Doit être un nombre positif"),

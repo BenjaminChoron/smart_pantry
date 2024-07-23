@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/app.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 
 import 'settings_controller.dart';
@@ -12,6 +13,8 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mainAppState = context.findAncestorStateOfType<MainAppState>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -52,6 +55,37 @@ class SettingsView extends StatelessWidget {
                       child: Text(S.of(context).darkTheme),
                     )
                   ],
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                Text(
+                  S.of(context).language,
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
+                ),
+                const Spacer(),
+                DropdownButton<Locale>(
+                  value: Localizations.localeOf(context),
+                  onChanged: (Locale? newLocale) {
+                    if (newLocale != null) {
+                      mainAppState?.changeLocale(newLocale);
+                    }
+                  },
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                  dropdownColor: Theme.of(context).colorScheme.surface,
+                  items: S.delegate.supportedLocales
+                      .map<DropdownMenuItem<Locale>>((Locale locale) {
+                    return DropdownMenuItem<Locale>(
+                      value: locale,
+                      child: Text(locale.toString()),
+                    );
+                  }).toList(),
                 ),
               ],
             ),

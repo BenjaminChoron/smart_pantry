@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Failed to remove item... Please try again later."),
         "failedToUpdateItem": MessageLookupByLibrary.simpleMessage(
             "Failed to update item... Please try again later."),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),
         "mustBePositive":
             MessageLookupByLibrary.simpleMessage("Must be a positive number"),

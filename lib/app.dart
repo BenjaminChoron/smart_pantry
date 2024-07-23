@@ -8,7 +8,7 @@ import 'package:smart_pantry/configs/color_schemes.dart';
 import 'package:smart_pantry/settings/settings_view.dart';
 import 'package:smart_pantry/settings/settings_controller.dart';
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({
     super.key,
     required this.settingsController,
@@ -17,14 +17,28 @@ class MainApp extends StatelessWidget {
   final SettingsController settingsController;
 
   @override
+  State<MainApp> createState() => MainAppState();
+}
+
+class MainAppState extends State<MainApp> {
+  Locale? _locale;
+
+  void changeLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
-      listenable: settingsController,
+      listenable: widget.settingsController,
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
           theme: theme,
           darkTheme: darkTheme,
-          themeMode: settingsController.themeMode,
+          themeMode: widget.settingsController.themeMode,
+          locale: _locale,
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -38,7 +52,7 @@ class MainApp extends StatelessWidget {
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
                   case SettingsView.routeName:
-                    return SettingsView(controller: settingsController);
+                    return SettingsView(controller: widget.settingsController);
                   case ShoppingListView.routeName:
                     return const ShoppingListView();
                   case PantryView.routeName:
