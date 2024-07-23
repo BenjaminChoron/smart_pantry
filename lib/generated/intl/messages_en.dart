@@ -50,6 +50,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add Shopping List Item"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dark"),
+        "failedToAddItem": MessageLookupByLibrary.simpleMessage(
+            "Failed to add item... Please try again later."),
+        "failedToRemoveItem": MessageLookupByLibrary.simpleMessage(
+            "Failed to remove item... Please try again later."),
+        "failedToUpdateItem": MessageLookupByLibrary.simpleMessage(
+            "Failed to update item... Please try again later."),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),
         "mustBePositive":
             MessageLookupByLibrary.simpleMessage("Must be a positive number"),
@@ -62,13 +68,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "pantryDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
             "Do you really want to remove this item from your pantry?"),
         "pantryDialogDismissContent": MessageLookupByLibrary.simpleMessage(
-            "Do you want to add this item to your shopping list?"),
+            "Do you want to add this item to your pantry?"),
         "pantryDialogTitle":
             MessageLookupByLibrary.simpleMessage("Pantry Item Removal"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Pantry"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantity"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
+        "shoppingListDialogActionNo":
+            MessageLookupByLibrary.simpleMessage("No"),
+        "shoppingListDialogActionYes":
+            MessageLookupByLibrary.simpleMessage("Yes"),
+        "shoppingListDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
+            "Do you really want to remove this item from your shopping list?"),
+        "shoppingListDialogTitle":
+            MessageLookupByLibrary.simpleMessage("Shopping List Item Removal"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Shopping List"),
         "storageName": m1,

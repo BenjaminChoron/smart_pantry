@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/data/categories.dart';
-import 'package:smart_pantry/shopping_list/add_shopping_item.dart';
-import 'package:smart_pantry/shopping_list/shopping_list.dart';
+import 'package:smart_pantry/pantry/pantry_view.dart';
+import 'package:smart_pantry/settings/settings_view.dart';
+import 'package:smart_pantry/shopping_list/add_shopping_list_item_view.dart';
+import 'package:smart_pantry/shopping_list/widgets/shopping_list_items.dart';
 
-class ShoppingView extends StatefulWidget {
-  const ShoppingView({super.key});
+class ShoppingListView extends StatefulWidget {
+  const ShoppingListView({super.key});
 
   static const routeName = '/shopping_list';
 
   @override
-  State<ShoppingView> createState() => _ShoppingViewState();
+  State<ShoppingListView> createState() => _ShoppingListViewState();
 }
 
-class _ShoppingViewState extends State<ShoppingView> {
+class _ShoppingListViewState extends State<ShoppingListView> {
   @override
   Widget build(BuildContext context) {
     List<Tab> shoppingTabs = [
@@ -34,9 +36,9 @@ class _ShoppingViewState extends State<ShoppingView> {
     ];
 
     List<Widget> shoppingTabViews = [
-      const ShoppingListScreen(isAllItems: true),
+      const ShoppingListItems(isAllItems: true),
       ...categories.entries
-          .map((entry) => ShoppingListScreen(category: entry.value)),
+          .map((entry) => ShoppingListItems(category: entry.value)),
     ];
 
     return Scaffold(
@@ -54,7 +56,7 @@ class _ShoppingViewState extends State<ShoppingView> {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (ctx) => const AddShoppingItemScreen(),
+                  builder: (context) => const AddShoppingListItemView(),
                 ),
               );
             },
@@ -65,7 +67,7 @@ class _ShoppingViewState extends State<ShoppingView> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/');
+              Navigator.of(context).pushReplacementNamed(PantryView.routeName);
             },
             icon: Icon(
               Icons.kitchen,
@@ -74,7 +76,7 @@ class _ShoppingViewState extends State<ShoppingView> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/settings');
+              Navigator.of(context).pushNamed(SettingsView.routeName);
             },
             icon: Icon(
               Icons.settings,

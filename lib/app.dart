@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:smart_pantry/pantry/pantry_view.dart';
-import 'package:smart_pantry/shopping_list/shopping_view.dart';
+import 'package:smart_pantry/shopping_list/shopping_list_view.dart';
 import 'generated/l10n.dart';
 
 import 'package:smart_pantry/configs/color_schemes.dart';
@@ -39,8 +39,8 @@ class MainApp extends StatelessWidget {
                 switch (routeSettings.name) {
                   case SettingsView.routeName:
                     return SettingsView(controller: settingsController);
-                  case ShoppingView.routeName:
-                    return const ShoppingView();
+                  case ShoppingListView.routeName:
+                    return const ShoppingListView();
                   case PantryView.routeName:
                   default:
                     return const PantryView();

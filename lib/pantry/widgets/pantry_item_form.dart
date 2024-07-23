@@ -57,8 +57,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
       if (!result) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content:
-                const Text('Failed to add item... Please try again later.'),
+            content: Text(S.of(context).failedToAddItem),
             backgroundColor: Theme.of(context).colorScheme.error,
             duration: const Duration(seconds: 2),
           ),
@@ -97,8 +96,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
       if (!result) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content:
-                const Text('Failed to update item... Please try again later.'),
+            content: Text(S.of(context).failedToUpdateItem),
             backgroundColor: Theme.of(context).colorScheme.error,
             duration: const Duration(seconds: 2),
           ),

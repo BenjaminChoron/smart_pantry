@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class PantryAlertDialog extends StatelessWidget {
-  const PantryAlertDialog({
+class GlobalAlertDialog extends StatelessWidget {
+  const GlobalAlertDialog({
     super.key,
     required this.title,
     required this.content,

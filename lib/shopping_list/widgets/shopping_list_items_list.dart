@@ -2,22 +2,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_pantry/generated/l10n.dart';
+import 'package:smart_pantry/globals/widgets/global_alert_dialog.dart';
 import 'package:smart_pantry/shopping_list/models/shopping_item.dart';
 import 'package:smart_pantry/shopping_list/providers/user_shopping_list.dart';
-import 'package:smart_pantry/shopping_list/widgets/shopping_item_form.dart';
+import 'package:smart_pantry/shopping_list/widgets/shopping_list_item_form.dart';
 
-class ShoppingItemsList extends ConsumerStatefulWidget {
-  const ShoppingItemsList(
+class ShoppingListItemsList extends ConsumerStatefulWidget {
+  const ShoppingListItemsList(
       {super.key, required this.items, this.isAllItems = false});
 
   final List<ShoppingItem> items;
   final bool isAllItems;
 
   @override
-  ConsumerState<ShoppingItemsList> createState() => _ShoppingItemsListState();
+  ConsumerState<ShoppingListItemsList> createState() =>
+      _ShoppingListItemsListState();
 }
 
-class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
+class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
   List<ShoppingItem> get items => widget.items;
   bool get isAllItems => widget.isAllItems;
 
@@ -34,8 +36,7 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
     if (!result) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content:
-              const Text('Failed to remove item... Please try again later.'),
+          content: Text(S.of(context).failedToRemoveItem),
           backgroundColor: Theme.of(context).colorScheme.error,
           duration: const Duration(seconds: 2),
         ),
@@ -52,7 +53,7 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
       builder: (context) {
         return Padding(
           padding: const EdgeInsets.all(20),
-          child: ShoppingItemForm(
+          child: ShoppingListItemForm(
             isUpdate: true,
             item: item,
           ),
@@ -78,7 +79,6 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
       itemCount: widget.items.length,
       itemBuilder: (context, index) {
         final item = widget.items[index];
-
         return Dismissible(
           key: ValueKey(item.id),
           onDismissed: (_) {
@@ -88,54 +88,18 @@ class _ShoppingItemsListState extends ConsumerState<ShoppingItemsList> {
           confirmDismiss: (_) async {
             return await showDialog(
               context: context,
-              builder: (context) {
-                bool isCupertino =
-                    Theme.of(context).platform == TargetPlatform.iOS;
-
-                if (isCupertino) {
-                  return CupertinoAlertDialog(
-                    title: const Text('Are you sure?'),
-                    content: const Text(
-                        'Do you really want to remove this item from the list?'),
-                    actions: [
-                      CupertinoDialogAction(
-                        textStyle: TextStyle(
-                            color: Theme.of(context).colorScheme.error),
-                        onPressed: () {
-                          Navigator.of(context).pop(true);
-                        },
-                        child: const Text('Yes'),
-                      ),
-                      CupertinoDialogAction(
-                        onPressed: () {
-                          Navigator.of(context).pop(false);
-                        },
-                        child: const Text('No'),
-                      ),
-                    ],
-                  );
-                }
-
-                return AlertDialog(
-                  title: const Text('Are you sure?'),
-                  content: const Text(
-                      'Do you want to remove this item from the list?'),
-                  actions: [
-                    TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop(true);
-                        },
-                        child: Text(
-                          'Yes',
-                          style: TextStyle(
-                              color: Theme.of(context).colorScheme.error),
-                        )),
-                    TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop(false);
-                        },
-                        child: const Text('No')),
-                  ],
+              builder: (_) {
+                return GlobalAlertDialog(
+                  title: S.of(context).shoppingListDialogTitle,
+                  content: S.of(context).shoppingListDialogConfirmContent,
+                  actionYes: S.of(context).shoppingListDialogActionYes,
+                  actionNo: S.of(context).shoppingListDialogActionNo,
+                  doOnYesAction: () {
+                    Navigator.of(context).pop(true);
+                  },
+                  doOnNoAction: () {
+                    Navigator.of(context).pop(false);
+                  },
                 );
               },
             );

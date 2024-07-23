@@ -3,25 +3,23 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:smart_pantry/globals/models/category.dart';
 import 'package:smart_pantry/shopping_list/providers/user_shopping_list.dart';
-import 'package:smart_pantry/shopping_list/widgets/shopping_items_list.dart';
+import 'package:smart_pantry/shopping_list/widgets/shopping_list_items_list.dart';
 
-class ShoppingListScreen extends ConsumerStatefulWidget {
-  const ShoppingListScreen({
+class ShoppingListItems extends ConsumerStatefulWidget {
+  const ShoppingListItems({
     super.key,
-    this.category,
     this.isAllItems = false,
+    this.category,
   });
 
-  static const routeName = '/shopping_list';
-
-  final Category? category;
   final bool isAllItems;
+  final Category? category;
 
   @override
-  ConsumerState<ShoppingListScreen> createState() => _ShoppingListScreenState();
+  ConsumerState<ShoppingListItems> createState() => _ShoppingListItemsState();
 }
 
-class _ShoppingListScreenState extends ConsumerState<ShoppingListScreen> {
+class _ShoppingListItemsState extends ConsumerState<ShoppingListItems> {
   late Future<void> _allItems;
   bool get isAllItems => widget.isAllItems;
 
@@ -44,10 +42,10 @@ class _ShoppingListScreenState extends ConsumerState<ShoppingListScreen> {
     return Scaffold(
       body: FutureBuilder(
         future: _allItems,
-        builder: (context, snapshot) =>
-            snapshot.connectionState == ConnectionState.waiting
-                ? const Center(child: CircularProgressIndicator())
-                : ShoppingItemsList(items: allItems, isAllItems: isAllItems),
+        builder: (context, snapshot) => snapshot.connectionState ==
+                ConnectionState.waiting
+            ? const Center(child: CircularProgressIndicator())
+            : ShoppingListItemsList(items: allItems, isAllItems: isAllItems),
       ),
     );
   }

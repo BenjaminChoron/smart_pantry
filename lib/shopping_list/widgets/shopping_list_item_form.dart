@@ -13,8 +13,8 @@ import 'package:smart_pantry/globals/widgets/category_dropdown_form_input.dart';
 import 'package:smart_pantry/globals/widgets/text_form_input.dart';
 import 'package:smart_pantry/globals/widgets/unit_dropdown_form_input.dart';
 
-class ShoppingItemForm extends ConsumerStatefulWidget {
-  const ShoppingItemForm({
+class ShoppingListItemForm extends ConsumerStatefulWidget {
+  const ShoppingListItemForm({
     super.key,
     this.isUpdate = false,
     this.isAddToShoppingAfterRemovedFromPantry = false,
@@ -26,10 +26,11 @@ class ShoppingItemForm extends ConsumerStatefulWidget {
   final bool isAddToShoppingAfterRemovedFromPantry;
 
   @override
-  ConsumerState<ShoppingItemForm> createState() => _ShoppingItemFormState();
+  ConsumerState<ShoppingListItemForm> createState() =>
+      _ShoppingListItemFormState();
 }
 
-class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
+class _ShoppingListItemFormState extends ConsumerState<ShoppingListItemForm> {
   bool get isUpdate => widget.isUpdate;
   bool get isAddToShoppingAfterRemovedFromPantry =>
       widget.isAddToShoppingAfterRemovedFromPantry;
@@ -61,8 +62,7 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
       if (!result) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content:
-                const Text('Failed to add item... Please try again later.'),
+            content: Text(S.of(context).failedToAddItem),
             backgroundColor: Theme.of(context).colorScheme.error,
             duration: const Duration(seconds: 2),
           ),
@@ -102,8 +102,7 @@ class _ShoppingItemFormState extends ConsumerState<ShoppingItemForm> {
       if (!result) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content:
-                const Text('Failed to update item... Please try again later.'),
+            content: Text(S.of(context).failedToUpdateItem),
             backgroundColor: Theme.of(context).colorScheme.error,
             duration: const Duration(seconds: 2),
           ),

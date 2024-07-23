@@ -50,6 +50,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ajouter à la liste de courses"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Sombre"),
+        "failedToAddItem": MessageLookupByLibrary.simpleMessage(
+            "Impossible d\'ajouter l\'élément... Veuillez réessayer plus tard."),
+        "failedToRemoveItem": MessageLookupByLibrary.simpleMessage(
+            "Impossible de supprimer l\'élément... Veuillez réessayer plus tard."),
+        "failedToUpdateItem": MessageLookupByLibrary.simpleMessage(
+            "Impossible de mettre à jour l\'élément... Veuillez réessayer plus tard."),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Clair"),
         "mustBePositive":
             MessageLookupByLibrary.simpleMessage("Doit être un nombre positif"),
@@ -70,6 +76,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantité"),
         "reset": MessageLookupByLibrary.simpleMessage("Réinitialiser"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Paramètres"),
+        "shoppingListDialogActionNo":
+            MessageLookupByLibrary.simpleMessage("Non"),
+        "shoppingListDialogActionYes":
+            MessageLookupByLibrary.simpleMessage("Oui"),
+        "shoppingListDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
+            "Voulez-vous vraiment supprimer cet élément de votre liste de courses ?"),
+        "shoppingListDialogTitle": MessageLookupByLibrary.simpleMessage(
+            "Suppression d\'un élément de la liste de courses"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Liste de courses"),
         "storageName": m1,

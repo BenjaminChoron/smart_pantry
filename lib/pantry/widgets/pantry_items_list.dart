@@ -4,12 +4,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_pantry/globals/data/categories.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/models/category.dart';
-import 'package:smart_pantry/globals/widgets/pantry_alert_dialog.dart';
+import 'package:smart_pantry/globals/widgets/global_alert_dialog.dart';
 
 import 'package:smart_pantry/pantry/models/pantry_item.dart';
 import 'package:smart_pantry/shopping_list/models/shopping_item.dart';
 import 'package:smart_pantry/pantry/providers/user_pantry.dart';
-import 'package:smart_pantry/shopping_list/add_shopping_item_view.dart';
+import 'package:smart_pantry/shopping_list/add_shopping_list_item_view.dart';
 import 'package:smart_pantry/pantry/widgets/pantry_item_form.dart';
 
 class PantryItemsList extends ConsumerStatefulWidget {
@@ -40,8 +40,7 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
     if (!result) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content:
-              const Text('Failed to remove item... Please try again later.'),
+          content: Text(S.of(context).failedToRemoveItem),
           backgroundColor: Theme.of(context).colorScheme.error,
           duration: const Duration(seconds: 2),
         ),
@@ -90,7 +89,7 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
             return await showDialog(
               context: context,
               builder: (_) {
-                return PantryAlertDialog(
+                return GlobalAlertDialog(
                   title: S.of(context).pantryDialogTitle,
                   content: S.of(context).pantryDialogConfirmContent,
                   actionYes: S.of(context).pantryDialogActionYes,
@@ -109,7 +108,7 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
             return await showDialog(
               context: context,
               builder: (_) {
-                return PantryAlertDialog(
+                return GlobalAlertDialog(
                   title: S.of(context).pantryDialogTitle,
                   content: S.of(context).pantryDialogDismissContent,
                   actionYes: S.of(context).pantryDialogActionYes,
@@ -118,7 +117,7 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
                     Navigator.of(context).pop();
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => AddShoppingItemView(
+                        builder: (context) => AddShoppingListItemView(
                           isAddToShoppingAfterRemovedFromPantry: true,
                           item: ShoppingItem(
                             name: item.name,

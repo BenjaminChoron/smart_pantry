@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 
 import 'package:smart_pantry/shopping_list/models/shopping_item.dart';
-import 'package:smart_pantry/shopping_list/widgets/shopping_item_form.dart';
+import 'package:smart_pantry/shopping_list/widgets/shopping_list_item_form.dart';
 
-class AddShoppingItemView extends StatelessWidget {
-  const AddShoppingItemView({
+class AddShoppingListItemView extends StatelessWidget {
+  const AddShoppingListItemView({
     super.key,
     this.isAddToShoppingAfterRemovedFromPantry = false,
     this.item,
@@ -23,11 +23,11 @@ class AddShoppingItemView extends StatelessWidget {
       body: Padding(
           padding: const EdgeInsets.all(16),
           child: isAddToShoppingAfterRemovedFromPantry
-              ? ShoppingItemForm(
+              ? ShoppingListItemForm(
                   isAddToShoppingAfterRemovedFromPantry: true,
                   item: item,
                 )
-              : const ShoppingItemForm()),
+              : const ShoppingListItemForm()),
     );
   }
 }

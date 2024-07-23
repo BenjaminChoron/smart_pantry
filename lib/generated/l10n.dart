@@ -50,132 +50,12 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Pantry`
-  String get pantryTitle {
-    return Intl.message(
-      'Pantry',
-      name: 'pantryTitle',
-      desc: 'Title for the pantry page',
-      args: [],
-    );
-  }
-
-  /// `Pantry Item Removal`
-  String get pantryDialogTitle {
-    return Intl.message(
-      'Pantry Item Removal',
-      name: 'pantryDialogTitle',
-      desc: 'Title for the dialog to remove pantry item',
-      args: [],
-    );
-  }
-
-  /// `Do you really want to remove this item from your pantry?`
-  String get pantryDialogConfirmContent {
-    return Intl.message(
-      'Do you really want to remove this item from your pantry?',
-      name: 'pantryDialogConfirmContent',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Do you want to add this item to your shopping list?`
-  String get pantryDialogDismissContent {
-    return Intl.message(
-      'Do you want to add this item to your shopping list?',
-      name: 'pantryDialogDismissContent',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Yes`
-  String get pantryDialogActionYes {
-    return Intl.message(
-      'Yes',
-      name: 'pantryDialogActionYes',
-      desc: 'Button text to confirm the action',
-      args: [],
-    );
-  }
-
-  /// `No`
-  String get pantryDialogActionNo {
-    return Intl.message(
-      'No',
-      name: 'pantryDialogActionNo',
-      desc: 'Button text to cancel the action',
-      args: [],
-    );
-  }
-
   /// `Add`
   String get add {
     return Intl.message(
       'Add',
       name: 'add',
       desc: 'Button text to add an item',
-      args: [],
-    );
-  }
-
-  /// `Update`
-  String get update {
-    return Intl.message(
-      'Update',
-      name: 'update',
-      desc: 'Button text to update an item',
-      args: [],
-    );
-  }
-
-  /// `Reset`
-  String get reset {
-    return Intl.message(
-      'Reset',
-      name: 'reset',
-      desc: 'Button text to reset the form',
-      args: [],
-    );
-  }
-
-  /// `Name`
-  String get nameLabel {
-    return Intl.message(
-      'Name',
-      name: 'nameLabel',
-      desc: 'Label for the name input field',
-      args: [],
-    );
-  }
-
-  /// `Quantity`
-  String get quantityLabel {
-    return Intl.message(
-      'Quantity',
-      name: 'quantityLabel',
-      desc: 'Label for the quantity input field',
-      args: [],
-    );
-  }
-
-  /// `Must be a positive number`
-  String get mustBePositive {
-    return Intl.message(
-      'Must be a positive number',
-      name: 'mustBePositive',
-      desc: 'Error message when the quantity is not a positive number',
-      args: [],
-    );
-  }
-
-  /// `Must be between 1 and 30 characters`
-  String get mustHaveCharacters {
-    return Intl.message(
-      'Must be between 1 and 30 characters',
-      name: 'mustHaveCharacters',
-      desc: 'Error message when the name is not between 1 and 30 characters',
       args: [],
     );
   }
@@ -190,16 +70,6 @@ class S {
     );
   }
 
-  /// `Shopping List`
-  String get shoppingListTitle {
-    return Intl.message(
-      'Shopping List',
-      name: 'shoppingListTitle',
-      desc: 'Title for the shopping list page',
-      args: [],
-    );
-  }
-
   /// `Add Shopping List Item`
   String get addShoppingListItem {
     return Intl.message(
@@ -207,32 +77,6 @@ class S {
       name: 'addShoppingListItem',
       desc: 'Button text to add an item to the shopping list',
       args: [],
-    );
-  }
-
-  /// `No items added yet.`
-  String get noItems {
-    return Intl.message(
-      'No items added yet.',
-      name: 'noItems',
-      desc: 'Message displayed when there are no items in the list',
-      args: [],
-    );
-  }
-
-  /// `{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}`
-  String storageName(Object name) {
-    return Intl.select(
-      name,
-      {
-        'All': 'All',
-        'Fridge': 'Fridge',
-        'Freezer': 'Freezer',
-        'Cupboard': 'Cupboard',
-      },
-      name: 'storageName',
-      desc: 'Name of the storage location',
-      args: [name],
     );
   }
 
@@ -259,32 +103,42 @@ class S {
     );
   }
 
-  /// `Settings`
-  String get settingsTitle {
-    return Intl.message(
-      'Settings',
-      name: 'settingsTitle',
-      desc: 'Title for the settings page',
-      args: [],
-    );
-  }
-
-  /// `Theme`
-  String get theme {
-    return Intl.message(
-      'Theme',
-      name: 'theme',
-      desc: 'Label for the theme setting',
-      args: [],
-    );
-  }
-
   /// `Dark`
   String get darkTheme {
     return Intl.message(
       'Dark',
       name: 'darkTheme',
       desc: 'Label for the dark theme',
+      args: [],
+    );
+  }
+
+  /// `Failed to add item... Please try again later.`
+  String get failedToAddItem {
+    return Intl.message(
+      'Failed to add item... Please try again later.',
+      name: 'failedToAddItem',
+      desc: 'Error message when an item cannot be added',
+      args: [],
+    );
+  }
+
+  /// `Failed to remove item... Please try again later.`
+  String get failedToRemoveItem {
+    return Intl.message(
+      'Failed to remove item... Please try again later.',
+      name: 'failedToRemoveItem',
+      desc: 'Error message when an item cannot be removed',
+      args: [],
+    );
+  }
+
+  /// `Failed to update item... Please try again later.`
+  String get failedToUpdateItem {
+    return Intl.message(
+      'Failed to update item... Please try again later.',
+      name: 'failedToUpdateItem',
+      desc: 'Error message when an item cannot be updated',
       args: [],
     );
   }
@@ -299,12 +153,228 @@ class S {
     );
   }
 
+  /// `Must be a positive number`
+  String get mustBePositive {
+    return Intl.message(
+      'Must be a positive number',
+      name: 'mustBePositive',
+      desc: 'Error message when the quantity is not a positive number',
+      args: [],
+    );
+  }
+
+  /// `Must be between 1 and 30 characters`
+  String get mustHaveCharacters {
+    return Intl.message(
+      'Must be between 1 and 30 characters',
+      name: 'mustHaveCharacters',
+      desc: 'Error message when the name is not between 1 and 30 characters',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get nameLabel {
+    return Intl.message(
+      'Name',
+      name: 'nameLabel',
+      desc: 'Label for the name input field',
+      args: [],
+    );
+  }
+
+  /// `No items added yet.`
+  String get noItems {
+    return Intl.message(
+      'No items added yet.',
+      name: 'noItems',
+      desc: 'Message displayed when there are no items in the list',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get pantryDialogActionNo {
+    return Intl.message(
+      'No',
+      name: 'pantryDialogActionNo',
+      desc: 'Button text to cancel the action',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get pantryDialogActionYes {
+    return Intl.message(
+      'Yes',
+      name: 'pantryDialogActionYes',
+      desc: 'Button text to confirm the action',
+      args: [],
+    );
+  }
+
+  /// `Do you really want to remove this item from your pantry?`
+  String get pantryDialogConfirmContent {
+    return Intl.message(
+      'Do you really want to remove this item from your pantry?',
+      name: 'pantryDialogConfirmContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to add this item to your pantry?`
+  String get pantryDialogDismissContent {
+    return Intl.message(
+      'Do you want to add this item to your pantry?',
+      name: 'pantryDialogDismissContent',
+      desc: 'Content for the dialog to add a pantry item to the pantry',
+      args: [],
+    );
+  }
+
+  /// `Pantry Item Removal`
+  String get pantryDialogTitle {
+    return Intl.message(
+      'Pantry Item Removal',
+      name: 'pantryDialogTitle',
+      desc: 'Title for the dialog to remove pantry item',
+      args: [],
+    );
+  }
+
+  /// `Pantry`
+  String get pantryTitle {
+    return Intl.message(
+      'Pantry',
+      name: 'pantryTitle',
+      desc: 'Title for the pantry page',
+      args: [],
+    );
+  }
+
+  /// `Quantity`
+  String get quantityLabel {
+    return Intl.message(
+      'Quantity',
+      name: 'quantityLabel',
+      desc: 'Label for the quantity input field',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get reset {
+    return Intl.message(
+      'Reset',
+      name: 'reset',
+      desc: 'Button text to reset the form',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settingsTitle {
+    return Intl.message(
+      'Settings',
+      name: 'settingsTitle',
+      desc: 'Title for the settings page',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get shoppingListDialogActionNo {
+    return Intl.message(
+      'No',
+      name: 'shoppingListDialogActionNo',
+      desc: 'Button text to cancel the action',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get shoppingListDialogActionYes {
+    return Intl.message(
+      'Yes',
+      name: 'shoppingListDialogActionYes',
+      desc: 'Button text to confirm the action',
+      args: [],
+    );
+  }
+
+  /// `Do you really want to remove this item from your shopping list?`
+  String get shoppingListDialogConfirmContent {
+    return Intl.message(
+      'Do you really want to remove this item from your shopping list?',
+      name: 'shoppingListDialogConfirmContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shopping List Item Removal`
+  String get shoppingListDialogTitle {
+    return Intl.message(
+      'Shopping List Item Removal',
+      name: 'shoppingListDialogTitle',
+      desc: 'Title for the dialog to remove shopping list item',
+      args: [],
+    );
+  }
+
+  /// `Shopping List`
+  String get shoppingListTitle {
+    return Intl.message(
+      'Shopping List',
+      name: 'shoppingListTitle',
+      desc: 'Title for the shopping list page',
+      args: [],
+    );
+  }
+
+  /// `{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}`
+  String storageName(Object name) {
+    return Intl.select(
+      name,
+      {
+        'All': 'All',
+        'Fridge': 'Fridge',
+        'Freezer': 'Freezer',
+        'Cupboard': 'Cupboard',
+      },
+      name: 'storageName',
+      desc: 'Name of the storage location',
+      args: [name],
+    );
+  }
+
   /// `System`
   String get systemTheme {
     return Intl.message(
       'System',
       name: 'systemTheme',
       desc: 'Label for the system theme',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get theme {
+    return Intl.message(
+      'Theme',
+      name: 'theme',
+      desc: 'Label for the theme setting',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
+      desc: 'Button text to update an item',
       args: [],
     );
   }

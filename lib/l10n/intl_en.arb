@@ -1,95 +1,126 @@
 {
-  "pantryTitle": "Pantry",
-  "@pantryTitle": {
-    "description": "Title for the pantry page"
-  },
-  "pantryDialogTitle": "Pantry Item Removal",
-  "@pantryDialogTitle": {
-    "description": "Title for the dialog to remove pantry item"
-  },
-  "pantryDialogConfirmContent": "Do you really want to remove this item from your pantry?",
-  "@pantryDialogContent": {
-    "description": "Content for the dialog to remove a pantry item"
-  },
-  "pantryDialogDismissContent": "Do you want to add this item to your shopping list?",
-  "pantryDialogActionYes": "Yes",
-  "@pantryDialogActionYes": {
-    "description": "Button text to confirm the action"
-  },
-  "pantryDialogActionNo": "No",
-  "@pantryDialogActionNo": {
-    "description": "Button text to cancel the action"
-  },
-  "add": "Add",
   "@add": {
     "description": "Button text to add an item"
   },
-  "update": "Update",
-  "@update": {
-    "description": "Button text to update an item"
-  },
-  "reset": "Reset",
-  "@reset": {
-    "description": "Button text to reset the form"
-  },
-  "nameLabel": "Name",
-  "@nameLabel": {
-    "description": "Label for the name input field"
-  },
-  "quantityLabel": "Quantity",
-  "@quantityLabel": {
-    "description": "Label for the quantity input field"
-  },
-  "mustBePositive": "Must be a positive number",
-  "@mustBePositive": {
-    "description": "Error message when the quantity is not a positive number"
-  },
-  "mustHaveCharacters": "Must be between 1 and 30 characters",
-  "@mustHaveCharacters": {
-    "description": "Error message when the name is not between 1 and 30 characters"
-  },
-  "addPantryItem": "Add Pantry Item",
   "@addPantryItem": {
     "description": "Button text to add an item to the pantry"
   },
-  "shoppingListTitle": "Shopping List",
-  "@shoppingListTitle": {
-    "description": "Title for the shopping list page"
-  },
-  "addShoppingListItem": "Add Shopping List Item",
   "@addShoppingListItem": {
     "description": "Button text to add an item to the shopping list"
   },
-  "noItems": "No items added yet.",
-  "@noItems": {
-    "description": "Message displayed when there are no items in the list"
-  },
-  "storageName": "{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}",
-  "@storageName": {
-    "description": "Name of the storage location"
-  },
-  "categoryName": "{name, select, All {All} Fruits {Fruits} Vegetables {Vegetables} Meat {Meat} Seafood {Seafood} Dairy {Dairy} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Other {Other}}",
   "@categoryName": {
     "description": "Name of the category"
   },
-  "settingsTitle": "Settings",
-  "@settingsTitle": {
-    "description": "Title for the settings page"
-  },
-  "theme": "Theme",
-  "@theme": {
-    "description": "Label for the theme setting"
-  },
-  "darkTheme": "Dark",
   "@darkTheme": {
     "description": "Label for the dark theme"
   },
-  "lightTheme": "Light",
+  "@failedToAddItem": {
+    "description": "Error message when an item cannot be added"
+  },
+  "@failedToRemoveItem": {
+    "description": "Error message when an item cannot be removed"
+  },
+  "@failedToUpdateItem": {
+    "description": "Error message when an item cannot be updated"
+  },
   "@lightTheme": {
     "description": "Label for the light theme"
   },
-  "systemTheme": "System",
+  "@mustBePositive": {
+    "description": "Error message when the quantity is not a positive number"
+  },
+  "@mustHaveCharacters": {
+    "description": "Error message when the name is not between 1 and 30 characters"
+  },
+  "@nameLabel": {
+    "description": "Label for the name input field"
+  },
+  "@noItems": {
+    "description": "Message displayed when there are no items in the list"
+  },
+  "@pantryDialogActionNo": {
+    "description": "Button text to cancel the action"
+  },
+  "@pantryDialogActionYes": {
+    "description": "Button text to confirm the action"
+  },
+  "@pantryDialogContent": {
+    "description": "Content for the dialog to remove a pantry item"
+  },
+  "@pantryDialogDismissContent": {
+    "description": "Content for the dialog to add a pantry item to the pantry"
+  },
+  "@pantryDialogTitle": {
+    "description": "Title for the dialog to remove pantry item"
+  },
+  "@pantryTitle": {
+    "description": "Title for the pantry page"
+  },
+  "@quantityLabel": {
+    "description": "Label for the quantity input field"
+  },
+  "@reset": {
+    "description": "Button text to reset the form"
+  },
+  "@settingsTitle": {
+    "description": "Title for the settings page"
+  },
+  "@shoppingListDialogActionNo": {
+    "description": "Button text to cancel the action"
+  },
+  "@shoppingListDialogActionYes": {
+    "description": "Button text to confirm the action"
+  },
+  "@shoppingListDialogContent": {
+    "description": "Content for the dialog to remove a shopping list item"
+  },
+  "@shoppingListDialogTitle": {
+    "description": "Title for the dialog to remove shopping list item"
+  },
+  "@shoppingListTitle": {
+    "description": "Title for the shopping list page"
+  },
+  "@storageName": {
+    "description": "Name of the storage location"
+  },
   "@systemTheme": {
     "description": "Label for the system theme"
-  }
+  },
+  "@theme": {
+    "description": "Label for the theme setting"
+  },
+  "@update": {
+    "description": "Button text to update an item"
+  },
+  "add": "Add",
+  "addPantryItem": "Add Pantry Item",
+  "addShoppingListItem": "Add Shopping List Item",
+  "categoryName": "{name, select, All {All} Fruits {Fruits} Vegetables {Vegetables} Meat {Meat} Seafood {Seafood} Dairy {Dairy} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Other {Other}}",
+  "darkTheme": "Dark",
+  "failedToAddItem": "Failed to add item... Please try again later.",
+  "failedToRemoveItem": "Failed to remove item... Please try again later.",
+  "failedToUpdateItem": "Failed to update item... Please try again later.",
+  "lightTheme": "Light",
+  "mustBePositive": "Must be a positive number",
+  "mustHaveCharacters": "Must be between 1 and 30 characters",
+  "nameLabel": "Name",
+  "noItems": "No items added yet.",
+  "pantryDialogActionNo": "No",
+  "pantryDialogActionYes": "Yes",
+  "pantryDialogConfirmContent": "Do you really want to remove this item from your pantry?",
+  "pantryDialogDismissContent": "Do you want to add this item to your pantry?",
+  "pantryDialogTitle": "Pantry Item Removal",
+  "pantryTitle": "Pantry",
+  "quantityLabel": "Quantity",
+  "reset": "Reset",
+  "settingsTitle": "Settings",
+  "shoppingListDialogActionNo": "No",
+  "shoppingListDialogActionYes": "Yes",
+  "shoppingListDialogConfirmContent": "Do you really want to remove this item from your shopping list?",
+  "shoppingListDialogTitle": "Shopping List Item Removal",
+  "shoppingListTitle": "Shopping List",
+  "storageName": "{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}",
+  "systemTheme": "System",
+  "theme": "Theme",
+  "update": "Update"
 }
