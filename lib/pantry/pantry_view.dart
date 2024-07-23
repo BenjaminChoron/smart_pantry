@@ -93,6 +93,8 @@ class _PantryViewState extends State<PantryView> {
             actions: [
               Expanded(
                 child: TabBar(
+                  isScrollable: true,
+                  tabAlignment: TabAlignment.start,
                   tabs: pantryTabs,
                 ),
               )

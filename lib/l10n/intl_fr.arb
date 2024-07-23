@@ -27,7 +27,7 @@
   "shoppingListDialogConfirmContent": "Voulez-vous vraiment supprimer cet élément de votre liste de courses ?",
   "shoppingListDialogTitle": "Suppression d'un élément de la liste de courses",
   "shoppingListTitle": "Liste de courses",
-  "storageName": "{name, select, All {Tous} Fridge {Frigo} Freezer {Congélateur} Cupboard {Placard}}",
+  "storageName": "{name, select, All {Tous} Fridge {Réfrigérateur} Freezer {Congélateur} Cupboard {Placard}}",
   "systemTheme": "Système",
   "theme": "Thème",
   "update": "Mettre à jour"

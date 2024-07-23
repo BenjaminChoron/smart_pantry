@@ -36,7 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(name) => "${Intl.select(name, {
             'All': 'Tous',
-            'Fridge': 'Frigo',
+            'Fridge': 'Réfrigérateur',
             'Freezer': 'Congélateur',
             'Cupboard': 'Placard',
           })}";
