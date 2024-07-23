@@ -122,7 +122,7 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
             },
             leading: isAllItems
                 ? CircleAvatar(
-                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    backgroundColor: item.category.color,
                     child: Icon(
                       item.category.icon,
                       color: Theme.of(context).colorScheme.onPrimary,

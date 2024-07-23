@@ -126,29 +126,18 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
       key: _formKey,
       child: Column(
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 2,
-                child: TextFormInput(
-                    initialValue: _enteredName,
-                    label: S.of(context).nameLabel,
-                    onSaved: (value) {
-                      _enteredName = value;
-                    }),
-              ),
-              const SizedBox(width: 20),
-              Expanded(
-                flex: 1,
-                child: StorageDropdownFormInput(
-                    storage: _selectedStorage,
-                    onChanged: (value) {
-                      _selectedStorage = value;
-                    }),
-              ),
-            ],
-          ),
+          TextFormInput(
+              initialValue: _enteredName,
+              label: S.of(context).nameLabel,
+              onSaved: (value) {
+                _enteredName = value;
+              }),
+          const SizedBox(width: 20),
+          StorageDropdownFormInput(
+              storage: _selectedStorage,
+              onChanged: (value) {
+                _selectedStorage = value;
+              }),
           const SizedBox(height: 20),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,

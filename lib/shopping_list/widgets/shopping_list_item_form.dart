@@ -137,28 +137,18 @@ class _ShoppingListItemFormState extends ConsumerState<ShoppingListItemForm> {
       key: _formKey,
       child: Column(
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 3,
-                child: TextFormInput(
-                    initialValue: _enteredName,
-                    label: S.of(context).nameLabel,
-                    onSaved: (value) {
-                      _enteredName = value;
-                    }),
-              ),
-              const SizedBox(width: 20),
-              Expanded(
-                flex: 2,
-                child: CategoryDropdownFormInput(
-                    category: _selectedCategory,
-                    onChanged: (value) {
-                      _selectedCategory = value;
-                    }),
-              ),
-            ],
+          TextFormInput(
+              initialValue: _enteredName,
+              label: S.of(context).nameLabel,
+              onSaved: (value) {
+                _enteredName = value;
+              }),
+          const SizedBox(width: 20),
+          CategoryDropdownFormInput(
+            category: _selectedCategory,
+            onChanged: (value) {
+              _selectedCategory = value;
+            },
           ),
           const SizedBox(height: 20),
           Row(
