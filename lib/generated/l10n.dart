@@ -80,21 +80,22 @@ class S {
     );
   }
 
-  /// `{name, select, All {All} Fruits {Fruits} Vegetables {Vegetables} Meat {Meat} Seafood {Seafood} Dairy {Dairy} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Other {Other}}`
+  /// `{name, select, All {All} Fruits {Fruits & Vegetables} Fish {Fish Shop} Butcher {Butcher Shop} Dairy {Dairy} Fresh {Fresh} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Grocery {Grocery} Other {Other}}`
   String categoryName(Object name) {
     return Intl.select(
       name,
       {
         'All': 'All',
-        'Fruits': 'Fruits',
-        'Vegetables': 'Vegetables',
-        'Meat': 'Meat',
-        'Seafood': 'Seafood',
+        'Fruits': 'Fruits & Vegetables',
+        'Fish': 'Fish Shop',
+        'Butcher': 'Butcher Shop',
         'Dairy': 'Dairy',
+        'Fresh': 'Fresh',
         'Bakery': 'Bakery',
         'Snacks': 'Snacks',
         'Drinks': 'Drinks',
         'Frozen': 'Frozen',
+        'Grocery': 'Grocery',
         'Other': 'Other',
       },
       name: 'categoryName',

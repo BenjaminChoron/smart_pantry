@@ -2,7 +2,7 @@
   "add": "Ajouter",
   "addPantryItem": "Ajouter au garde-manger",
   "addShoppingListItem": "Ajouter à la liste de courses",
-  "categoryName": "{name, select, All {Tous} Fruits {Fruits} Vegetables {Légumes} Meat {Viande} Seafood {Fruits de mer} Dairy {Produits laitiers} Bakery {Boulangerie} Snacks {Collations} Drinks {Boissons} Frozen {Surgelés} Other {Autre}}",
+  "categoryName": "{name, select, All {Tout} Fruits {Fruits & Légumes} Fish {Poissonnerie} Butcher {Boucherie} Dairy {Produits Laitiers} Fresh {Frais} Bakery {Boulangerie} Snacks {Snacks} Drinks {Boissons} Frozen {Surgelés} Grocery {Épicerie} Other {Autre}}",
   "darkTheme": "Sombre",
   "failedToAddItem": "Impossible d'ajouter l'élément... Veuillez réessayer plus tard.",
   "failedToRemoveItem": "Impossible de supprimer l'élément... Veuillez réessayer plus tard.",

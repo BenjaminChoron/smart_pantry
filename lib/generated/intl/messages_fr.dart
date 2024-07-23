@@ -21,16 +21,17 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
   static String m0(name) => "${Intl.select(name, {
-            'All': 'Tous',
-            'Fruits': 'Fruits',
-            'Vegetables': 'Légumes',
-            'Meat': 'Viande',
-            'Seafood': 'Fruits de mer',
-            'Dairy': 'Produits laitiers',
+            'All': 'Tout',
+            'Fruits': 'Fruits & Légumes',
+            'Fish': 'Poissonnerie',
+            'Butcher': 'Boucherie',
+            'Dairy': 'Produits Laitiers',
+            'Fresh': 'Frais',
             'Bakery': 'Boulangerie',
-            'Snacks': 'Collations',
+            'Snacks': 'Snacks',
             'Drinks': 'Boissons',
             'Frozen': 'Surgelés',
+            'Grocery': 'Épicerie',
             'Other': 'Autre',
           })}";
 

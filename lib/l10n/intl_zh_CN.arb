@@ -2,7 +2,7 @@
   "add": "添加",
   "addPantryItem": "添加到储藏室",
   "addShoppingListItem": "添加到购物清单",
-  "categoryName": "{name, select, All {所有} Fruits {水果} Vegetables {蔬菜} Meat {肉类} Seafood {海鲜} Dairy {乳制品} Bakery {烘焙} Snacks {零食} Drinks {饮料} Frozen {冷冻} Other {其他}}",
+  "categoryName": "{name, select, All {所有} Fruits {水果} Fish {鱼类} Butcher {肉类} Dairy {乳制品} Fresh {新鲜} Bakery {面包店} Snacks {零食} Drinks {饮料} Frozen {冷冻食品} Grocery {杂货} Other {其他}}",
   "darkTheme": "深色",
   "failedToAddItem": "无法添加项目... 请稍后再试。",
   "failedToRemoveItem": "无法删除项目... 请稍后再试。",
