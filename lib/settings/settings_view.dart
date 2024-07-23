@@ -15,6 +15,27 @@ class SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     final mainAppState = context.findAncestorStateOfType<MainAppState>();
 
+    String localeToLanguage(Locale locale) {
+      switch (locale.languageCode) {
+        case 'en':
+          return 'English';
+        case 'es':
+          return 'Español';
+        case 'fr':
+          return 'Français';
+        case 'de':
+          return 'Deutsch';
+        case 'it':
+          return 'Italiano';
+        case 'pt':
+          return 'Português';
+        case 'zh':
+          return '中文';
+        default:
+          return 'Unknown';
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -83,7 +104,7 @@ class SettingsView extends StatelessWidget {
                       .map<DropdownMenuItem<Locale>>((Locale locale) {
                     return DropdownMenuItem<Locale>(
                       value: locale,
-                      child: Text(locale.toString()),
+                      child: Text(localeToLanguage(locale)),
                     );
                   }).toList(),
                 ),
