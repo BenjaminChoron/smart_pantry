@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/expiration/expiration_view.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/data/storages.dart';
 import 'package:smart_pantry/pantry/add_pantry_item_view.dart';
@@ -6,16 +7,11 @@ import 'package:smart_pantry/pantry/widgets/pantry_items.dart';
 import 'package:smart_pantry/settings/settings_view.dart';
 import 'package:smart_pantry/shopping_list/shopping_list_view.dart';
 
-class PantryView extends StatefulWidget {
+class PantryView extends StatelessWidget {
   const PantryView({super.key});
 
   static const routeName = '/';
 
-  @override
-  State<PantryView> createState() => _PantryViewState();
-}
-
-class _PantryViewState extends State<PantryView> {
   @override
   Widget build(BuildContext context) {
     List<Tab> pantryTabs = [
@@ -71,6 +67,16 @@ class _PantryViewState extends State<PantryView> {
             },
             icon: Icon(
               Icons.shopping_cart,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .pushReplacementNamed(ExpirationView.routeName);
+            },
+            icon: Icon(
+              Icons.warning,
               color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),

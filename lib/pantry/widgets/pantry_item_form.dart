@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_pantry/globals/data/storages.dart';
 import 'package:smart_pantry/globals/data/units.dart';
 import 'package:smart_pantry/generated/l10n.dart';
+import 'package:smart_pantry/globals/widgets/date_picker_form_input.dart';
 import 'package:smart_pantry/pantry/models/pantry_item.dart';
 import 'package:smart_pantry/globals/models/storage.dart';
 import 'package:smart_pantry/globals/models/unit.dart';
@@ -36,6 +37,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
   Storage _selectedStorage = storages[Storages.fridge]!;
   int _enteredQuantity = 0;
   Unit _selectedUnit = units[Units.gram]!;
+  DateTime? _enteredExpiration;
 
   bool _isSending = false;
 
@@ -52,6 +54,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
             _selectedStorage,
             _enteredQuantity,
             _selectedUnit,
+            _enteredExpiration,
           );
 
       if (!result) {
@@ -120,6 +123,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
       _selectedStorage = item!.storage;
       _enteredQuantity = item!.quantity;
       _selectedUnit = item!.unit;
+      _enteredExpiration = item!.expiration;
     }
 
     return Form(
@@ -161,6 +165,13 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
                     }),
               )
             ],
+          ),
+          const SizedBox(height: 20),
+          DatePickerFormInput(
+            initialDate: _enteredExpiration,
+            onSubmitted: (value) {
+              _enteredExpiration = value;
+            },
           ),
           const SizedBox(height: 20),
           Row(

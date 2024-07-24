@@ -11,6 +11,7 @@ class PantryItem {
     required this.name,
     required this.quantity,
     required this.unit,
+    this.expiration,
     String? id,
   }) : id = id ?? uuid.v4();
 
@@ -19,4 +20,5 @@ class PantryItem {
   final String name;
   final int quantity;
   final Unit unit;
+  final DateTime? expiration;
 }

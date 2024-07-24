@@ -6,6 +6,8 @@
   "addShoppingListItem": "Zur Einkaufsliste hinzufügen",
   "categoryName": "{name, select, All {Alle} Fruits {Obst & Gemüse} Fish {Fisch} Butcher {Metzgerei} Dairy {Milchprodukte} Fresh {Frisch} Bakery {Bäckerei} Snacks {Snacks} Drinks {Getränke} Frozen {Tiefkühl} Grocery {Lebensmittel} Other {Sonstiges}}",
   "darkTheme": "Dunkel",
+  "expirationRange": "Innerhalb von 5 Tagen",
+  "expirationTitle": "Ablaufdaten",
   "failedToAddItem": "Artikel konnte nicht hinzugefügt werden... Bitte versuchen Sie es später noch einmal.",
   "failedToRemoveItem": "Artikel konnte nicht entfernt werden... Bitte versuchen Sie es später noch einmal.",
   "failedToUpdateItem": "Artikel konnte nicht aktualisiert werden... Bitte versuchen Sie es später noch einmal.",

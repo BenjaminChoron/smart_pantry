@@ -52,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("已添加到购物清单！"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("深色"),
+        "expirationRange": MessageLookupByLibrary.simpleMessage("在5天内"),
+        "expirationTitle": MessageLookupByLibrary.simpleMessage("到期日期"),
         "failedToAddItem":
             MessageLookupByLibrary.simpleMessage("无法添加项目... 请稍后再试。"),
         "failedToRemoveItem":

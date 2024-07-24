@@ -6,6 +6,8 @@
   "addShoppingListItem": "Ajouter à la liste de courses",
   "categoryName": "{name, select, All {Tout} Fruits {Fruits & Légumes} Fish {Poissonnerie} Butcher {Boucherie} Dairy {Produits Laitiers} Fresh {Frais} Bakery {Boulangerie} Snacks {Snacks} Drinks {Boissons} Frozen {Surgelés} Grocery {Épicerie} Other {Autre}}",
   "darkTheme": "Sombre",
+  "expirationRange": "Dans les 5 jours",
+  "expirationTitle": "Dates d'expiration",
   "failedToAddItem": "Impossible d'ajouter l'élément... Veuillez réessayer plus tard.",
   "failedToRemoveItem": "Impossible de supprimer l'élément... Veuillez réessayer plus tard.",
   "failedToUpdateItem": "Impossible de mettre à jour l'élément... Veuillez réessayer plus tard.",

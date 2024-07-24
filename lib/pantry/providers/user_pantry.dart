@@ -15,7 +15,7 @@ Future<Database> _getDatabase() async {
     path.join(dbPath, 'pantry.db'),
     onCreate: (db, version) {
       return db.execute(
-        'CREATE TABLE user_pantry(id TEXT PRIMARY KEY, name TEXT, storage TEXT, quantity INTEGER, unit TEXT)',
+        'CREATE TABLE user_pantry(id TEXT PRIMARY KEY, name TEXT, storage TEXT, quantity INTEGER, unit TEXT, expiration TEXT)',
       );
     },
     version: 1,
@@ -27,10 +27,14 @@ Future<Database> _getDatabase() async {
 class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
   UserPantryNotifier() : super(const []);
 
-  Future<bool> addItem(
-      String name, Storage storage, int quantity, Unit unit) async {
+  Future<bool> addItem(String name, Storage storage, int quantity, Unit unit,
+      DateTime? expiration) async {
     final newItem = PantryItem(
-        name: name, storage: storage, quantity: quantity, unit: unit);
+        name: name,
+        storage: storage,
+        quantity: quantity,
+        unit: unit,
+        expiration: expiration);
 
     final db = await _getDatabase();
 
@@ -40,6 +44,7 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
       'storage': newItem.storage.name,
       'quantity': newItem.quantity,
       'unit': newItem.unit.name,
+      'expiration': newItem.expiration?.toIso8601String(),
     });
 
     if (result == 0) {
@@ -59,6 +64,7 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
         'storage': item.storage.name,
         'quantity': item.quantity,
         'unit': item.unit.name,
+        'expiration': item.expiration?.toIso8601String(),
       },
       where: 'id = ?',
       whereArgs: [item.id],
@@ -107,6 +113,9 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
             unit: units.values.firstWhere(
               (unit) => unit.name == row['unit'],
             ),
+            expiration: row['expiration'] == null
+                ? null
+                : DateTime.parse(row['expiration'] as String),
           ),
         )
         .toList();
@@ -130,6 +139,39 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
             unit: units.values.firstWhere(
               (unit) => unit.name == row['unit'],
             ),
+            expiration: row['expiration'] == null
+                ? null
+                : DateTime.parse(row['expiration'] as String),
+          ),
+        )
+        .toList();
+
+    state = items;
+  }
+
+  Future<void> loadAlmostExpiredItems() async {
+    final db = await _getDatabase();
+    final data = await db.query('user_pantry',
+        where: 'expiration IS NOT NULL AND expiration <= ?',
+        whereArgs: [
+          DateTime.now().add(const Duration(days: 5)).toIso8601String(),
+        ],
+        orderBy: 'expiration');
+    final items = data
+        .map(
+          (row) => PantryItem(
+            id: row['id'] as String,
+            name: row['name'] as String,
+            storage: storages.values.firstWhere(
+              (storage) => storage.name == row['storage'],
+            ),
+            quantity: row['quantity'] as int,
+            unit: units.values.firstWhere(
+              (unit) => unit.name == row['unit'],
+            ),
+            expiration: row['expiration'] == null
+                ? null
+                : DateTime.parse(row['expiration'] as String),
           ),
         )
         .toList();

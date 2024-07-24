@@ -20,6 +20,12 @@
   "@darkTheme": {
     "description": "Label for the dark theme"
   },
+  "@expirationRange": {
+    "description": "Title of the expiration list view"
+  },
+  "@expirationTitle": {
+    "description": "Title for the expiration dates page"
+  },
   "@failedToAddItem": {
     "description": "Error message when an item cannot be added"
   },
@@ -120,6 +126,8 @@
   "addShoppingListItem": "Add Shopping List Item",
   "categoryName": "{name, select, All {All} Fruits {Fruits & Vegetables} Fish {Fish Shop} Butcher {Butcher Shop} Dairy {Dairy} Fresh {Fresh} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Grocery {Grocery} Other {Other}}",
   "darkTheme": "Dark",
+  "expirationRange": "Within 5 days",
+  "expirationTitle": "Expiration Dates",
   "failedToAddItem": "Failed to add item... Please try again later.",
   "failedToRemoveItem": "Failed to remove item... Please try again later.",
   "failedToUpdateItem": "Failed to update item... Please try again later.",

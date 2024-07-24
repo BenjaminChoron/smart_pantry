@@ -134,6 +134,26 @@ class S {
     );
   }
 
+  /// `Within 5 days`
+  String get expirationRange {
+    return Intl.message(
+      'Within 5 days',
+      name: 'expirationRange',
+      desc: 'Title of the expiration list view',
+      args: [],
+    );
+  }
+
+  /// `Expiration Dates`
+  String get expirationTitle {
+    return Intl.message(
+      'Expiration Dates',
+      name: 'expirationTitle',
+      desc: 'Title for the expiration dates page',
+      args: [],
+    );
+  }
+
   /// `Failed to add item... Please try again later.`
   String get failedToAddItem {
     return Intl.message(

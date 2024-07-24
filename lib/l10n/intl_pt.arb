@@ -6,6 +6,8 @@
   "addShoppingListItem": "Adicionar à lista de compras",
   "categoryName": "{name, select, All {Todos} Fruits {Frutas & Legumes} Fish {Peixaria} Butcher {Açougue} Dairy {Laticínios} Fresh {Frescos} Bakery {Padaria} Snacks {Lanches} Drinks {Bebidas} Frozen {Congelados} Grocery {Mercearia} Other {Outros}}",
   "darkTheme": "Escuro",
+  "expirationRange": "Em 5 dias",
+  "expirationTitle": "Datas de validade",
   "failedToAddItem": "Falha ao adicionar item... Por favor, tente novamente mais tarde.",
   "failedToRemoveItem": "Falha ao remover item... Por favor, tente novamente mais tarde.",
   "failedToUpdateItem": "Falha ao atualizar item... Por favor, tente novamente mais tarde.",

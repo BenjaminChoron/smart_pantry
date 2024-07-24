@@ -55,6 +55,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Item adicionado à lista de compras!"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Escuro"),
+        "expirationRange": MessageLookupByLibrary.simpleMessage("Em 5 dias"),
+        "expirationTitle":
+            MessageLookupByLibrary.simpleMessage("Datas de validade"),
         "failedToAddItem": MessageLookupByLibrary.simpleMessage(
             "Falha ao adicionar item... Por favor, tente novamente mais tarde."),
         "failedToRemoveItem": MessageLookupByLibrary.simpleMessage(

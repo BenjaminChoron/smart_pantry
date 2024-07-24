@@ -70,6 +70,7 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
       storage,
       item.quantity,
       item.unit,
+      null,
     );
 
     if (!result) {

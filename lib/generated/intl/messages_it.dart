@@ -55,6 +55,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Articolo aggiunto alla lista della spesa!"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Scuro"),
+        "expirationRange":
+            MessageLookupByLibrary.simpleMessage("Entro 5 giorni"),
+        "expirationTitle":
+            MessageLookupByLibrary.simpleMessage("Date di scadenza"),
         "failedToAddItem": MessageLookupByLibrary.simpleMessage(
             "Impossibile aggiungere l\'elemento... Riprova più tardi."),
         "failedToRemoveItem": MessageLookupByLibrary.simpleMessage(

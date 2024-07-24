@@ -6,6 +6,8 @@
   "addShoppingListItem": "Aggiungi alla lista della spesa",
   "categoryName": "{name, select, All {Tutti} Fruits {Frutta e Verdura} Fish {Pesce} Butcher {Macelleria} Dairy {Latticini} Fresh {Fresco} Bakery {Panetteria} Snacks {Snack} Drinks {Bevande} Frozen {Congelati} Grocery {Alimentari} Other {Altro}}",
   "darkTheme": "Scuro",
+  "expirationRange": "Entro 5 giorni",
+  "expirationTitle": "Date di scadenza",
   "failedToAddItem": "Impossibile aggiungere l'elemento... Riprova più tardi.",
   "failedToRemoveItem": "Impossibile rimuovere l'elemento... Riprova più tardi.",
   "failedToUpdateItem": "Impossibile aggiornare l'elemento... Riprova più tardi.",
