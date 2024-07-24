@@ -51,28 +51,29 @@ class ExpirationList extends StatelessWidget {
                 itemCount: items.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    titleTextStyle: expireToday(items[index].expiration!)
-                        ? Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              color: Theme.of(context).colorScheme.error,
-                              fontWeight: FontWeight.bold,
-                            )
-                        : Theme.of(context).textTheme.bodyMedium,
+                    titleTextStyle:
+                        expireToday(items[index].expiration ?? DateTime.now())
+                            ? Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                  color: Theme.of(context).colorScheme.error,
+                                  fontWeight: FontWeight.bold,
+                                )
+                            : Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
+                                ),
                     title: Text(items[index].name),
-                    trailing: items[index].expiration != null
-                        ? Text(
-                            formatDate(items[index].expiration!),
-                            style: expireToday(items[index].expiration!)
-                                ? Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                      color:
-                                          Theme.of(context).colorScheme.error,
-                                      fontWeight: FontWeight.bold,
-                                    )
-                                : Theme.of(context).textTheme.bodyMedium,
-                          )
-                        : null,
+                    trailing: Text(
+                      formatDate(items[index].expiration ?? DateTime.now()),
+                      style: expireToday(
+                              items[index].expiration ?? DateTime.now())
+                          ? Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                color: Theme.of(context).colorScheme.error,
+                                fontWeight: FontWeight.bold,
+                              )
+                          : Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
+                              ),
+                    ),
                   );
                 },
               ),

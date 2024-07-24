@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_pantry/expiration/expiration_view.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/data/storages.dart';
+import 'package:smart_pantry/globals/widgets/expiration_icon.dart';
 import 'package:smart_pantry/pantry/add_pantry_item_view.dart';
 import 'package:smart_pantry/pantry/widgets/pantry_items.dart';
 import 'package:smart_pantry/settings/settings_view.dart';
@@ -70,16 +70,7 @@ class PantryView extends StatelessWidget {
               color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),
-          IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .pushReplacementNamed(ExpirationView.routeName);
-            },
-            icon: Icon(
-              Icons.warning,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
+          const ExpirationIcon(),
           IconButton(
             onPressed: () {
               Navigator.of(context).pushNamed(SettingsView.routeName);
