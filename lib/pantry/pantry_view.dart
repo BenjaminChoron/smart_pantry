@@ -93,6 +93,9 @@ class _PantryViewState extends State<PantryView> {
             actions: [
               Expanded(
                 child: TabBar(
+                  dividerColor: Theme.of(context).colorScheme.primary,
+                  indicatorColor: Theme.of(context).colorScheme.primary,
+                  labelColor: Theme.of(context).colorScheme.secondary,
                   isScrollable: true,
                   tabAlignment: TabAlignment.start,
                   tabs: pantryTabs,

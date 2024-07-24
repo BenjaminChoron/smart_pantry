@@ -93,6 +93,7 @@ class _ShoppingListViewState extends State<ShoppingListView> {
             actions: [
               Expanded(
                 child: TabBar(
+                  dividerColor: Theme.of(context).colorScheme.primary,
                   isScrollable: true,
                   tabAlignment: TabAlignment.start,
                   tabs: shoppingTabs,
