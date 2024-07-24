@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/expiration/widgets/expiration_list_item.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/pantry/models/pantry_item.dart';
 
@@ -9,17 +10,6 @@ class ExpirationList extends StatelessWidget {
   });
 
   final List<PantryItem> items;
-
-  String formatDate(DateTime date) {
-    return '${date.day}/${date.month}/${date.year}';
-  }
-
-  bool expireToday(DateTime date) {
-    final today = DateTime.now();
-    return date.day == today.day &&
-        date.month == today.month &&
-        date.year == today.year;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,30 +40,9 @@ class ExpirationList extends StatelessWidget {
               child: ListView.builder(
                 itemCount: items.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    titleTextStyle:
-                        expireToday(items[index].expiration ?? DateTime.now())
-                            ? Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                  color: Theme.of(context).colorScheme.error,
-                                  fontWeight: FontWeight.bold,
-                                )
-                            : Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                  color:
-                                      Theme.of(context).colorScheme.onSurface,
-                                ),
-                    title: Text(items[index].name),
-                    trailing: Text(
-                      formatDate(items[index].expiration ?? DateTime.now()),
-                      style: expireToday(
-                              items[index].expiration ?? DateTime.now())
-                          ? Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                color: Theme.of(context).colorScheme.error,
-                                fontWeight: FontWeight.bold,
-                              )
-                          : Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                color: Theme.of(context).colorScheme.onSurface,
-                              ),
-                    ),
+                  return ExpirationListItem(
+                    context: context,
+                    item: items[index],
                   );
                 },
               ),
