@@ -23,14 +23,14 @@ class _ShoppingListViewState extends State<ShoppingListView> {
         text: S.of(context).categoryName('All'),
         icon: Icon(
           Icons.list,
-          color: Theme.of(context).colorScheme.primary,
+          color: Theme.of(context).colorScheme.secondary,
         ),
       ),
       ...categories.entries.map((entry) => Tab(
             text: S.of(context).categoryName(entry.value.name),
             icon: Icon(
               entry.value.icon,
-              color: entry.value.color,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           )),
     ];

@@ -159,10 +159,10 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
                 const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
             leading: isAllPantryItems
                 ? CircleAvatar(
-                    backgroundColor: item.storage.color,
+                    backgroundColor: Theme.of(context).colorScheme.secondary,
                     child: Icon(
                       item.storage.icon,
-                      color: Theme.of(context).colorScheme.onPrimary,
+                      color: Theme.of(context).colorScheme.onSecondary,
                     ))
                 : null,
             title: Text(

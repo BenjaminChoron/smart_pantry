@@ -201,13 +201,13 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
           ),
           background: Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondary,
+              color: Theme.of(context).colorScheme.tertiary,
             ),
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.only(left: 16),
             child: Icon(
               Icons.shopping_cart,
-              color: Theme.of(context).colorScheme.onSecondary,
+              color: Theme.of(context).colorScheme.onTertiary,
               size: 32,
             ),
           ),
@@ -217,10 +217,10 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
             },
             leading: isAllItems
                 ? CircleAvatar(
-                    backgroundColor: item.category.color,
+                    backgroundColor: Theme.of(context).colorScheme.secondary,
                     child: Icon(
                       item.category.icon,
-                      color: Theme.of(context).colorScheme.onPrimary,
+                      color: Theme.of(context).colorScheme.onSecondary,
                     ))
                 : null,
             title: Text(

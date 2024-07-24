@@ -23,14 +23,14 @@ class _PantryViewState extends State<PantryView> {
         text: S.of(context).storageName('All'),
         icon: Icon(
           Icons.list,
-          color: Theme.of(context).colorScheme.primary,
+          color: Theme.of(context).colorScheme.secondary,
         ),
       ),
       ...storages.entries.map((entry) => Tab(
             text: S.of(context).storageName(entry.value.name),
             icon: Icon(
               entry.value.icon,
-              color: entry.value.color,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           )),
     ];
