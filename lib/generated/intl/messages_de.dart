@@ -49,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Zum Vorrat hinzufügen"),
         "addShoppingListItem": MessageLookupByLibrary.simpleMessage(
             "Zur Einkaufsliste hinzufügen"),
+        "addedToPantry": MessageLookupByLibrary.simpleMessage(
+            "Artikel zum Vorrat hinzugefügt!"),
+        "addedToShoppingList": MessageLookupByLibrary.simpleMessage(
+            "Artikel zur Einkaufsliste hinzugefügt!"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dunkel"),
         "failedToAddItem": MessageLookupByLibrary.simpleMessage(
@@ -78,13 +82,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Menge"),
         "reset": MessageLookupByLibrary.simpleMessage("Zurücksetzen"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Einstellungen"),
-        "shoppingListDialogActionNo":
+        "shoppingListAddToPantryDialogActionNo":
             MessageLookupByLibrary.simpleMessage("Nein"),
-        "shoppingListDialogActionYes":
+        "shoppingListAddToPantryDialogActionYes":
             MessageLookupByLibrary.simpleMessage("Ja"),
-        "shoppingListDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
-            "Möchten Sie diesen Artikel wirklich von Ihrer Einkaufsliste entfernen?"),
-        "shoppingListDialogTitle": MessageLookupByLibrary.simpleMessage(
+        "shoppingListAddToPantryDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Haben Sie diesen Artikel gekauft und möchten ihn zum Vorrat hinzufügen?"),
+        "shoppingListAddToPantryDialogTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Gekaufter Artikel der Einkaufsliste"),
+        "shoppingListRemoveDialogActionNo":
+            MessageLookupByLibrary.simpleMessage("Nein"),
+        "shoppingListRemoveDialogActionYes":
+            MessageLookupByLibrary.simpleMessage("Ja"),
+        "shoppingListRemoveDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Möchten Sie diesen Artikel wirklich von Ihrer Einkaufsliste entfernen?"),
+        "shoppingListRemoveDialogTitle": MessageLookupByLibrary.simpleMessage(
             "Entfernen eines Artikels von der Einkaufsliste"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Einkaufsliste"),

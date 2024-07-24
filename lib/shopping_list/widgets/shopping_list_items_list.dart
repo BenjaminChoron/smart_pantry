@@ -2,7 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_pantry/generated/l10n.dart';
+import 'package:smart_pantry/globals/data/categories.dart';
+import 'package:smart_pantry/globals/data/storages.dart';
+import 'package:smart_pantry/globals/models/category.dart';
+import 'package:smart_pantry/globals/models/storage.dart';
 import 'package:smart_pantry/globals/widgets/global_alert_dialog.dart';
+import 'package:smart_pantry/pantry/providers/user_pantry.dart';
 import 'package:smart_pantry/shopping_list/models/shopping_item.dart';
 import 'package:smart_pantry/shopping_list/providers/user_shopping_list.dart';
 import 'package:smart_pantry/shopping_list/widgets/shopping_list_item_form.dart';
@@ -47,6 +52,50 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
     }
   }
 
+  void _storeItem(ShoppingItem item) async {
+    final index = items.indexOf(item);
+    final pantry = ref.read(userPantryProvider.notifier);
+    Storage storage = storages[Storages.cupboard]!;
+
+    if (item.category == categories[Categories.frozen]) {
+      storage = storages[Storages.freezer]!;
+    }
+
+    if (item.category == categories[Categories.fresh]) {
+      storage = storages[Storages.fridge]!;
+    }
+
+    final result = await pantry.addItem(
+      item.name,
+      storage,
+      item.quantity,
+      item.unit,
+    );
+
+    if (!result) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(S.of(context).failedToAddItem),
+          backgroundColor: Theme.of(context).colorScheme.error,
+          duration: const Duration(seconds: 2),
+        ),
+      );
+      setState(() {
+        items.insert(index, item);
+      });
+    }
+
+    _onRemoveItem(item);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(S.of(context).addedToPantry),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        duration: const Duration(seconds: 2),
+      ),
+    );
+  }
+
   void _showBottomSheet(ShoppingItem item) {
     showModalBottomSheet(
       context: context,
@@ -81,30 +130,64 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
         final item = widget.items[index];
         return Dismissible(
           key: ValueKey(item.id),
-          onDismissed: (_) {
-            _onRemoveItem(item);
+          onDismissed: (direction) async {
+            if (direction == DismissDirection.endToStart) {
+              _onRemoveItem(item);
+            }
+
+            if (direction == DismissDirection.startToEnd) {
+              _storeItem(item);
+            }
           },
-          direction: DismissDirection.endToStart,
-          confirmDismiss: (_) async {
-            return await showDialog(
-              context: context,
-              builder: (_) {
-                return GlobalAlertDialog(
-                  title: S.of(context).shoppingListDialogTitle,
-                  content: S.of(context).shoppingListDialogConfirmContent,
-                  actionYes: S.of(context).shoppingListDialogActionYes,
-                  actionNo: S.of(context).shoppingListDialogActionNo,
-                  doOnYesAction: () {
-                    Navigator.of(context).pop(true);
-                  },
-                  doOnNoAction: () {
-                    Navigator.of(context).pop(false);
-                  },
-                );
-              },
-            );
+          confirmDismiss: (direction) async {
+            if (direction == DismissDirection.endToStart) {
+              return await showDialog(
+                context: context,
+                builder: (_) {
+                  return GlobalAlertDialog(
+                    title: S.of(context).shoppingListRemoveDialogTitle,
+                    content:
+                        S.of(context).shoppingListRemoveDialogConfirmContent,
+                    actionYes: S.of(context).shoppingListRemoveDialogActionYes,
+                    actionNo: S.of(context).shoppingListRemoveDialogActionNo,
+                    doOnYesAction: () {
+                      Navigator.of(context).pop(true);
+                    },
+                    doOnNoAction: () {
+                      Navigator.of(context).pop(false);
+                    },
+                  );
+                },
+              );
+            }
+
+            if (direction == DismissDirection.startToEnd) {
+              return await showDialog(
+                context: context,
+                builder: (_) {
+                  return GlobalAlertDialog(
+                    title: S.of(context).shoppingListAddToPantryDialogTitle,
+                    content: S
+                        .of(context)
+                        .shoppingListAddToPantryDialogConfirmContent,
+                    actionYes:
+                        S.of(context).shoppingListAddToPantryDialogActionYes,
+                    actionNo:
+                        S.of(context).shoppingListAddToPantryDialogActionNo,
+                    doOnYesAction: () {
+                      Navigator.of(context).pop(true);
+                    },
+                    doOnNoAction: () {
+                      Navigator.of(context).pop(false);
+                    },
+                  );
+                },
+              );
+            }
+
+            return null;
           },
-          background: Container(
+          secondaryBackground: Container(
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.error,
             ),
@@ -113,6 +196,18 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
             child: Icon(
               Icons.delete,
               color: Theme.of(context).colorScheme.onError,
+              size: 32,
+            ),
+          ),
+          background: Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.secondary,
+            ),
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.only(left: 16),
+            child: Icon(
+              Icons.shopping_cart,
+              color: Theme.of(context).colorScheme.onSecondary,
               size: 32,
             ),
           ),

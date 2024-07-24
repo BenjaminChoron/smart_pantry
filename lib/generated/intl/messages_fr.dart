@@ -49,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ajouter au garde-manger"),
         "addShoppingListItem": MessageLookupByLibrary.simpleMessage(
             "Ajouter à la liste de courses"),
+        "addedToPantry": MessageLookupByLibrary.simpleMessage(
+            "Article ajouté au garde-manger !"),
+        "addedToShoppingList": MessageLookupByLibrary.simpleMessage(
+            "Article ajouté à la liste de courses !"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Sombre"),
         "failedToAddItem": MessageLookupByLibrary.simpleMessage(
@@ -78,13 +82,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantité"),
         "reset": MessageLookupByLibrary.simpleMessage("Réinitialiser"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Paramètres"),
-        "shoppingListDialogActionNo":
+        "shoppingListAddToPantryDialogActionNo":
             MessageLookupByLibrary.simpleMessage("Non"),
-        "shoppingListDialogActionYes":
+        "shoppingListAddToPantryDialogActionYes":
             MessageLookupByLibrary.simpleMessage("Oui"),
-        "shoppingListDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
-            "Voulez-vous vraiment supprimer cet élément de votre liste de courses ?"),
-        "shoppingListDialogTitle": MessageLookupByLibrary.simpleMessage(
+        "shoppingListAddToPantryDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Avez-vous acheté cet article et souhaitez-vous l\'ajouter au garde-manger ?"),
+        "shoppingListAddToPantryDialogTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Article acheté de la liste de courses"),
+        "shoppingListRemoveDialogActionNo":
+            MessageLookupByLibrary.simpleMessage("Non"),
+        "shoppingListRemoveDialogActionYes":
+            MessageLookupByLibrary.simpleMessage("Oui"),
+        "shoppingListRemoveDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Voulez-vous vraiment supprimer cet élément de votre liste de courses ?"),
+        "shoppingListRemoveDialogTitle": MessageLookupByLibrary.simpleMessage(
             "Suppression d\'un élément de la liste de courses"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Liste de courses"),

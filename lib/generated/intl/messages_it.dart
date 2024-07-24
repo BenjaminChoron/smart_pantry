@@ -49,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Aggiungi alla dispensa"),
         "addShoppingListItem": MessageLookupByLibrary.simpleMessage(
             "Aggiungi alla lista della spesa"),
+        "addedToPantry": MessageLookupByLibrary.simpleMessage(
+            "Articolo aggiunto alla dispensa!"),
+        "addedToShoppingList": MessageLookupByLibrary.simpleMessage(
+            "Articolo aggiunto alla lista della spesa!"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Scuro"),
         "failedToAddItem": MessageLookupByLibrary.simpleMessage(
@@ -78,14 +82,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantità"),
         "reset": MessageLookupByLibrary.simpleMessage("Reimposta"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Impostazioni"),
-        "shoppingListDialogActionNo":
+        "shoppingListAddToPantryDialogActionNo":
             MessageLookupByLibrary.simpleMessage("No"),
-        "shoppingListDialogActionYes":
+        "shoppingListAddToPantryDialogActionYes":
             MessageLookupByLibrary.simpleMessage("Sì"),
-        "shoppingListDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
-            "Vuoi davvero rimuovere questo elemento dalla tua lista della spesa?"),
-        "shoppingListDialogTitle": MessageLookupByLibrary.simpleMessage(
-            "Rimozione di un elemento dalla lista della spesa"),
+        "shoppingListAddToPantryDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Hai acquistato questo articolo e desideri aggiungerlo alla dispensa?"),
+        "shoppingListAddToPantryDialogTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Articolo acquistato dalla lista della spesa"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Lista della spesa"),
         "storageName": m1,

@@ -1,5 +1,7 @@
 {
   "add": "Adicionar",
+  "addedToPantry": "Item adicionado à despensa!",
+  "addedToShoppingList": "Item adicionado à lista de compras!",
   "addPantryItem": "Adicionar à despensa",
   "addShoppingListItem": "Adicionar à lista de compras",
   "categoryName": "{name, select, All {Todos} Fruits {Frutas & Legumes} Fish {Peixaria} Butcher {Açougue} Dairy {Laticínios} Fresh {Frescos} Bakery {Padaria} Snacks {Lanches} Drinks {Bebidas} Frozen {Congelados} Grocery {Mercearia} Other {Outros}}",
@@ -22,6 +24,10 @@
   "quantityLabel": "Quantidade",
   "reset": "Redefinir",
   "settingsTitle": "Configurações",
+  "shoppingListAddToPantryDialogActionNo": "Não",
+  "shoppingListAddToPantryDialogActionYes": "Sim",
+  "shoppingListAddToPantryDialogConfirmContent": "Você comprou este item e deseja adicioná-lo à despensa?",
+  "shoppingListAddToPantryDialogTitle": "Item comprado da lista de compras",
   "shoppingListDialogActionNo": "Não",
   "shoppingListDialogActionYes": "Sim",
   "shoppingListDialogConfirmContent": "Você realmente deseja remover este item da sua lista de compras?",

@@ -2,6 +2,12 @@
   "@add": {
     "description": "Button text to add an item"
   },
+  "@addedToPantry": {
+    "description": "Message displayed when an item is added to the pantry"
+  },
+  "@addedToShoppingList": {
+    "description": "Message displayed when an item is added to the shopping list"
+  },
   "@addPantryItem": {
     "description": "Button text to add an item to the pantry"
   },
@@ -68,16 +74,28 @@
   "@settingsTitle": {
     "description": "Title for the settings page"
   },
-  "@shoppingListDialogActionNo": {
+  "@shoppingListAddToPantryDialogActionNo": {
     "description": "Button text to cancel the action"
   },
-  "@shoppingListDialogActionYes": {
+  "@shoppingListAddToPantryDialogActionYes": {
     "description": "Button text to confirm the action"
   },
-  "@shoppingListDialogContent": {
+  "@shoppingListAddToPantryDialogConfirmContent": {
     "description": "Content for the dialog to remove a shopping list item"
   },
-  "@shoppingListDialogTitle": {
+  "@shoppingListAddToPantryDialogTitle": {
+    "description": "Title for the dialog to remove shopping list item and add it to the pantry"
+  },
+  "@shoppingListRemoveDialogActionNo": {
+    "description": "Button text to cancel the action"
+  },
+  "@shoppingListRemoveDialogActionYes": {
+    "description": "Button text to confirm the action"
+  },
+  "@shoppingListRemoveDialogContent": {
+    "description": "Content for the dialog to remove a shopping list item"
+  },
+  "@shoppingListRemoveDialogTitle": {
     "description": "Title for the dialog to remove shopping list item"
   },
   "@shoppingListTitle": {
@@ -96,6 +114,8 @@
     "description": "Button text to update an item"
   },
   "add": "Add",
+  "addedToPantry": "Item added to pantry!",
+  "addedToShoppingList": "Item added to shopping list!",
   "addPantryItem": "Add Pantry Item",
   "addShoppingListItem": "Add Shopping List Item",
   "categoryName": "{name, select, All {All} Fruits {Fruits & Vegetables} Fish {Fish Shop} Butcher {Butcher Shop} Dairy {Dairy} Fresh {Fresh} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Grocery {Grocery} Other {Other}}",
@@ -118,10 +138,14 @@
   "quantityLabel": "Quantity",
   "reset": "Reset",
   "settingsTitle": "Settings",
-  "shoppingListDialogActionNo": "No",
-  "shoppingListDialogActionYes": "Yes",
-  "shoppingListDialogConfirmContent": "Do you really want to remove this item from your shopping list?",
-  "shoppingListDialogTitle": "Shopping List Item Removal",
+  "shoppingListAddToPantryDialogActionNo": "No",
+  "shoppingListAddToPantryDialogActionYes": "Yes",
+  "shoppingListAddToPantryDialogConfirmContent": "Did you purchase that item and want to add it to the pantry?",
+  "shoppingListAddToPantryDialogTitle": "Shopping List Purchased Item",
+  "shoppingListRemoveDialogActionNo": "No",
+  "shoppingListRemoveDialogActionYes": "Yes",
+  "shoppingListRemoveDialogConfirmContent": "Do you really want to remove this item from your shopping list?",
+  "shoppingListRemoveDialogTitle": "Shopping List Item Removal",
   "shoppingListTitle": "Shopping List",
   "storageName": "{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}",
   "systemTheme": "System",

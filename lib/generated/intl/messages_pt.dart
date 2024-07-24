@@ -49,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Adicionar à despensa"),
         "addShoppingListItem": MessageLookupByLibrary.simpleMessage(
             "Adicionar à lista de compras"),
+        "addedToPantry":
+            MessageLookupByLibrary.simpleMessage("Item adicionado à despensa!"),
+        "addedToShoppingList": MessageLookupByLibrary.simpleMessage(
+            "Item adicionado à lista de compras!"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Escuro"),
         "failedToAddItem": MessageLookupByLibrary.simpleMessage(
@@ -78,14 +82,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantidade"),
         "reset": MessageLookupByLibrary.simpleMessage("Redefinir"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Configurações"),
-        "shoppingListDialogActionNo":
+        "shoppingListAddToPantryDialogActionNo":
             MessageLookupByLibrary.simpleMessage("Não"),
-        "shoppingListDialogActionYes":
+        "shoppingListAddToPantryDialogActionYes":
             MessageLookupByLibrary.simpleMessage("Sim"),
-        "shoppingListDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
-            "Você realmente deseja remover este item da sua lista de compras?"),
-        "shoppingListDialogTitle": MessageLookupByLibrary.simpleMessage(
-            "Remoção de item da lista de compras"),
+        "shoppingListAddToPantryDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Você comprou este item e deseja adicioná-lo à despensa?"),
+        "shoppingListAddToPantryDialogTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Item comprado da lista de compras"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Lista de compras"),
         "storageName": m1,

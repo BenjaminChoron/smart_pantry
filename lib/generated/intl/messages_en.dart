@@ -49,6 +49,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add Pantry Item"),
         "addShoppingListItem":
             MessageLookupByLibrary.simpleMessage("Add Shopping List Item"),
+        "addedToPantry":
+            MessageLookupByLibrary.simpleMessage("Item added to pantry!"),
+        "addedToShoppingList": MessageLookupByLibrary.simpleMessage(
+            "Item added to shopping list!"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dark"),
         "failedToAddItem": MessageLookupByLibrary.simpleMessage(
@@ -77,13 +81,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantity"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
-        "shoppingListDialogActionNo":
+        "shoppingListAddToPantryDialogActionNo":
             MessageLookupByLibrary.simpleMessage("No"),
-        "shoppingListDialogActionYes":
+        "shoppingListAddToPantryDialogActionYes":
             MessageLookupByLibrary.simpleMessage("Yes"),
-        "shoppingListDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
-            "Do you really want to remove this item from your shopping list?"),
-        "shoppingListDialogTitle":
+        "shoppingListAddToPantryDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Did you purchase that item and want to add it to the pantry?"),
+        "shoppingListAddToPantryDialogTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Shopping List Purchased Item"),
+        "shoppingListRemoveDialogActionNo":
+            MessageLookupByLibrary.simpleMessage("No"),
+        "shoppingListRemoveDialogActionYes":
+            MessageLookupByLibrary.simpleMessage("Yes"),
+        "shoppingListRemoveDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Do you really want to remove this item from your shopping list?"),
+        "shoppingListRemoveDialogTitle":
             MessageLookupByLibrary.simpleMessage("Shopping List Item Removal"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Shopping List"),

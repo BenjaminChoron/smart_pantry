@@ -1,5 +1,7 @@
 {
   "add": "添加",
+  "addedToPantry": "已添加到储藏室！",
+  "addedToShoppingList": "已添加到购物清单！",
   "addPantryItem": "添加到储藏室",
   "addShoppingListItem": "添加到购物清单",
   "categoryName": "{name, select, All {所有} Fruits {水果} Fish {鱼类} Butcher {肉类} Dairy {乳制品} Fresh {新鲜} Bakery {面包店} Snacks {零食} Drinks {饮料} Frozen {冷冻食品} Grocery {杂货} Other {其他}}",
@@ -22,6 +24,10 @@
   "quantityLabel": "数量",
   "reset": "重置",
   "settingsTitle": "设置",
+  "shoppingListAddToPantryDialogActionNo": "否",
+  "shoppingListAddToPantryDialogActionYes": "是",
+  "shoppingListAddToPantryDialogConfirmContent": "您购买了该项目并希望将其添加到储藏室吗？",
+  "shoppingListAddToPantryDialogTitle": "购物清单购买的项目",
   "shoppingListDialogActionNo": "否",
   "shoppingListDialogActionYes": "是",
   "shoppingListDialogConfirmContent": "您真的要从购物清单中删除此项目吗？",

@@ -47,6 +47,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "add": MessageLookupByLibrary.simpleMessage("添加"),
         "addPantryItem": MessageLookupByLibrary.simpleMessage("添加到储藏室"),
         "addShoppingListItem": MessageLookupByLibrary.simpleMessage("添加到购物清单"),
+        "addedToPantry": MessageLookupByLibrary.simpleMessage("已添加到储藏室！"),
+        "addedToShoppingList":
+            MessageLookupByLibrary.simpleMessage("已添加到购物清单！"),
         "categoryName": m0,
         "darkTheme": MessageLookupByLibrary.simpleMessage("深色"),
         "failedToAddItem":
@@ -73,13 +76,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "quantityLabel": MessageLookupByLibrary.simpleMessage("数量"),
         "reset": MessageLookupByLibrary.simpleMessage("重置"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("设置"),
-        "shoppingListDialogActionNo": MessageLookupByLibrary.simpleMessage("否"),
-        "shoppingListDialogActionYes":
+        "shoppingListAddToPantryDialogActionNo":
+            MessageLookupByLibrary.simpleMessage("否"),
+        "shoppingListAddToPantryDialogActionYes":
             MessageLookupByLibrary.simpleMessage("是"),
-        "shoppingListDialogConfirmContent":
-            MessageLookupByLibrary.simpleMessage("您真的要从购物清单中删除此项目吗？"),
-        "shoppingListDialogTitle":
-            MessageLookupByLibrary.simpleMessage("从购物清单删除项目"),
+        "shoppingListAddToPantryDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage("您购买了该项目并希望将其添加到储藏室吗？"),
+        "shoppingListAddToPantryDialogTitle":
+            MessageLookupByLibrary.simpleMessage("购物清单购买的项目"),
         "shoppingListTitle": MessageLookupByLibrary.simpleMessage("购物清单"),
         "storageName": m1,
         "systemTheme": MessageLookupByLibrary.simpleMessage("系统"),

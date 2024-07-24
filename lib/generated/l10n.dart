@@ -60,6 +60,26 @@ class S {
     );
   }
 
+  /// `Item added to pantry!`
+  String get addedToPantry {
+    return Intl.message(
+      'Item added to pantry!',
+      name: 'addedToPantry',
+      desc: 'Message displayed when an item is added to the pantry',
+      args: [],
+    );
+  }
+
+  /// `Item added to shopping list!`
+  String get addedToShoppingList {
+    return Intl.message(
+      'Item added to shopping list!',
+      name: 'addedToShoppingList',
+      desc: 'Message displayed when an item is added to the shopping list',
+      args: [],
+    );
+  }
+
   /// `Add Pantry Item`
   String get addPantryItem {
     return Intl.message(
@@ -295,40 +315,81 @@ class S {
   }
 
   /// `No`
-  String get shoppingListDialogActionNo {
+  String get shoppingListAddToPantryDialogActionNo {
     return Intl.message(
       'No',
-      name: 'shoppingListDialogActionNo',
+      name: 'shoppingListAddToPantryDialogActionNo',
       desc: 'Button text to cancel the action',
       args: [],
     );
   }
 
   /// `Yes`
-  String get shoppingListDialogActionYes {
+  String get shoppingListAddToPantryDialogActionYes {
     return Intl.message(
       'Yes',
-      name: 'shoppingListDialogActionYes',
+      name: 'shoppingListAddToPantryDialogActionYes',
+      desc: 'Button text to confirm the action',
+      args: [],
+    );
+  }
+
+  /// `Did you purchase that item and want to add it to the pantry?`
+  String get shoppingListAddToPantryDialogConfirmContent {
+    return Intl.message(
+      'Did you purchase that item and want to add it to the pantry?',
+      name: 'shoppingListAddToPantryDialogConfirmContent',
+      desc: 'Content for the dialog to remove a shopping list item',
+      args: [],
+    );
+  }
+
+  /// `Shopping List Purchased Item`
+  String get shoppingListAddToPantryDialogTitle {
+    return Intl.message(
+      'Shopping List Purchased Item',
+      name: 'shoppingListAddToPantryDialogTitle',
+      desc:
+          'Title for the dialog to remove shopping list item and add it to the pantry',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get shoppingListRemoveDialogActionNo {
+    return Intl.message(
+      'No',
+      name: 'shoppingListRemoveDialogActionNo',
+      desc: 'Button text to cancel the action',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get shoppingListRemoveDialogActionYes {
+    return Intl.message(
+      'Yes',
+      name: 'shoppingListRemoveDialogActionYes',
       desc: 'Button text to confirm the action',
       args: [],
     );
   }
 
   /// `Do you really want to remove this item from your shopping list?`
-  String get shoppingListDialogConfirmContent {
+  String get shoppingListRemoveDialogConfirmContent {
     return Intl.message(
       'Do you really want to remove this item from your shopping list?',
-      name: 'shoppingListDialogConfirmContent',
+      name: 'shoppingListRemoveDialogConfirmContent',
       desc: '',
       args: [],
     );
   }
 
   /// `Shopping List Item Removal`
-  String get shoppingListDialogTitle {
+  String get shoppingListRemoveDialogTitle {
     return Intl.message(
       'Shopping List Item Removal',
-      name: 'shoppingListDialogTitle',
+      name: 'shoppingListRemoveDialogTitle',
       desc: 'Title for the dialog to remove shopping list item',
       args: [],
     );
