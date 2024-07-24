@@ -23,7 +23,7 @@ class _DatePickerFormInputState extends State<DatePickerFormInput> {
           child: InputDatePickerFormField(
             fieldLabelText: 'Date d\'expiration (dd/mm/yyyy)',
             keyboardType: TextInputType.datetime,
-            initialDate: null,
+            initialDate: widget.initialDate,
             firstDate: DateTime.now(),
             lastDate: DateTime(2100),
             onDateSubmitted: (value) => widget.onSubmitted(value),
