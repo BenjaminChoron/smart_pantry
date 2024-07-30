@@ -8,6 +8,7 @@
   "darkTheme": "深色",
   "expirationRange": "在5天内",
   "expirationTitle": "到期日期",
+  "expired": "已过期",
   "failedToAddItem": "无法添加项目... 请稍后再试。",
   "failedToRemoveItem": "无法删除项目... 请稍后再试。",
   "failedToUpdateItem": "无法更新项目... 请稍后再试。",

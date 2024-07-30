@@ -8,6 +8,7 @@
   "darkTheme": "Oscuro",
   "expirationRange": "Dentro de 5 días",
   "expirationTitle": "Fechas de vencimiento",
+  "expired": "Vencido",
   "failedToAddItem": "No se pudo agregar el elemento... Por favor, inténtelo de nuevo más tarde.",
   "failedToRemoveItem": "No se pudo eliminar el elemento... Por favor, inténtelo de nuevo más tarde.",
   "failedToUpdateItem": "No se pudo actualizar el elemento... Por favor, inténtelo de nuevo más tarde.",

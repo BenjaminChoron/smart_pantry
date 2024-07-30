@@ -27,7 +27,46 @@ class _PantryItemsState extends ConsumerState<ExpirationView> {
 
   @override
   Widget build(BuildContext context) {
-    final allItems = ref.watch(userPantryProvider);
+    final expiredItems = ref.watch(userPantryProvider).where(
+      (item) {
+        bool hasExpiration = item.expiration != null;
+
+        if (!hasExpiration) {
+          return false;
+        }
+
+        bool isExpired = item.expiration!.isBefore(DateTime.now()) &&
+            item.expiration!.day != DateTime.now().day;
+
+        if (!isExpired) {
+          return false;
+        }
+
+        return true;
+      },
+    ).toList();
+
+    final almostExpiredItems = ref.watch(userPantryProvider).where(
+      (item) {
+        bool hasExpiration = item.expiration != null;
+
+        if (!hasExpiration) {
+          return false;
+        }
+
+        bool isExpired = item.expiration!.isBefore(DateTime.now()) &&
+            item.expiration!.day != DateTime.now().day;
+
+        if (isExpired) {
+          return false;
+        }
+
+        bool isAlmostExpired = item.expiration!
+            .isBefore(DateTime.now().add(const Duration(days: 5)));
+
+        return isAlmostExpired;
+      },
+    ).toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -75,7 +114,10 @@ class _PantryItemsState extends ConsumerState<ExpirationView> {
         builder: (context, snapshot) =>
             snapshot.connectionState == ConnectionState.waiting
                 ? const Center(child: CircularProgressIndicator())
-                : ExpirationList(items: allItems),
+                : ExpirationList(
+                    expiredItems: expiredItems,
+                    almostExpiredItems: almostExpiredItems,
+                  ),
       ),
     );
   }

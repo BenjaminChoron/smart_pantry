@@ -8,6 +8,7 @@
   "darkTheme": "Escuro",
   "expirationRange": "Em 5 dias",
   "expirationTitle": "Datas de validade",
+  "expired": "Expirado",
   "failedToAddItem": "Falha ao adicionar item... Por favor, tente novamente mais tarde.",
   "failedToRemoveItem": "Falha ao remover item... Por favor, tente novamente mais tarde.",
   "failedToUpdateItem": "Falha ao atualizar item... Por favor, tente novamente mais tarde.",

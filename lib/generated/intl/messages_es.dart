@@ -59,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dentro de 5 días"),
         "expirationTitle":
             MessageLookupByLibrary.simpleMessage("Fechas de vencimiento"),
+        "expired": MessageLookupByLibrary.simpleMessage("Vencido"),
         "failedToAddItem": MessageLookupByLibrary.simpleMessage(
             "No se pudo agregar el elemento... Por favor, inténtelo de nuevo más tarde."),
         "failedToRemoveItem": MessageLookupByLibrary.simpleMessage(

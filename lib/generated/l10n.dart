@@ -154,6 +154,16 @@ class S {
     );
   }
 
+  /// `Expired`
+  String get expired {
+    return Intl.message(
+      'Expired',
+      name: 'expired',
+      desc: 'Label for the expired status',
+      args: [],
+    );
+  }
+
   /// `Failed to add item... Please try again later.`
   String get failedToAddItem {
     return Intl.message(

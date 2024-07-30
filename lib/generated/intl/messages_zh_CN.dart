@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "darkTheme": MessageLookupByLibrary.simpleMessage("深色"),
         "expirationRange": MessageLookupByLibrary.simpleMessage("在5天内"),
         "expirationTitle": MessageLookupByLibrary.simpleMessage("到期日期"),
+        "expired": MessageLookupByLibrary.simpleMessage("已过期"),
         "failedToAddItem":
             MessageLookupByLibrary.simpleMessage("无法添加项目... 请稍后再试。"),
         "failedToRemoveItem":

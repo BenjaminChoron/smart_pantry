@@ -17,31 +17,43 @@ class ExpirationListItem extends StatelessWidget {
       return '${date.day}/${date.month}/${date.year}';
     }
 
-    bool expireToday(DateTime date) {
-      final today = DateTime.now();
-      return date.day == today.day &&
-          date.month == today.month &&
-          date.year == today.year;
+    TextStyle? textStyle;
+
+    TextStyle expiredStyle = Theme.of(context).textTheme.bodyMedium!.copyWith(
+          color: Theme.of(context).colorScheme.error,
+          fontWeight: FontWeight.bold,
+        );
+
+    TextStyle almostExpiredStyle =
+        Theme.of(context).textTheme.bodyMedium!.copyWith(
+              color: Colors.orange,
+              fontWeight: FontWeight.bold,
+            );
+
+    bool isExpired = item.expiration!.isBefore(DateTime.now()) &&
+        item.expiration!.day != DateTime.now().day;
+
+    bool expireToday = item.expiration!.day == DateTime.now().day &&
+        item.expiration!.month == DateTime.now().month &&
+        item.expiration!.year == DateTime.now().year;
+
+    if (isExpired) {
+      textStyle = expiredStyle;
+    }
+    if (expireToday) {
+      textStyle = almostExpiredStyle;
     }
 
     return ListTile(
-      titleTextStyle: expireToday(item.expiration ?? DateTime.now())
-          ? Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: Theme.of(context).colorScheme.error,
-                fontWeight: FontWeight.bold,
-              )
-          : Theme.of(context).textTheme.bodyMedium!.copyWith(
+      titleTextStyle: textStyle ??
+          Theme.of(context).textTheme.bodyMedium!.copyWith(
                 color: Theme.of(context).colorScheme.onSurface,
               ),
       title: Text(item.name),
       trailing: Text(
         formatDate(item.expiration ?? DateTime.now()),
-        style: expireToday(item.expiration ?? DateTime.now())
-            ? Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  color: Theme.of(context).colorScheme.error,
-                  fontWeight: FontWeight.bold,
-                )
-            : Theme.of(context).textTheme.bodyMedium!.copyWith(
+        style: textStyle ??
+            Theme.of(context).textTheme.bodyMedium!.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
       ),

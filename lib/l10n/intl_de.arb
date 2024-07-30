@@ -8,6 +8,7 @@
   "darkTheme": "Dunkel",
   "expirationRange": "Innerhalb von 5 Tagen",
   "expirationTitle": "Ablaufdaten",
+  "expired": "Abgelaufen",
   "failedToAddItem": "Artikel konnte nicht hinzugefügt werden... Bitte versuchen Sie es später noch einmal.",
   "failedToRemoveItem": "Artikel konnte nicht entfernt werden... Bitte versuchen Sie es später noch einmal.",
   "failedToUpdateItem": "Artikel konnte nicht aktualisiert werden... Bitte versuchen Sie es später noch einmal.",

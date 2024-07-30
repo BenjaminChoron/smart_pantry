@@ -8,6 +8,7 @@
   "darkTheme": "Scuro",
   "expirationRange": "Entro 5 giorni",
   "expirationTitle": "Date di scadenza",
+  "expired": "Scaduto",
   "failedToAddItem": "Impossibile aggiungere l'elemento... Riprova più tardi.",
   "failedToRemoveItem": "Impossibile rimuovere l'elemento... Riprova più tardi.",
   "failedToUpdateItem": "Impossibile aggiornare l'elemento... Riprova più tardi.",

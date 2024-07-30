@@ -26,6 +26,9 @@
   "@expirationTitle": {
     "description": "Title for the expiration dates page"
   },
+  "@expired": {
+    "description": "Label for the expired status"
+  },
   "@failedToAddItem": {
     "description": "Error message when an item cannot be added"
   },
@@ -128,6 +131,7 @@
   "darkTheme": "Dark",
   "expirationRange": "Within 5 days",
   "expirationTitle": "Expiration Dates",
+  "expired": "Expired",
   "failedToAddItem": "Failed to add item... Please try again later.",
   "failedToRemoveItem": "Failed to remove item... Please try again later.",
   "failedToUpdateItem": "Failed to update item... Please try again later.",

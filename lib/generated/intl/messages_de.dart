@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "expirationRange":
             MessageLookupByLibrary.simpleMessage("Innerhalb von 5 Tagen"),
         "expirationTitle": MessageLookupByLibrary.simpleMessage("Ablaufdaten"),
+        "expired": MessageLookupByLibrary.simpleMessage("Abgelaufen"),
         "failedToAddItem": MessageLookupByLibrary.simpleMessage(
             "Artikel konnte nicht hinzugefügt werden... Bitte versuchen Sie es später noch einmal."),
         "failedToRemoveItem": MessageLookupByLibrary.simpleMessage(
