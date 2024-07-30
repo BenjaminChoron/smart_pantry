@@ -21,10 +21,36 @@ class _ExpirationIconState extends ConsumerState<ExpirationIcon> {
 
   @override
   Widget build(BuildContext context) {
-    final allItems = ref.watch(userPantryProvider);
+    Widget content = const SizedBox();
+    final allItems = ref.watch(userPantryProvider).where((item) {
+      bool hasExpiration = item.expiration != null;
 
-    if (allItems.isEmpty) {
-      return const SizedBox();
+      if (!hasExpiration) {
+        return false;
+      }
+
+      bool isExpired = item.expiration!.isBefore(DateTime.now());
+
+      if (!isExpired) {
+        return false;
+      }
+
+      bool isAlmostExpired = item.expiration!
+          .isBefore(DateTime.now().add(const Duration(days: 5)));
+
+      return isAlmostExpired;
+    }).toList();
+
+    if (allItems.isNotEmpty) {
+      content = IconButton(
+        onPressed: () {
+          Navigator.of(context).pushReplacementNamed(ExpirationView.routeName);
+        },
+        icon: const Icon(
+          Icons.warning,
+          color: Color.fromARGB(255, 255, 193, 7),
+        ),
+      );
     }
 
     return FutureBuilder(
@@ -32,16 +58,7 @@ class _ExpirationIconState extends ConsumerState<ExpirationIcon> {
       builder: (context, snapshot) =>
           snapshot.connectionState == ConnectionState.waiting
               ? const Center(child: CircularProgressIndicator())
-              : IconButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(ExpirationView.routeName);
-                  },
-                  icon: const Icon(
-                    Icons.warning,
-                    color: Color.fromARGB(255, 255, 193, 7),
-                  ),
-                ),
+              : content,
     );
   }
 }

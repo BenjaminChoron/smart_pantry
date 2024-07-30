@@ -91,6 +91,7 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
         storage: _selectedStorage,
         quantity: _enteredQuantity,
         unit: _selectedUnit,
+        expiration: _enteredExpiration,
       );
 
       final result =
