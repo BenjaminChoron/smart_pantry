@@ -19,7 +19,13 @@ class TextFormInput extends StatelessWidget {
       initialValue: initialValue,
       maxLength: 30,
       decoration: InputDecoration(
-        label: Text(label),
+        label: Text(
+          label,
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium!
+              .copyWith(color: Theme.of(context).colorScheme.onSurface),
+        ),
         border: OutlineInputBorder(
           borderSide: BorderSide(
             color: Theme.of(context).colorScheme.primary,

@@ -67,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appVersion": m0,
         "categoryName": m1,
         "darkTheme": MessageLookupByLibrary.simpleMessage("深色"),
+        "expirationLabel": MessageLookupByLibrary.simpleMessage("到期日期"),
         "expirationRange": MessageLookupByLibrary.simpleMessage("在5天内"),
         "expirationTitle": MessageLookupByLibrary.simpleMessage("到期日期"),
         "expired": MessageLookupByLibrary.simpleMessage("已过期"),

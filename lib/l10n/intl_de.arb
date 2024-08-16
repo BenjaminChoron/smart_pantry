@@ -13,6 +13,7 @@
   "appVersion": "Version {version}",
   "categoryName": "{name, select, All {Alle} Fruits {Obst & Gemüse} Fish {Fisch} Butcher {Metzgerei} Dairy {Milchprodukte} Fresh {Frisch} Bakery {Bäckerei} Snacks {Snacks} Drinks {Getränke} Frozen {Tiefkühl} Grocery {Lebensmittel} Other {Sonstiges}}",
   "darkTheme": "Dunkel",
+  "expirationLabel": "Ablaufdatum",
   "expirationRange": "Innerhalb von 5 Tagen",
   "expirationTitle": "Ablaufdaten",
   "expired": "Abgelaufen",

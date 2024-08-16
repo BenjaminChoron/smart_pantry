@@ -169,8 +169,9 @@ class _PantryItemFormState extends ConsumerState<PantryItemForm> {
           ),
           const SizedBox(height: 20),
           DatePickerFormInput(
+            label: S.of(context).expirationLabel,
             initialDate: _enteredExpiration,
-            onSubmitted: (value) {
+            onSaved: (value) {
               _enteredExpiration = value;
             },
           ),

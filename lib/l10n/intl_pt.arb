@@ -13,6 +13,7 @@
   "appVersion": "Versão {version}",
   "categoryName": "{name, select, All {Todos} Fruits {Frutas & Legumes} Fish {Peixaria} Butcher {Açougue} Dairy {Laticínios} Fresh {Frescos} Bakery {Padaria} Snacks {Lanches} Drinks {Bebidas} Frozen {Congelados} Grocery {Mercearia} Other {Outros}}",
   "darkTheme": "Escuro",
+  "expirationLabel": "Data de validade",
   "expirationRange": "Em 5 dias",
   "expirationTitle": "Datas de validade",
   "expired": "Expirado",

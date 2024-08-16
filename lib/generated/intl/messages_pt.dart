@@ -71,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appVersion": m0,
         "categoryName": m1,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Escuro"),
+        "expirationLabel":
+            MessageLookupByLibrary.simpleMessage("Data de validade"),
         "expirationRange": MessageLookupByLibrary.simpleMessage("Em 5 dias"),
         "expirationTitle":
             MessageLookupByLibrary.simpleMessage("Datas de validade"),

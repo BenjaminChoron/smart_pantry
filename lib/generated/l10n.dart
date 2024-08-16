@@ -204,6 +204,16 @@ class S {
     );
   }
 
+  /// `Expiration Date`
+  String get expirationLabel {
+    return Intl.message(
+      'Expiration Date',
+      name: 'expirationLabel',
+      desc: 'Label for the expiration date input field',
+      args: [],
+    );
+  }
+
   /// `Within 5 days`
   String get expirationRange {
     return Intl.message(

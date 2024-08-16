@@ -41,6 +41,9 @@
   "@darkTheme": {
     "description": "Label for the dark theme"
   },
+  "@expirationLabel": {
+    "description": "Label for the expiration date input field"
+  },
   "@expirationRange": {
     "description": "Title of the expiration list view"
   },
@@ -157,6 +160,7 @@
   "appVersion": "Version {version}",
   "categoryName": "{name, select, All {All} Fruits {Fruits & Vegetables} Fish {Fish Shop} Butcher {Butcher Shop} Dairy {Dairy} Fresh {Fresh} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Grocery {Grocery} Other {Other}}",
   "darkTheme": "Dark",
+  "expirationLabel": "Expiration Date",
   "expirationRange": "Within 5 days",
   "expirationTitle": "Expiration Dates",
   "expired": "Expired",
