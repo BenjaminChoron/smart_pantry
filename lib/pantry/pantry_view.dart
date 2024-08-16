@@ -49,30 +49,6 @@ class PantryView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const AddPantryItemView(),
-                ),
-              );
-            },
-            icon: Icon(
-              Icons.add,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .pushReplacementNamed(ShoppingListView.routeName);
-            },
-            icon: Icon(
-              Icons.shopping_cart,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
-          const ExpirationIcon(),
-          IconButton(
-            onPressed: () {
               Navigator.of(context).pushNamed(SettingsView.routeName);
             },
             icon: Icon(
@@ -81,6 +57,49 @@ class PantryView extends StatelessWidget {
             ),
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(30),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(ShoppingListView.routeName);
+                    },
+                    icon: Icon(
+                      Icons.shopping_cart,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                  const ExpirationIcon(),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.book,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                ],
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const AddPantryItemView(),
+                    ),
+                  );
+                },
+                icon: Icon(
+                  Icons.add,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       body: DefaultTabController(
         length: pantryTabs.length,

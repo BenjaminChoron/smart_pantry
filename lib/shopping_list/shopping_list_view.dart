@@ -50,29 +50,6 @@ class ShoppingListView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const AddShoppingListItemView(),
-                ),
-              );
-            },
-            icon: Icon(
-              Icons.add,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).pushReplacementNamed(PantryView.routeName);
-            },
-            icon: Icon(
-              Icons.kitchen,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
-          const ExpirationIcon(),
-          IconButton(
-            onPressed: () {
               Navigator.of(context).pushNamed(SettingsView.routeName);
             },
             icon: Icon(
@@ -81,6 +58,49 @@ class ShoppingListView extends StatelessWidget {
             ),
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(30),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(PantryView.routeName);
+                    },
+                    icon: Icon(
+                      Icons.kitchen,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                  const ExpirationIcon(),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.book,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                ],
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const AddShoppingListItemView(),
+                    ),
+                  );
+                },
+                icon: Icon(
+                  Icons.add,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       body: DefaultTabController(
         length: shoppingTabs.length,
