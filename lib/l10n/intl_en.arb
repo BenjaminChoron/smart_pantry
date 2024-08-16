@@ -14,6 +14,27 @@
   "@addShoppingListItem": {
     "description": "Button text to add an item to the shopping list"
   },
+  "@appDevelopedBy": {
+    "description": "The developer of the application"
+  },
+  "@appExpirationDateManagementContent": {
+    "description": "Content for the expiration date management section"
+  },
+  "@appExpirationDateManagementTitle": {
+    "description": "Title for the expiration date management section"
+  },
+  "@appInformationsButton": {
+    "description": "Button text to display app informations"
+  },
+  "@appStorageInformationsContent": {
+    "description": "Content for the storage information section"
+  },
+  "@appStorageInformationsTitle": {
+    "description": "Title for the storage information section"
+  },
+  "@appVersion": {
+    "description": "The version of the application"
+  },
   "@categoryName": {
     "description": "Name of the category"
   },
@@ -127,6 +148,13 @@
   "addedToShoppingList": "Item added to shopping list!",
   "addPantryItem": "Add Pantry Item",
   "addShoppingListItem": "Add Shopping List Item",
+  "appDevelopedBy": "Developed by Benjamin Choron",
+  "appExpirationDateManagementContent": "This application offers the display of products approaching their expiration date within five days before they expire. After the expiration date, they remain displayed in red on this list until they are removed.",
+  "appExpirationDateManagementTitle": "Expiration date management",
+  "appInformationsButton": "Informations",
+  "appStorageInformationsContent": "This application uses local storage to save your data. This means that your data is stored on your device and is not shared with any third party. Warning, if you delete the app, you will lose all this data.",
+  "appStorageInformationsTitle": "Information related to storage",
+  "appVersion": "Version {version}",
   "categoryName": "{name, select, All {All} Fruits {Fruits & Vegetables} Fish {Fish Shop} Butcher {Butcher Shop} Dairy {Dairy} Fresh {Fresh} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Grocery {Grocery} Other {Other}}",
   "darkTheme": "Dark",
   "expirationRange": "Within 5 days",

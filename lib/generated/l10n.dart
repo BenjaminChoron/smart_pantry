@@ -100,6 +100,76 @@ class S {
     );
   }
 
+  /// `Developed by Benjamin Choron`
+  String get appDevelopedBy {
+    return Intl.message(
+      'Developed by Benjamin Choron',
+      name: 'appDevelopedBy',
+      desc: 'The developer of the application',
+      args: [],
+    );
+  }
+
+  /// `This application offers the display of products approaching their expiration date within five days before they expire. After the expiration date, they remain displayed in red on this list until they are removed.`
+  String get appExpirationDateManagementContent {
+    return Intl.message(
+      'This application offers the display of products approaching their expiration date within five days before they expire. After the expiration date, they remain displayed in red on this list until they are removed.',
+      name: 'appExpirationDateManagementContent',
+      desc: 'Content for the expiration date management section',
+      args: [],
+    );
+  }
+
+  /// `Expiration date management`
+  String get appExpirationDateManagementTitle {
+    return Intl.message(
+      'Expiration date management',
+      name: 'appExpirationDateManagementTitle',
+      desc: 'Title for the expiration date management section',
+      args: [],
+    );
+  }
+
+  /// `Informations`
+  String get appInformationsButton {
+    return Intl.message(
+      'Informations',
+      name: 'appInformationsButton',
+      desc: 'Button text to display app informations',
+      args: [],
+    );
+  }
+
+  /// `This application uses local storage to save your data. This means that your data is stored on your device and is not shared with any third party. Warning, if you delete the app, you will lose all this data.`
+  String get appStorageInformationsContent {
+    return Intl.message(
+      'This application uses local storage to save your data. This means that your data is stored on your device and is not shared with any third party. Warning, if you delete the app, you will lose all this data.',
+      name: 'appStorageInformationsContent',
+      desc: 'Content for the storage information section',
+      args: [],
+    );
+  }
+
+  /// `Information related to storage`
+  String get appStorageInformationsTitle {
+    return Intl.message(
+      'Information related to storage',
+      name: 'appStorageInformationsTitle',
+      desc: 'Title for the storage information section',
+      args: [],
+    );
+  }
+
+  /// `Version {version}`
+  String appVersion(Object version) {
+    return Intl.message(
+      'Version $version',
+      name: 'appVersion',
+      desc: 'The version of the application',
+      args: [version],
+    );
+  }
+
   /// `{name, select, All {All} Fruits {Fruits & Vegetables} Fish {Fish Shop} Butcher {Butcher Shop} Dairy {Dairy} Fresh {Fresh} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Grocery {Grocery} Other {Other}}`
   String categoryName(Object name) {
     return Intl.select(

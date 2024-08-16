@@ -20,7 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'zh_CN';
 
-  static String m0(name) => "${Intl.select(name, {
+  static String m0(version) => "版本${version}";
+
+  static String m1(name) => "${Intl.select(name, {
             'All': '所有',
             'Fruits': '水果',
             'Fish': '鱼类',
@@ -35,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             'Other': '其他',
           })}";
 
-  static String m1(name) => "${Intl.select(name, {
+  static String m2(name) => "${Intl.select(name, {
             'All': '所有',
             'Fridge': '冰箱',
             'Freezer': '冷冻柜',
@@ -50,7 +52,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "addedToPantry": MessageLookupByLibrary.simpleMessage("已添加到储藏室！"),
         "addedToShoppingList":
             MessageLookupByLibrary.simpleMessage("已添加到购物清单！"),
-        "categoryName": m0,
+        "appDevelopedBy":
+            MessageLookupByLibrary.simpleMessage("由Benjamin Choron开发"),
+        "appExpirationDateManagementContent":
+            MessageLookupByLibrary.simpleMessage(
+                "此应用程序提供了在过期日期前五天内显示接近过期的产品的功能。过期后，它们将保持在此列表中以红色显示，直到被删除。"),
+        "appExpirationDateManagementTitle":
+            MessageLookupByLibrary.simpleMessage("到期日期管理"),
+        "appInformationsButton": MessageLookupByLibrary.simpleMessage("信息"),
+        "appStorageInformationsContent": MessageLookupByLibrary.simpleMessage(
+            "此应用程序使用本地存储来保存您的数据。这意味着您的数据存储在您的设备上，不会与任何第三方共享。警告，如果您删除该应用程序，将丢失所有这些数据。"),
+        "appStorageInformationsTitle":
+            MessageLookupByLibrary.simpleMessage("存储信息"),
+        "appVersion": m0,
+        "categoryName": m1,
         "darkTheme": MessageLookupByLibrary.simpleMessage("深色"),
         "expirationRange": MessageLookupByLibrary.simpleMessage("在5天内"),
         "expirationTitle": MessageLookupByLibrary.simpleMessage("到期日期"),
@@ -88,7 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shoppingListAddToPantryDialogTitle":
             MessageLookupByLibrary.simpleMessage("购物清单购买的项目"),
         "shoppingListTitle": MessageLookupByLibrary.simpleMessage("购物清单"),
-        "storageName": m1,
+        "storageName": m2,
         "systemTheme": MessageLookupByLibrary.simpleMessage("系统"),
         "theme": MessageLookupByLibrary.simpleMessage("主题"),
         "update": MessageLookupByLibrary.simpleMessage("更新")

@@ -20,7 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
-  static String m0(name) => "${Intl.select(name, {
+  static String m0(version) => "Version ${version}";
+
+  static String m1(name) => "${Intl.select(name, {
             'All': 'Tout',
             'Fruits': 'Fruits & Légumes',
             'Fish': 'Poissonnerie',
@@ -35,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             'Other': 'Autre',
           })}";
 
-  static String m1(name) => "${Intl.select(name, {
+  static String m2(name) => "${Intl.select(name, {
             'All': 'Tous',
             'Fridge': 'Réfrigérateur',
             'Freezer': 'Congélateur',
@@ -53,7 +55,21 @@ class MessageLookup extends MessageLookupByLibrary {
             "Article ajouté au garde-manger !"),
         "addedToShoppingList": MessageLookupByLibrary.simpleMessage(
             "Article ajouté à la liste de courses !"),
-        "categoryName": m0,
+        "appDevelopedBy": MessageLookupByLibrary.simpleMessage(
+            "Développé par Benjamin Choron"),
+        "appExpirationDateManagementContent": MessageLookupByLibrary.simpleMessage(
+            "Cette application offre l\'affichage des produits approchant de leur date d\'expiration dans les cinq jours précédant leur expiration. Après la date d\'expiration, ils restent affichés en rouge sur cette liste jusqu\'à ce qu\'ils soient supprimés."),
+        "appExpirationDateManagementTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Gestion des dates d\'expiration"),
+        "appInformationsButton":
+            MessageLookupByLibrary.simpleMessage("Informations"),
+        "appStorageInformationsContent": MessageLookupByLibrary.simpleMessage(
+            "Cette application utilise le stockage local pour enregistrer vos données. Cela signifie que vos données sont stockées sur votre appareil et ne sont pas partagées avec des tiers. Attention, si vous supprimez l\'application, vous perdrez toutes ces données."),
+        "appStorageInformationsTitle":
+            MessageLookupByLibrary.simpleMessage("Informations de stockage"),
+        "appVersion": m0,
+        "categoryName": m1,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Sombre"),
         "expirationRange":
             MessageLookupByLibrary.simpleMessage("Dans les 5 jours"),
@@ -108,7 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Suppression d\'un élément de la liste de courses"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Liste de courses"),
-        "storageName": m1,
+        "storageName": m2,
         "systemTheme": MessageLookupByLibrary.simpleMessage("Système"),
         "theme": MessageLookupByLibrary.simpleMessage("Thème"),
         "update": MessageLookupByLibrary.simpleMessage("Mettre à jour")

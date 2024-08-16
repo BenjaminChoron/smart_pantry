@@ -20,7 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
-  static String m0(name) => "${Intl.select(name, {
+  static String m0(version) => "Versión ${version}";
+
+  static String m1(name) => "${Intl.select(name, {
             'All': 'Todos',
             'Fruits': 'Frutas y Verduras',
             'Fish': 'Pescado',
@@ -35,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             'Other': 'Otros',
           })}";
 
-  static String m1(name) => "${Intl.select(name, {
+  static String m2(name) => "${Intl.select(name, {
             'All': 'Todos',
             'Fridge': 'Refrigerador',
             'Freezer': 'Congelador',
@@ -53,7 +55,21 @@ class MessageLookup extends MessageLookupByLibrary {
             "¡Elemento agregado a la despensa!"),
         "addedToShoppingList": MessageLookupByLibrary.simpleMessage(
             "¡Elemento agregado a la lista de compras!"),
-        "categoryName": m0,
+        "appDevelopedBy": MessageLookupByLibrary.simpleMessage(
+            "Desarrollado por Benjamin Choron"),
+        "appExpirationDateManagementContent": MessageLookupByLibrary.simpleMessage(
+            "Esta aplicación ofrece la visualización de productos que se acercan a su fecha de vencimiento dentro de los cinco días anteriores a su vencimiento. Después de la fecha de vencimiento, permanecen en rojo en esta lista hasta que se eliminan."),
+        "appExpirationDateManagementTitle":
+            MessageLookupByLibrary.simpleMessage(
+                "Gestión de fechas de vencimiento"),
+        "appInformationsButton":
+            MessageLookupByLibrary.simpleMessage("Informaciones"),
+        "appStorageInformationsContent": MessageLookupByLibrary.simpleMessage(
+            "Esta aplicación utiliza el almacenamiento local para guardar sus datos. Esto significa que sus datos se almacenan en su dispositivo y no se comparten con terceros. Advertencia, si elimina la aplicación, perderá todos estos datos."),
+        "appStorageInformationsTitle": MessageLookupByLibrary.simpleMessage(
+            "Información de almacenamiento"),
+        "appVersion": m0,
+        "categoryName": m1,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Oscuro"),
         "expirationRange":
             MessageLookupByLibrary.simpleMessage("Dentro de 5 días"),
@@ -109,7 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Eliminación de un elemento de la lista de compras"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Lista de compras"),
-        "storageName": m1,
+        "storageName": m2,
         "systemTheme": MessageLookupByLibrary.simpleMessage("Sistema"),
         "theme": MessageLookupByLibrary.simpleMessage("Tema"),
         "update": MessageLookupByLibrary.simpleMessage("Actualizar")

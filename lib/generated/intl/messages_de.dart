@@ -20,7 +20,9 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
-  static String m0(name) => "${Intl.select(name, {
+  static String m0(version) => "Version ${version}";
+
+  static String m1(name) => "${Intl.select(name, {
             'All': 'Alle',
             'Fruits': 'Obst & Gemüse',
             'Fish': 'Fisch',
@@ -35,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             'Other': 'Sonstiges',
           })}";
 
-  static String m1(name) => "${Intl.select(name, {
+  static String m2(name) => "${Intl.select(name, {
             'All': 'Alle',
             'Fridge': 'Kühlschrank',
             'Freezer': 'Gefrierschrank',
@@ -53,7 +55,20 @@ class MessageLookup extends MessageLookupByLibrary {
             "Artikel zum Vorrat hinzugefügt!"),
         "addedToShoppingList": MessageLookupByLibrary.simpleMessage(
             "Artikel zur Einkaufsliste hinzugefügt!"),
-        "categoryName": m0,
+        "appDevelopedBy": MessageLookupByLibrary.simpleMessage(
+            "Entwickelt von Benjamin Choron"),
+        "appExpirationDateManagementContent": MessageLookupByLibrary.simpleMessage(
+            "Diese Anwendung bietet die Anzeige von Produkten, die sich ihrem Ablaufdatum nähern, innerhalb von fünf Tagen vor ihrem Ablauf. Nach dem Ablaufdatum bleiben sie rot auf dieser Liste angezeigt, bis sie entfernt werden."),
+        "appExpirationDateManagementTitle":
+            MessageLookupByLibrary.simpleMessage("Ablaufdatumverwaltung"),
+        "appInformationsButton":
+            MessageLookupByLibrary.simpleMessage("Informationen"),
+        "appStorageInformationsContent": MessageLookupByLibrary.simpleMessage(
+            "Diese Anwendung verwendet den lokalen Speicher, um Ihre Daten zu speichern. Das bedeutet, dass Ihre Daten auf Ihrem Gerät gespeichert sind und nicht mit Dritten geteilt werden. Achtung, wenn Sie die App löschen, verlieren Sie alle diese Daten."),
+        "appStorageInformationsTitle":
+            MessageLookupByLibrary.simpleMessage("Informationen zum Speicher"),
+        "appVersion": m0,
+        "categoryName": m1,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dunkel"),
         "expirationRange":
             MessageLookupByLibrary.simpleMessage("Innerhalb von 5 Tagen"),
@@ -107,7 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Entfernen eines Artikels von der Einkaufsliste"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Einkaufsliste"),
-        "storageName": m1,
+        "storageName": m2,
         "systemTheme": MessageLookupByLibrary.simpleMessage("System"),
         "theme": MessageLookupByLibrary.simpleMessage("Thema"),
         "update": MessageLookupByLibrary.simpleMessage("Aktualisieren")

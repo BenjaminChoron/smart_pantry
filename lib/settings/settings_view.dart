@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/app.dart';
 import 'package:smart_pantry/generated/l10n.dart';
+import 'package:smart_pantry/settings/widgets/informations_view.dart';
 
 import 'settings_controller.dart';
 
@@ -107,6 +108,33 @@ class SettingsView extends StatelessWidget {
                       child: Text(localeToLanguage(locale)),
                     );
                   }).toList(),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton.icon(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) => const InformationsView(),
+                    );
+                  },
+                  icon: Icon(Icons.info_outline,
+                      color: Theme.of(context).colorScheme.onSecondary),
+                  label: Text(
+                    S.of(context).appInformationsButton,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Theme.of(context).colorScheme.onSecondary,
+                          fontSize: 18,
+                        ),
+                  ),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.secondary,
+                    fixedSize: const Size(300, 50),
+                  ),
                 ),
               ],
             ),
