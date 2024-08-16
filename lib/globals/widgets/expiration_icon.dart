@@ -31,12 +31,12 @@ class _ExpirationIconState extends ConsumerState<ExpirationIcon> {
 
       bool isExpired = item.expiration!.isBefore(DateTime.now());
 
-      if (!isExpired) {
-        return false;
-      }
-
       bool isAlmostExpired = item.expiration!
           .isBefore(DateTime.now().add(const Duration(days: 5)));
+
+      if (!isExpired && !isAlmostExpired) {
+        return false;
+      }
 
       return isAlmostExpired;
     }).toList();
@@ -52,6 +52,8 @@ class _ExpirationIconState extends ConsumerState<ExpirationIcon> {
         ),
       );
     }
+
+    print(allItems);
 
     return FutureBuilder(
       future: _allItems,
