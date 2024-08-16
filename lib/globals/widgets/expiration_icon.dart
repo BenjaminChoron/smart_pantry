@@ -53,8 +53,6 @@ class _ExpirationIconState extends ConsumerState<ExpirationIcon> {
       );
     }
 
-    print(allItems);
-
     return FutureBuilder(
       future: _allItems,
       builder: (context, snapshot) =>
