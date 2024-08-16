@@ -4,6 +4,7 @@ import 'package:smart_pantry/globals/data/storages.dart';
 import 'package:smart_pantry/globals/widgets/expiration_icon.dart';
 import 'package:smart_pantry/pantry/add_pantry_item_view.dart';
 import 'package:smart_pantry/pantry/widgets/pantry_items.dart';
+import 'package:smart_pantry/recipes/recipes_view.dart';
 import 'package:smart_pantry/settings/settings_view.dart';
 import 'package:smart_pantry/shopping_list/shopping_list_view.dart';
 
@@ -76,7 +77,10 @@ class PantryView extends StatelessWidget {
                   ),
                   const ExpirationIcon(),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(RecipesView.routeName);
+                    },
                     icon: Icon(
                       Icons.book,
                       color: Theme.of(context).colorScheme.onPrimary,

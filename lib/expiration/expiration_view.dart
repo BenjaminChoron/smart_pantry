@@ -4,6 +4,7 @@ import 'package:smart_pantry/expiration/widgets/expiration_list.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/pantry/pantry_view.dart';
 import 'package:smart_pantry/pantry/providers/user_pantry.dart';
+import 'package:smart_pantry/recipes/recipes_view.dart';
 import 'package:smart_pantry/settings/settings_view.dart';
 import 'package:smart_pantry/shopping_list/shopping_list_view.dart';
 
@@ -81,25 +82,6 @@ class _PantryItemsState extends ConsumerState<ExpirationView> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed(PantryView.routeName);
-            },
-            icon: Icon(
-              Icons.kitchen,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .pushReplacementNamed(ShoppingListView.routeName);
-            },
-            icon: Icon(
-              Icons.shopping_cart,
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
-          IconButton(
-            onPressed: () {
               Navigator.of(context).pushNamed(SettingsView.routeName);
             },
             icon: Icon(
@@ -108,6 +90,57 @@ class _PantryItemsState extends ConsumerState<ExpirationView> {
             ),
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(30),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(PantryView.routeName);
+                    },
+                    icon: Icon(
+                      Icons.kitchen,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(ShoppingListView.routeName);
+                    },
+                    icon: Icon(
+                      Icons.shopping_cart,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(RecipesView.routeName);
+                    },
+                    icon: Icon(
+                      Icons.book,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                ],
+              ),
+              IconButton(
+                onPressed: () {
+                  // add recipe form
+                },
+                icon: Icon(
+                  Icons.add,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       body: FutureBuilder(
         future: _allItems,

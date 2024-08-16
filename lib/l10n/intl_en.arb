@@ -101,6 +101,9 @@
   "@quantityLabel": {
     "description": "Label for the quantity input field"
   },
+  "@recipesTitle": {
+    "description": "Title for the recipes page"
+  },
   "@reset": {
     "description": "Button text to reset the form"
   },
@@ -180,6 +183,7 @@
   "pantryDialogTitle": "Pantry Item Removal",
   "pantryTitle": "Pantry",
   "quantityLabel": "Quantity",
+  "recipesTitle": "Recipes",
   "reset": "Reset",
   "settingsTitle": "Settings",
   "shoppingListAddToPantryDialogActionNo": "No",

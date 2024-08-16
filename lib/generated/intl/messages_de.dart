@@ -100,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Entfernen eines Artikels aus dem Vorrat"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Vorrat"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Menge"),
+        "recipesTitle": MessageLookupByLibrary.simpleMessage("Rezepte"),
         "reset": MessageLookupByLibrary.simpleMessage("Zurücksetzen"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Einstellungen"),
         "shoppingListAddToPantryDialogActionNo":

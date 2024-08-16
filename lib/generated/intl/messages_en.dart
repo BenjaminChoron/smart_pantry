@@ -101,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pantry Item Removal"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Pantry"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantity"),
+        "recipesTitle": MessageLookupByLibrary.simpleMessage("Recipes"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "shoppingListAddToPantryDialogActionNo":

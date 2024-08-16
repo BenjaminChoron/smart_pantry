@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:smart_pantry/expiration/expiration_view.dart';
 import 'package:smart_pantry/pantry/pantry_view.dart';
+import 'package:smart_pantry/recipes/recipes_view.dart';
 import 'package:smart_pantry/shopping_list/shopping_list_view.dart';
 import 'generated/l10n.dart';
 
@@ -58,6 +59,8 @@ class MainAppState extends State<MainApp> {
                     return const ShoppingListView();
                   case ExpirationView.routeName:
                     return const ExpirationView();
+                  case RecipesView.routeName:
+                    return const RecipesView();
                   case PantryView.routeName:
                   default:
                     return const PantryView();

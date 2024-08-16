@@ -404,6 +404,16 @@ class S {
     );
   }
 
+  /// `Recipes`
+  String get recipesTitle {
+    return Intl.message(
+      'Recipes',
+      name: 'recipesTitle',
+      desc: 'Title for the recipes page',
+      args: [],
+    );
+  }
+
   /// `Reset`
   String get reset {
     return Intl.message(
