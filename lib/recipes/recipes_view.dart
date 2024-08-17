@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/generated/l10n.dart';
+import 'package:smart_pantry/globals/data/units.dart';
+import 'package:smart_pantry/globals/models/unit.dart';
 import 'package:smart_pantry/globals/widgets/expiration_icon.dart';
 import 'package:smart_pantry/pantry/pantry_view.dart';
+import 'package:smart_pantry/recipes/data/recipe_costs.dart';
+import 'package:smart_pantry/recipes/data/recipe_difficulties.dart';
+import 'package:smart_pantry/recipes/data/recipe_types.dart';
+import 'package:smart_pantry/recipes/models/recipe.dart';
+import 'package:smart_pantry/recipes/models/recipe_cost.dart';
+import 'package:smart_pantry/recipes/models/recipe_description.dart';
+import 'package:smart_pantry/recipes/models/recipe_difficulty.dart';
+import 'package:smart_pantry/recipes/models/recipe_ingredient.dart';
+import 'package:smart_pantry/recipes/models/recipe_time.dart';
+import 'package:smart_pantry/recipes/models/recipe_type.dart';
+import 'package:smart_pantry/recipes/widgets/recipe_card.dart';
 import 'package:smart_pantry/settings/settings_view.dart';
 import 'package:smart_pantry/shopping_list/shopping_list_view.dart';
 
@@ -12,6 +25,102 @@ class RecipesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final items = [
+      Recipe(
+        name: 'Test',
+        description: RecipeDescription(
+          cost: recipeCosts[Costs.medium]!,
+          difficulty: recipeDifficulties[Difficulties.medium]!,
+          time: RecipeTime(minutes: 30),
+          type: recipeTypes[Types.breakfast]!,
+        ),
+        ingredients: [
+          RecipeIngredient(
+            name: 'Test',
+            quantity: 100,
+            unit: units[Units.gram]!,
+          ),
+          RecipeIngredient(
+            name: 'Toto',
+            quantity: 1,
+            unit: units[Units.liter]!,
+          ),
+          RecipeIngredient(
+            name: 'Hello',
+            quantity: 2,
+            unit: units[Units.piece]!,
+          ),
+        ],
+        steps: [
+          'Step 1',
+          'Step 2',
+          'Step 3',
+        ],
+      ),
+      Recipe(
+        name: 'Toto',
+        description: RecipeDescription(
+          cost: recipeCosts[Costs.low]!,
+          difficulty: recipeDifficulties[Difficulties.hard]!,
+          time: RecipeTime(minutes: 45, hours: 1),
+          type: recipeTypes[Types.dinner]!,
+        ),
+        ingredients: [
+          RecipeIngredient(
+            name: 'Test',
+            quantity: 100,
+            unit: units[Units.gram]!,
+          ),
+          RecipeIngredient(
+            name: 'Toto',
+            quantity: 1,
+            unit: units[Units.liter]!,
+          ),
+          RecipeIngredient(
+            name: 'Hello',
+            quantity: 2,
+            unit: units[Units.piece]!,
+          ),
+        ],
+        steps: [
+          'Step 1',
+          'Step 2',
+          'Step 3',
+        ],
+      ),
+      Recipe(
+        name: 'Pouloulou',
+        description: RecipeDescription(
+          cost: recipeCosts[Costs.high]!,
+          difficulty: recipeDifficulties[Difficulties.easy]!,
+          time: RecipeTime(minutes: 15, hours: 2),
+          type: recipeTypes[Types.lunch]!,
+        ),
+        ingredients: [
+          RecipeIngredient(
+            name: 'Test',
+            quantity: 100,
+            unit: units[Units.gram]!,
+          ),
+          RecipeIngredient(
+            name: 'Toto',
+            quantity: 1,
+            unit: units[Units.liter]!,
+          ),
+          RecipeIngredient(
+            name: 'Hello',
+            quantity: 2,
+            unit: units[Units.piece]!,
+          ),
+        ],
+        steps: [
+          'Step 1',
+          'Step 2',
+          'Step 3',
+        ],
+      )
+    ];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
@@ -76,8 +185,16 @@ class RecipesView extends StatelessWidget {
           ),
         ),
       ),
-      body: const Center(
-        child: Text('Recipes'),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListView.builder(
+            itemCount: items.length,
+            itemBuilder: (context, index) {
+              return RecipeCard(recipe: items[index]);
+            },
+          ),
+        ),
       ),
     );
   }
