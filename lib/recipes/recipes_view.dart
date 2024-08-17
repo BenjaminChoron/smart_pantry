@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/data/units.dart';
 import 'package:smart_pantry/globals/models/unit.dart';
@@ -27,98 +28,76 @@ class RecipesView extends StatelessWidget {
   Widget build(BuildContext context) {
     final items = [
       Recipe(
-        name: 'Test',
-        description: RecipeDescription(
-          cost: recipeCosts[Costs.medium]!,
-          difficulty: recipeDifficulties[Difficulties.medium]!,
-          time: RecipeTime(minutes: 30),
-          type: recipeTypes[Types.breakfast]!,
-        ),
-        ingredients: [
-          RecipeIngredient(
-            name: 'Test',
-            quantity: 100,
-            unit: units[Units.gram]!,
-          ),
-          RecipeIngredient(
-            name: 'Toto',
-            quantity: 1,
-            unit: units[Units.liter]!,
-          ),
-          RecipeIngredient(
-            name: 'Hello',
-            quantity: 2,
-            unit: units[Units.piece]!,
-          ),
-        ],
-        steps: [
-          'Aliqua ipsum et sint cillum qui eu nulla in eiusmod nulla commodo nulla deserunt.',
-          'Non non nisi velit duis eu dolore tempor.',
-          'Esse aliquip magna dolore duis exercitation elit laboris reprehenderit occaecat aute Lorem qui.',
-        ],
-      ),
-      Recipe(
-        name: 'Toto',
+        name: 'Sandwich au poulet mariné',
         description: RecipeDescription(
           cost: recipeCosts[Costs.low]!,
-          difficulty: recipeDifficulties[Difficulties.hard]!,
-          time: RecipeTime(minutes: 45, hours: 1),
-          type: recipeTypes[Types.dinner]!,
-        ),
-        ingredients: [
-          RecipeIngredient(
-            name: 'Test',
-            quantity: 100,
-            unit: units[Units.gram]!,
-          ),
-          RecipeIngredient(
-            name: 'Toto',
-            quantity: 1,
-            unit: units[Units.liter]!,
-          ),
-          RecipeIngredient(
-            name: 'Hello',
-            quantity: 2,
-            unit: units[Units.piece]!,
-          ),
-        ],
-        steps: [
-          'Amet officia duis ea proident fugiat.',
-          'Dolore mollit cupidatat officia esse consequat commodo voluptate ex et exercitation amet cupidatat fugiat.',
-          'Eiusmod do amet velit mollit pariatur non commodo ea tempor eiusmod cupidatat reprehenderit.',
-        ],
-      ),
-      Recipe(
-        name: 'Pouloulou',
-        description: RecipeDescription(
-          cost: recipeCosts[Costs.high]!,
           difficulty: recipeDifficulties[Difficulties.easy]!,
-          time: RecipeTime(minutes: 15, hours: 2),
+          time: RecipeTime(minutes: 30),
           type: recipeTypes[Types.lunch]!,
         ),
         ingredients: [
           RecipeIngredient(
-            name: 'Test',
-            quantity: 100,
+            name: 'Baguette',
+            quantity: 1,
+            unit: units[Units.piece]!,
+          ),
+          RecipeIngredient(
+            name: 'Escalope de poulet',
+            quantity: 1,
+            unit: units[Units.piece]!,
+          ),
+          RecipeIngredient(
+            name: 'Huile d\'olive',
+            quantity: 20,
+            unit: units[Units.milliliter]!,
+          ),
+          RecipeIngredient(
+            name: 'Gousse d\'ail',
+            quantity: 1,
+            unit: units[Units.piece]!,
+          ),
+          RecipeIngredient(
+            name: 'Persil',
+            quantity: 20,
             unit: units[Units.gram]!,
           ),
           RecipeIngredient(
-            name: 'Toto',
-            quantity: 1,
-            unit: units[Units.liter]!,
+            name: 'Jus de citron',
+            quantity: 50,
+            unit: units[Units.milliliter]!,
           ),
           RecipeIngredient(
-            name: 'Hello',
-            quantity: 2,
+            name: 'Mayonnaise',
+            quantity: 20,
+            unit: units[Units.gram]!,
+          ),
+          RecipeIngredient(
+            name: 'Feuilles de salade',
+            quantity: 4,
+            unit: units[Units.piece]!,
+          ),
+          RecipeIngredient(
+            name: 'Tomates séchées',
+            quantity: 6,
             unit: units[Units.piece]!,
           ),
         ],
         steps: [
-          'Culpa commodo elit nisi commodo laborum officia.',
-          'Occaecat consectetur proident qui cillum nulla officia reprehenderit est.',
-          'Occaecat veniam adipisicing ut enim veniam veniam do anim ad ad nisi labore.',
+          'Hacher l\'ail.',
+          'Hacher le persil.',
+          'Mélanger le pot de tomates séchées avec le persil, l\'ail, l\'huile d\'olive et le jus de citron.',
+          'Faire mariner l\'escalope de poulet pendant au moins 15 minutes.',
+          'Faire griller à feu vif l\'escalope de poulet dans une poêle antiadhésive pendant environ 5 minutes.',
+          'Couper la baguette en deux.',
+          'Tartiner la mayonnaise sur les deux côtés de la baguette.',
+          'Disposer les feuilles de salade sur la baguette.',
+          'Ajouter l\'escalope de poulet grillée coupée en lamelles.',
+          'Ajouter la préparation de tomates séchées.',
+          'Ajouter les feuilles de salade.',
+          'Refermer la baguette.',
+          'Déguster !',
         ],
-      )
+      ),
     ];
 
     return Scaffold(
@@ -172,15 +151,33 @@ class RecipesView extends StatelessWidget {
                   const ExpirationIcon(),
                 ],
               ),
-              IconButton(
-                onPressed: () {
-                  // add recipe form
-                },
-                icon: Icon(
-                  Icons.add,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
-              ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      // add recipe form
+                    },
+                    icon: Icon(
+                      Icons.add,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.search,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.filter_list,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
