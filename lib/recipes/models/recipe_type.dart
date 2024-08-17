@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum Types {
   breakfast,
   lunch,
@@ -9,7 +11,9 @@ enum Types {
 class RecipeType {
   RecipeType({
     required this.name,
+    required this.icon,
   });
 
   final String name;
+  final IconData icon;
 }

@@ -21,13 +21,12 @@ class RecipeDescriptionLine extends StatelessWidget {
           Column(
             children: [
               const SizedBox(
-                width: 60,
+                width: 35,
               ),
-              Text(
-                description.type.name,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.onSurface,
-                    ),
+              Icon(
+                description.type.icon,
+                size: 30,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ],
           ),
