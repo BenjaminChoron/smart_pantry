@@ -104,8 +104,20 @@
   "@recipeCost": {
     "description": "Label for the recipe cost"
   },
+  "@recipeCostLabel": {
+    "description": "Label for the recipe cost"
+  },
+  "@recipeCostName": {
+    "description": "Name of the recipe cost"
+  },
   "@recipeDifficulty": {
     "description": "Label for the recipe difficulty"
+  },
+  "@recipeDifficultyLabel": {
+    "description": "Label for the recipe difficulty"
+  },
+  "@recipeDifficultyName": {
+    "description": "Name of the recipe difficulty"
   },
   "@recipeIngredients": {
     "description": "Label for the recipe ingredients"
@@ -115,6 +127,12 @@
   },
   "@recipesTitle": {
     "description": "Title for the recipes page"
+  },
+  "@recipeTypeLabel": {
+    "description": "Label for the recipe type"
+  },
+  "@recipeTypeName": {
+    "description": "Name of the recipe type"
   },
   "@reset": {
     "description": "Button text to reset the form"
@@ -196,10 +214,16 @@
   "pantryTitle": "Pantry",
   "quantityLabel": "Quantity",
   "recipeCost": "Cost",
+  "recipeCostLabel": "Cost",
+  "recipeCostName": "{name, select, Low {Low} Medium {Medium} High {High}}",
   "recipeDifficulty": "Difficulty",
+  "recipeDifficultyLabel": "Difficulty",
+  "recipeDifficultyName": "{name, select, Easy {Easy} Medium {Medium} Hard {Hard}}",
   "recipeIngredients": "Ingredients",
   "recipeSteps": "Steps",
   "recipesTitle": "Recipes",
+  "recipeTypeLabel": "Type",
+  "recipeTypeName": "{name, select, Breakfast {Breakfast} Lunch {Lunch} Dinner {Dinner} Snack {Snack} Dessert {Dessert}}",
   "reset": "Reset",
   "settingsTitle": "Settings",
   "shoppingListAddToPantryDialogActionNo": "No",

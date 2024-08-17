@@ -38,6 +38,26 @@ class MessageLookup extends MessageLookupByLibrary {
           })}";
 
   static String m2(name) => "${Intl.select(name, {
+            'Low': '低',
+            'Medium': '中',
+            'High': '高',
+          })}";
+
+  static String m3(name) => "${Intl.select(name, {
+            'Easy': '简单',
+            'Medium': '中等',
+            'Hard': '困难',
+          })}";
+
+  static String m4(name) => "${Intl.select(name, {
+            'Breakfast': '早餐',
+            'Lunch': '午餐',
+            'Dinner': '晚餐',
+            'Snack': '小吃',
+            'Dessert': '甜点',
+          })}";
+
+  static String m5(name) => "${Intl.select(name, {
             'All': '所有',
             'Fridge': '冰箱',
             'Freezer': '冷冻柜',
@@ -94,9 +114,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "pantryTitle": MessageLookupByLibrary.simpleMessage("储藏室"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("数量"),
         "recipeCost": MessageLookupByLibrary.simpleMessage("成本"),
+        "recipeCostLabel": MessageLookupByLibrary.simpleMessage("成本"),
+        "recipeCostName": m2,
         "recipeDifficulty": MessageLookupByLibrary.simpleMessage("难度"),
+        "recipeDifficultyLabel": MessageLookupByLibrary.simpleMessage("难度"),
+        "recipeDifficultyName": m3,
         "recipeIngredients": MessageLookupByLibrary.simpleMessage("配料"),
         "recipeSteps": MessageLookupByLibrary.simpleMessage("步骤"),
+        "recipeTypeLabel": MessageLookupByLibrary.simpleMessage("类型"),
+        "recipeTypeName": m4,
         "recipesTitle": MessageLookupByLibrary.simpleMessage("食谱"),
         "reset": MessageLookupByLibrary.simpleMessage("重置"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("设置"),
@@ -109,7 +135,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shoppingListAddToPantryDialogTitle":
             MessageLookupByLibrary.simpleMessage("购物清单购买的项目"),
         "shoppingListTitle": MessageLookupByLibrary.simpleMessage("购物清单"),
-        "storageName": m2,
+        "storageName": m5,
         "systemTheme": MessageLookupByLibrary.simpleMessage("系统"),
         "theme": MessageLookupByLibrary.simpleMessage("主题"),
         "update": MessageLookupByLibrary.simpleMessage("更新")

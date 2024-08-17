@@ -3,7 +3,7 @@ import 'package:smart_pantry/recipes/models/recipe_difficulty.dart';
 
 final recipeDifficulties = {
   Difficulties.easy: RecipeDifficulty(
-    name: 'easy',
+    name: 'Easy',
     icons: [
       Icons.star,
       Icons.star_outline,
@@ -11,7 +11,7 @@ final recipeDifficulties = {
     ],
   ),
   Difficulties.medium: RecipeDifficulty(
-    name: 'medium',
+    name: 'Medium',
     icons: [
       Icons.star,
       Icons.star,
@@ -19,7 +19,7 @@ final recipeDifficulties = {
     ],
   ),
   Difficulties.hard: RecipeDifficulty(
-    name: 'hard',
+    name: 'Hard',
     icons: [
       Icons.star,
       Icons.star,

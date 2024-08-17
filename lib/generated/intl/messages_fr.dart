@@ -38,6 +38,26 @@ class MessageLookup extends MessageLookupByLibrary {
           })}";
 
   static String m2(name) => "${Intl.select(name, {
+            'Low': 'Faible',
+            'Medium': 'Moyen',
+            'High': 'Élevé',
+          })}";
+
+  static String m3(name) => "${Intl.select(name, {
+            'Easy': 'Facile',
+            'Medium': 'Moyen',
+            'Hard': 'Difficile',
+          })}";
+
+  static String m4(name) => "${Intl.select(name, {
+            'Breakfast': 'Petit-déjeuner',
+            'Lunch': 'Déjeuner',
+            'Dinner': 'Dîner',
+            'Snack': 'Collation',
+            'Dessert': 'Dessert',
+          })}";
+
+  static String m5(name) => "${Intl.select(name, {
             'All': 'Tous',
             'Fridge': 'Réfrigérateur',
             'Freezer': 'Congélateur',
@@ -104,10 +124,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Garde-manger"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantité"),
         "recipeCost": MessageLookupByLibrary.simpleMessage("Coût"),
+        "recipeCostLabel": MessageLookupByLibrary.simpleMessage("Coût"),
+        "recipeCostName": m2,
         "recipeDifficulty": MessageLookupByLibrary.simpleMessage("Difficulté"),
+        "recipeDifficultyLabel":
+            MessageLookupByLibrary.simpleMessage("Difficulté"),
+        "recipeDifficultyName": m3,
         "recipeIngredients":
             MessageLookupByLibrary.simpleMessage("Ingrédients"),
         "recipeSteps": MessageLookupByLibrary.simpleMessage("Étapes"),
+        "recipeTypeLabel": MessageLookupByLibrary.simpleMessage("Type"),
+        "recipeTypeName": m4,
         "recipesTitle": MessageLookupByLibrary.simpleMessage("Recettes"),
         "reset": MessageLookupByLibrary.simpleMessage("Réinitialiser"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Paramètres"),
@@ -132,7 +159,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Suppression d\'un élément de la liste de courses"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Liste de courses"),
-        "storageName": m2,
+        "storageName": m5,
         "systemTheme": MessageLookupByLibrary.simpleMessage("Système"),
         "theme": MessageLookupByLibrary.simpleMessage("Thème"),
         "update": MessageLookupByLibrary.simpleMessage("Mettre à jour")

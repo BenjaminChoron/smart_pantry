@@ -38,6 +38,26 @@ class MessageLookup extends MessageLookupByLibrary {
           })}";
 
   static String m2(name) => "${Intl.select(name, {
+            'Low': 'Low',
+            'Medium': 'Medium',
+            'High': 'High',
+          })}";
+
+  static String m3(name) => "${Intl.select(name, {
+            'Easy': 'Easy',
+            'Medium': 'Medium',
+            'Hard': 'Hard',
+          })}";
+
+  static String m4(name) => "${Intl.select(name, {
+            'Breakfast': 'Breakfast',
+            'Lunch': 'Lunch',
+            'Dinner': 'Dinner',
+            'Snack': 'Snack',
+            'Dessert': 'Dessert',
+          })}";
+
+  static String m5(name) => "${Intl.select(name, {
             'All': 'All',
             'Fridge': 'Fridge',
             'Freezer': 'Freezer',
@@ -102,10 +122,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Pantry"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantity"),
         "recipeCost": MessageLookupByLibrary.simpleMessage("Cost"),
+        "recipeCostLabel": MessageLookupByLibrary.simpleMessage("Cost"),
+        "recipeCostName": m2,
         "recipeDifficulty": MessageLookupByLibrary.simpleMessage("Difficulty"),
+        "recipeDifficultyLabel":
+            MessageLookupByLibrary.simpleMessage("Difficulty"),
+        "recipeDifficultyName": m3,
         "recipeIngredients":
             MessageLookupByLibrary.simpleMessage("Ingredients"),
         "recipeSteps": MessageLookupByLibrary.simpleMessage("Steps"),
+        "recipeTypeLabel": MessageLookupByLibrary.simpleMessage("Type"),
+        "recipeTypeName": m4,
         "recipesTitle": MessageLookupByLibrary.simpleMessage("Recipes"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
@@ -130,7 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Shopping List Item Removal"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Shopping List"),
-        "storageName": m2,
+        "storageName": m5,
         "systemTheme": MessageLookupByLibrary.simpleMessage("System"),
         "theme": MessageLookupByLibrary.simpleMessage("Theme"),
         "update": MessageLookupByLibrary.simpleMessage("Update")

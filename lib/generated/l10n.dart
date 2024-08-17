@@ -414,6 +414,31 @@ class S {
     );
   }
 
+  /// `Cost`
+  String get recipeCostLabel {
+    return Intl.message(
+      'Cost',
+      name: 'recipeCostLabel',
+      desc: 'Label for the recipe cost',
+      args: [],
+    );
+  }
+
+  /// `{name, select, Low {Low} Medium {Medium} High {High}}`
+  String recipeCostName(Object name) {
+    return Intl.select(
+      name,
+      {
+        'Low': 'Low',
+        'Medium': 'Medium',
+        'High': 'High',
+      },
+      name: 'recipeCostName',
+      desc: 'Name of the recipe cost',
+      args: [name],
+    );
+  }
+
   /// `Difficulty`
   String get recipeDifficulty {
     return Intl.message(
@@ -421,6 +446,31 @@ class S {
       name: 'recipeDifficulty',
       desc: 'Label for the recipe difficulty',
       args: [],
+    );
+  }
+
+  /// `Difficulty`
+  String get recipeDifficultyLabel {
+    return Intl.message(
+      'Difficulty',
+      name: 'recipeDifficultyLabel',
+      desc: 'Label for the recipe difficulty',
+      args: [],
+    );
+  }
+
+  /// `{name, select, Easy {Easy} Medium {Medium} Hard {Hard}}`
+  String recipeDifficultyName(Object name) {
+    return Intl.select(
+      name,
+      {
+        'Easy': 'Easy',
+        'Medium': 'Medium',
+        'Hard': 'Hard',
+      },
+      name: 'recipeDifficultyName',
+      desc: 'Name of the recipe difficulty',
+      args: [name],
     );
   }
 
@@ -451,6 +501,33 @@ class S {
       name: 'recipesTitle',
       desc: 'Title for the recipes page',
       args: [],
+    );
+  }
+
+  /// `Type`
+  String get recipeTypeLabel {
+    return Intl.message(
+      'Type',
+      name: 'recipeTypeLabel',
+      desc: 'Label for the recipe type',
+      args: [],
+    );
+  }
+
+  /// `{name, select, Breakfast {Breakfast} Lunch {Lunch} Dinner {Dinner} Snack {Snack} Dessert {Dessert}}`
+  String recipeTypeName(Object name) {
+    return Intl.select(
+      name,
+      {
+        'Breakfast': 'Breakfast',
+        'Lunch': 'Lunch',
+        'Dinner': 'Dinner',
+        'Snack': 'Snack',
+        'Dessert': 'Dessert',
+      },
+      name: 'recipeTypeName',
+      desc: 'Name of the recipe type',
+      args: [name],
     );
   }
 
