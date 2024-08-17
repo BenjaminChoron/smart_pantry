@@ -5,6 +5,7 @@ import 'package:smart_pantry/globals/data/units.dart';
 import 'package:smart_pantry/globals/models/unit.dart';
 import 'package:smart_pantry/globals/widgets/expiration_icon.dart';
 import 'package:smart_pantry/pantry/pantry_view.dart';
+import 'package:smart_pantry/recipes/add_new_recipe_view.dart';
 import 'package:smart_pantry/recipes/data/recipe_costs.dart';
 import 'package:smart_pantry/recipes/data/recipe_difficulties.dart';
 import 'package:smart_pantry/recipes/data/recipe_types.dart';
@@ -155,7 +156,11 @@ class RecipesView extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      // add recipe form
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const AddNewRecipeView(),
+                        ),
+                      );
                     },
                     icon: Icon(
                       Icons.add,
