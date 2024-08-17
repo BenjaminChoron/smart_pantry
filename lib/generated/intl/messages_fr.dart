@@ -103,6 +103,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Suppression d\'un élément du garde-manger"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Garde-manger"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantité"),
+        "recipeCost": MessageLookupByLibrary.simpleMessage("Coût"),
+        "recipeDifficulty": MessageLookupByLibrary.simpleMessage("Difficulté"),
+        "recipeIngredients":
+            MessageLookupByLibrary.simpleMessage("Ingrédients"),
+        "recipeSteps": MessageLookupByLibrary.simpleMessage("Étapes"),
         "recipesTitle": MessageLookupByLibrary.simpleMessage("Recettes"),
         "reset": MessageLookupByLibrary.simpleMessage("Réinitialiser"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Paramètres"),

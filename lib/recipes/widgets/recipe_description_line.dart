@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/recipes/models/recipe_description.dart';
 
 class RecipeDescriptionLine extends StatelessWidget {
@@ -36,7 +37,7 @@ class RecipeDescriptionLine extends StatelessWidget {
                 width: 65,
               ),
               Text(
-                'Difficulty',
+                S.of(context).recipeDifficulty,
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
@@ -59,7 +60,7 @@ class RecipeDescriptionLine extends StatelessWidget {
                 width: 60,
               ),
               Text(
-                'Cost',
+                S.of(context).recipeCost,
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: Theme.of(context).colorScheme.onSurface,
                     ),

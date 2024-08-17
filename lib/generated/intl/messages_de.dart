@@ -100,6 +100,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Entfernen eines Artikels aus dem Vorrat"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Vorrat"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Menge"),
+        "recipeCost": MessageLookupByLibrary.simpleMessage("Kosten"),
+        "recipeDifficulty":
+            MessageLookupByLibrary.simpleMessage("Schwierigkeit"),
+        "recipeIngredients": MessageLookupByLibrary.simpleMessage("Zutaten"),
+        "recipeSteps": MessageLookupByLibrary.simpleMessage("Schritte"),
         "recipesTitle": MessageLookupByLibrary.simpleMessage("Rezepte"),
         "reset": MessageLookupByLibrary.simpleMessage("Zurücksetzen"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Einstellungen"),

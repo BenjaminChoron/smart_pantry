@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/recipes/models/recipe.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_description_line.dart';
 
@@ -27,7 +28,7 @@ class RecipeDetails extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Ingredients',
+                    S.of(context).recipeIngredients,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           color: Theme.of(context).colorScheme.onSurface,
                         ),
@@ -82,7 +83,7 @@ class RecipeDetails extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Steps',
+                    S.of(context).recipeSteps,
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           color: Theme.of(context).colorScheme.onSurface,
                         ),

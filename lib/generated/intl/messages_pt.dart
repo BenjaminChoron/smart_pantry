@@ -102,6 +102,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Remoção de item da despensa"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Despensa"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("Quantidade"),
+        "recipeCost": MessageLookupByLibrary.simpleMessage("Custo"),
+        "recipeDifficulty": MessageLookupByLibrary.simpleMessage("Dificuldade"),
+        "recipeIngredients":
+            MessageLookupByLibrary.simpleMessage("Ingredientes"),
+        "recipeSteps": MessageLookupByLibrary.simpleMessage("Passos"),
         "recipesTitle": MessageLookupByLibrary.simpleMessage("Receitas"),
         "reset": MessageLookupByLibrary.simpleMessage("Redefinir"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Configurações"),

@@ -101,6 +101,18 @@
   "@quantityLabel": {
     "description": "Label for the quantity input field"
   },
+  "@recipeCost": {
+    "description": "Label for the recipe cost"
+  },
+  "@recipeDifficulty": {
+    "description": "Label for the recipe difficulty"
+  },
+  "@recipeIngredients": {
+    "description": "Label for the recipe ingredients"
+  },
+  "@recipeSteps": {
+    "description": "Label for the recipe steps"
+  },
   "@recipesTitle": {
     "description": "Title for the recipes page"
   },
@@ -183,6 +195,10 @@
   "pantryDialogTitle": "Pantry Item Removal",
   "pantryTitle": "Pantry",
   "quantityLabel": "Quantity",
+  "recipeCost": "Cost",
+  "recipeDifficulty": "Difficulty",
+  "recipeIngredients": "Ingredients",
+  "recipeSteps": "Steps",
   "recipesTitle": "Recipes",
   "reset": "Reset",
   "settingsTitle": "Settings",

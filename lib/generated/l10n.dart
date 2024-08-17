@@ -404,6 +404,46 @@ class S {
     );
   }
 
+  /// `Cost`
+  String get recipeCost {
+    return Intl.message(
+      'Cost',
+      name: 'recipeCost',
+      desc: 'Label for the recipe cost',
+      args: [],
+    );
+  }
+
+  /// `Difficulty`
+  String get recipeDifficulty {
+    return Intl.message(
+      'Difficulty',
+      name: 'recipeDifficulty',
+      desc: 'Label for the recipe difficulty',
+      args: [],
+    );
+  }
+
+  /// `Ingredients`
+  String get recipeIngredients {
+    return Intl.message(
+      'Ingredients',
+      name: 'recipeIngredients',
+      desc: 'Label for the recipe ingredients',
+      args: [],
+    );
+  }
+
+  /// `Steps`
+  String get recipeSteps {
+    return Intl.message(
+      'Steps',
+      name: 'recipeSteps',
+      desc: 'Label for the recipe steps',
+      args: [],
+    );
+  }
+
   /// `Recipes`
   String get recipesTitle {
     return Intl.message(
