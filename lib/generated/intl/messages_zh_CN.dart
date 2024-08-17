@@ -67,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add": MessageLookupByLibrary.simpleMessage("添加"),
+        "addNewRecipe": MessageLookupByLibrary.simpleMessage("添加新食谱"),
         "addPantryItem": MessageLookupByLibrary.simpleMessage("添加到储藏室"),
         "addShoppingListItem": MessageLookupByLibrary.simpleMessage("添加到购物清单"),
         "addedToPantry": MessageLookupByLibrary.simpleMessage("已添加到储藏室！"),
@@ -97,8 +98,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("无法删除项目... 请稍后再试。"),
         "failedToUpdateItem":
             MessageLookupByLibrary.simpleMessage("无法更新项目... 请稍后再试。"),
+        "hours": MessageLookupByLibrary.simpleMessage("小时"),
         "language": MessageLookupByLibrary.simpleMessage("语言"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("浅色"),
+        "minutes": MessageLookupByLibrary.simpleMessage("分钟"),
         "mustBePositive": MessageLookupByLibrary.simpleMessage("必须是正数"),
         "mustHaveCharacters":
             MessageLookupByLibrary.simpleMessage("必须包含1到30个字符"),
@@ -116,11 +119,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "recipeCost": MessageLookupByLibrary.simpleMessage("成本"),
         "recipeCostLabel": MessageLookupByLibrary.simpleMessage("成本"),
         "recipeCostName": m2,
+        "recipeDescription": MessageLookupByLibrary.simpleMessage("描述"),
         "recipeDifficulty": MessageLookupByLibrary.simpleMessage("难度"),
         "recipeDifficultyLabel": MessageLookupByLibrary.simpleMessage("难度"),
         "recipeDifficultyName": m3,
         "recipeIngredients": MessageLookupByLibrary.simpleMessage("配料"),
         "recipeSteps": MessageLookupByLibrary.simpleMessage("步骤"),
+        "recipeTimeLabel": MessageLookupByLibrary.simpleMessage("时间"),
         "recipeTypeLabel": MessageLookupByLibrary.simpleMessage("类型"),
         "recipeTypeName": m4,
         "recipesTitle": MessageLookupByLibrary.simpleMessage("食谱"),

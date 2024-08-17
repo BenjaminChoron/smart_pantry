@@ -67,6 +67,8 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add": MessageLookupByLibrary.simpleMessage("Agregar"),
+        "addNewRecipe":
+            MessageLookupByLibrary.simpleMessage("Agregar nueva receta"),
         "addPantryItem":
             MessageLookupByLibrary.simpleMessage("Agregar a la despensa"),
         "addShoppingListItem": MessageLookupByLibrary.simpleMessage(
@@ -104,8 +106,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "No se pudo eliminar el elemento... Por favor, inténtelo de nuevo más tarde."),
         "failedToUpdateItem": MessageLookupByLibrary.simpleMessage(
             "No se pudo actualizar el elemento... Por favor, inténtelo de nuevo más tarde."),
+        "hours": MessageLookupByLibrary.simpleMessage("Horas"),
         "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Claro"),
+        "minutes": MessageLookupByLibrary.simpleMessage("Minutos"),
         "mustBePositive":
             MessageLookupByLibrary.simpleMessage("Debe ser un número positivo"),
         "mustHaveCharacters": MessageLookupByLibrary.simpleMessage(
@@ -126,6 +130,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "recipeCost": MessageLookupByLibrary.simpleMessage("Costo"),
         "recipeCostLabel": MessageLookupByLibrary.simpleMessage("Costo"),
         "recipeCostName": m2,
+        "recipeDescription":
+            MessageLookupByLibrary.simpleMessage("Descripción"),
         "recipeDifficulty": MessageLookupByLibrary.simpleMessage("Dificultad"),
         "recipeDifficultyLabel":
             MessageLookupByLibrary.simpleMessage("Dificultad"),
@@ -133,6 +139,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "recipeIngredients":
             MessageLookupByLibrary.simpleMessage("Ingredientes"),
         "recipeSteps": MessageLookupByLibrary.simpleMessage("Pasos"),
+        "recipeTimeLabel": MessageLookupByLibrary.simpleMessage("Tiempo"),
         "recipeTypeLabel": MessageLookupByLibrary.simpleMessage("Tipo"),
         "recipeTypeName": m4,
         "recipesTitle": MessageLookupByLibrary.simpleMessage("Recetas"),

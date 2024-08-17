@@ -8,6 +8,9 @@
   "@addedToShoppingList": {
     "description": "Message displayed when an item is added to the shopping list"
   },
+  "@addNewRecipe": {
+    "description": "Button text to add a new recipe"
+  },
   "@addPantryItem": {
     "description": "Button text to add an item to the pantry"
   },
@@ -62,11 +65,17 @@
   "@failedToUpdateItem": {
     "description": "Error message when an item cannot be updated"
   },
+  "@hours": {
+    "description": "Label for the hours"
+  },
   "@language": {
     "description": "Label for the language setting"
   },
   "@lightTheme": {
     "description": "Label for the light theme"
+  },
+  "@minutes": {
+    "description": "Label for the minutes"
   },
   "@mustBePositive": {
     "description": "Error message when the quantity is not a positive number"
@@ -110,6 +119,9 @@
   "@recipeCostName": {
     "description": "Name of the recipe cost"
   },
+  "@recipeDescription": {
+    "description": "Label for the recipe description"
+  },
   "@recipeDifficulty": {
     "description": "Label for the recipe difficulty"
   },
@@ -127,6 +139,9 @@
   },
   "@recipesTitle": {
     "description": "Title for the recipes page"
+  },
+  "@recipeTime": {
+    "description": "Label for the recipe time"
   },
   "@recipeTypeLabel": {
     "description": "Label for the recipe type"
@@ -182,6 +197,7 @@
   "add": "Add",
   "addedToPantry": "Item added to pantry!",
   "addedToShoppingList": "Item added to shopping list!",
+  "addNewRecipe": "Add New Recipe",
   "addPantryItem": "Add Pantry Item",
   "addShoppingListItem": "Add Shopping List Item",
   "appDevelopedBy": "Developed by Benjamin Choron",
@@ -200,8 +216,10 @@
   "failedToAddItem": "Failed to add item... Please try again later.",
   "failedToRemoveItem": "Failed to remove item... Please try again later.",
   "failedToUpdateItem": "Failed to update item... Please try again later.",
+  "hours": "hours",
   "language": "Language",
   "lightTheme": "Light",
+  "minutes": "minutes",
   "mustBePositive": "Must be a positive number",
   "mustHaveCharacters": "Must be between 1 and 30 characters",
   "nameLabel": "Name",
@@ -216,12 +234,14 @@
   "recipeCost": "Cost",
   "recipeCostLabel": "Cost",
   "recipeCostName": "{name, select, Low {Low} Medium {Medium} High {High}}",
+  "recipeDescription": "Description",
   "recipeDifficulty": "Difficulty",
   "recipeDifficultyLabel": "Difficulty",
   "recipeDifficultyName": "{name, select, Easy {Easy} Medium {Medium} Hard {Hard}}",
   "recipeIngredients": "Ingredients",
   "recipeSteps": "Steps",
   "recipesTitle": "Recipes",
+  "recipeTimeLabel": "Time",
   "recipeTypeLabel": "Type",
   "recipeTypeName": "{name, select, Breakfast {Breakfast} Lunch {Lunch} Dinner {Dinner} Snack {Snack} Dessert {Dessert}}",
   "reset": "Reset",

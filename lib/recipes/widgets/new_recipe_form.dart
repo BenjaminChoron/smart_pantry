@@ -9,6 +9,7 @@ import 'package:smart_pantry/recipes/models/recipe_difficulty.dart';
 import 'package:smart_pantry/recipes/models/recipe_type.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_cost_dropdown_form_input.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_difficulty_dropdown_form_input.dart';
+import 'package:smart_pantry/recipes/widgets/recipe_time_form_input.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_type_dropdown_form_input.dart';
 
 class NewRecipeForm extends StatefulWidget {
@@ -21,6 +22,23 @@ class NewRecipeForm extends StatefulWidget {
 class _NewRecipeFormState extends State<NewRecipeForm> {
   final _formKey = GlobalKey<FormState>();
   String _enteredName = '';
+  RecipeType _selectedRecipeType = recipeTypes[Types.breakfast]!;
+  RecipeDifficulty _selectedRecipeDifficulty =
+      recipeDifficulties[Difficulties.easy]!;
+  RecipeCost _selectedRecipeCost = recipeCosts[Costs.low]!;
+  int _hours = 0;
+  int _minutes = 0;
+
+  void _saveRecipe() {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      print('Name: $_enteredName');
+      print('Type: ${_selectedRecipeType.name}');
+      print('Difficulty: ${_selectedRecipeDifficulty.name}');
+      print('Cost: ${_selectedRecipeCost.name}');
+      print('Time: $_hours hours $_minutes minutes');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +65,7 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
             child: Column(
               children: [
                 Text(
-                  'Description',
+                  S.of(context).recipeDescription,
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onSurface,
                       fontWeight: FontWeight.bold),
@@ -58,17 +76,34 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
                   thickness: 1,
                 ),
                 RecipeTypeDropdownFormInput(
-                  recipeType: recipeTypes[Types.breakfast]!,
-                  onChanged: (value) {},
+                  recipeType: _selectedRecipeType,
+                  onChanged: (value) {
+                    _selectedRecipeType = value;
+                  },
                 ),
                 RecipeDifficultyDropdownFormInput(
-                  recipeDifficulty: recipeDifficulties[Difficulties.easy]!,
-                  onChanged: (value) {},
+                  recipeDifficulty: _selectedRecipeDifficulty,
+                  onChanged: (value) {
+                    _selectedRecipeDifficulty = value;
+                  },
                 ),
                 RecipeCostDropdownFormInput(
-                  recipeCost: recipeCosts[Costs.low]!,
-                  onChanged: (value) {},
-                )
+                  recipeCost: _selectedRecipeCost,
+                  onChanged: (value) {
+                    _selectedRecipeCost = value;
+                  },
+                ),
+                const SizedBox(height: 10),
+                RecipeTimeFormInput(
+                  hours: _hours,
+                  minutes: _minutes,
+                  onHoursSaved: (value) {
+                    _hours = value;
+                  },
+                  onMinutesSaved: (value) {
+                    _minutes = value;
+                  },
+                ),
               ],
             ),
           ),
@@ -84,7 +119,7 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
               ),
               const SizedBox(width: 12),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => _saveRecipe,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.primary,
                 ),

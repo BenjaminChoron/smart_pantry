@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/recipes/widgets/new_recipe_form.dart';
 
 class AddNewRecipeView extends StatelessWidget {
@@ -8,11 +9,21 @@ class AddNewRecipeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add New Recipe'),
+        title: Text(
+          S.of(context).addNewRecipe,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge!
+              .copyWith(color: Theme.of(context).colorScheme.onSurface),
+        ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16),
-        child: NewRecipeForm(),
+      body: const SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: NewRecipeForm(),
+          ),
+        ),
       ),
     );
   }

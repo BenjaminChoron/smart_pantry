@@ -80,6 +80,16 @@ class S {
     );
   }
 
+  /// `Add New Recipe`
+  String get addNewRecipe {
+    return Intl.message(
+      'Add New Recipe',
+      name: 'addNewRecipe',
+      desc: 'Button text to add a new recipe',
+      args: [],
+    );
+  }
+
   /// `Add Pantry Item`
   String get addPantryItem {
     return Intl.message(
@@ -274,6 +284,16 @@ class S {
     );
   }
 
+  /// `hours`
+  String get hours {
+    return Intl.message(
+      'hours',
+      name: 'hours',
+      desc: 'Label for the hours',
+      args: [],
+    );
+  }
+
   /// `Language`
   String get language {
     return Intl.message(
@@ -290,6 +310,16 @@ class S {
       'Light',
       name: 'lightTheme',
       desc: 'Label for the light theme',
+      args: [],
+    );
+  }
+
+  /// `minutes`
+  String get minutes {
+    return Intl.message(
+      'minutes',
+      name: 'minutes',
+      desc: 'Label for the minutes',
       args: [],
     );
   }
@@ -439,6 +469,16 @@ class S {
     );
   }
 
+  /// `Description`
+  String get recipeDescription {
+    return Intl.message(
+      'Description',
+      name: 'recipeDescription',
+      desc: 'Label for the recipe description',
+      args: [],
+    );
+  }
+
   /// `Difficulty`
   String get recipeDifficulty {
     return Intl.message(
@@ -500,6 +540,16 @@ class S {
       'Recipes',
       name: 'recipesTitle',
       desc: 'Title for the recipes page',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get recipeTimeLabel {
+    return Intl.message(
+      'Time',
+      name: 'recipeTimeLabel',
+      desc: '',
       args: [],
     );
   }
