@@ -52,9 +52,9 @@ class RecipesView extends StatelessWidget {
           ),
         ],
         steps: [
-          'Step 1',
-          'Step 2',
-          'Step 3',
+          'Aliqua ipsum et sint cillum qui eu nulla in eiusmod nulla commodo nulla deserunt.',
+          'Non non nisi velit duis eu dolore tempor.',
+          'Esse aliquip magna dolore duis exercitation elit laboris reprehenderit occaecat aute Lorem qui.',
         ],
       ),
       Recipe(
@@ -83,9 +83,9 @@ class RecipesView extends StatelessWidget {
           ),
         ],
         steps: [
-          'Step 1',
-          'Step 2',
-          'Step 3',
+          'Amet officia duis ea proident fugiat.',
+          'Dolore mollit cupidatat officia esse consequat commodo voluptate ex et exercitation amet cupidatat fugiat.',
+          'Eiusmod do amet velit mollit pariatur non commodo ea tempor eiusmod cupidatat reprehenderit.',
         ],
       ),
       Recipe(
@@ -114,9 +114,9 @@ class RecipesView extends StatelessWidget {
           ),
         ],
         steps: [
-          'Step 1',
-          'Step 2',
-          'Step 3',
+          'Culpa commodo elit nisi commodo laborum officia.',
+          'Occaecat consectetur proident qui cillum nulla officia reprehenderit est.',
+          'Occaecat veniam adipisicing ut enim veniam veniam do anim ad ad nisi labore.',
         ],
       )
     ];
