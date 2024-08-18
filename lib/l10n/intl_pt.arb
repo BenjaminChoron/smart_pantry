@@ -33,6 +33,7 @@
   "pantryDialogActionYes": "Sim",
   "pantryDialogConfirmContent": "Você realmente deseja remover este item da sua despensa?",
   "pantryDialogDismissContent": "Deseja adicionar este item à sua lista de compras?",
+  "pantryDialogDismissTitle": "Adicionar à lista de compras",
   "pantryDialogTitle": "Remoção de item da despensa",
   "pantryTitle": "Despensa",
   "quantityLabel": "Quantidade",

@@ -394,12 +394,22 @@ class S {
     );
   }
 
-  /// `Do you want to add this item to your pantry?`
+  /// `Do you want to add this item to your shopping list?`
   String get pantryDialogDismissContent {
     return Intl.message(
-      'Do you want to add this item to your pantry?',
+      'Do you want to add this item to your shopping list?',
       name: 'pantryDialogDismissContent',
       desc: 'Content for the dialog to add a pantry item to the pantry',
+      args: [],
+    );
+  }
+
+  /// `Add to shopping list`
+  String get pantryDialogDismissTitle {
+    return Intl.message(
+      'Add to shopping list',
+      name: 'pantryDialogDismissTitle',
+      desc: 'Title for the dialog to add a pantry item to the shopping list',
       args: [],
     );
   }

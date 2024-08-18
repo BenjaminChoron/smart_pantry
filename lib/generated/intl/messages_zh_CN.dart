@@ -113,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("您真的要从储藏室中删除此项目吗？"),
         "pantryDialogDismissContent":
             MessageLookupByLibrary.simpleMessage("您想将此项目添加到购物清单吗？"),
+        "pantryDialogDismissTitle":
+            MessageLookupByLibrary.simpleMessage("添加到购物清单"),
         "pantryDialogTitle": MessageLookupByLibrary.simpleMessage("从储藏室删除项目"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("储藏室"),
         "quantityLabel": MessageLookupByLibrary.simpleMessage("数量"),

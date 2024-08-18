@@ -33,6 +33,7 @@
   "pantryDialogActionYes": "Ja",
   "pantryDialogConfirmContent": "Möchten Sie diesen Artikel wirklich aus Ihrem Vorrat entfernen?",
   "pantryDialogDismissContent": "Möchten Sie diesen Artikel zu Ihrer Einkaufsliste hinzufügen?",
+  "pantryDialogDismissTitle": "Zur Einkaufsliste hinzufügen",
   "pantryDialogTitle": "Entfernen eines Artikels aus dem Vorrat",
   "pantryTitle": "Vorrat",
   "quantityLabel": "Menge",

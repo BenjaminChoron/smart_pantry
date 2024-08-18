@@ -33,6 +33,7 @@
   "pantryDialogActionYes": "Oui",
   "pantryDialogConfirmContent": "Voulez-vous vraiment supprimer cet élément de votre garde-manger ?",
   "pantryDialogDismissContent": "Voulez-vous ajouter cet élément à votre liste de courses ?",
+  "pantryDialogDismissTitle": "Ajouter à la liste de courses",
   "pantryDialogTitle": "Suppression d'un élément du garde-manger",
   "pantryTitle": "Garde-manger",
   "quantityLabel": "Quantité",

@@ -120,6 +120,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Möchten Sie diesen Artikel wirklich aus Ihrem Vorrat entfernen?"),
         "pantryDialogDismissContent": MessageLookupByLibrary.simpleMessage(
             "Möchten Sie diesen Artikel zu Ihrer Einkaufsliste hinzufügen?"),
+        "pantryDialogDismissTitle": MessageLookupByLibrary.simpleMessage(
+            "Zur Einkaufsliste hinzufügen"),
         "pantryDialogTitle": MessageLookupByLibrary.simpleMessage(
             "Entfernen eines Artikels aus dem Vorrat"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Vorrat"),

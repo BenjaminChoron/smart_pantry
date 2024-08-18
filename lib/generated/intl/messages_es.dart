@@ -123,6 +123,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "¿Realmente quiere eliminar este elemento de su despensa?"),
         "pantryDialogDismissContent": MessageLookupByLibrary.simpleMessage(
             "¿Quiere agregar este elemento a su lista de compras?"),
+        "pantryDialogDismissTitle": MessageLookupByLibrary.simpleMessage(
+            "Agregar a la lista de compras"),
         "pantryDialogTitle": MessageLookupByLibrary.simpleMessage(
             "Eliminación de un elemento de la despensa"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Despensa"),

@@ -33,6 +33,7 @@
   "pantryDialogActionYes": "是",
   "pantryDialogConfirmContent": "您真的要从储藏室中删除此项目吗？",
   "pantryDialogDismissContent": "您想将此项目添加到购物清单吗？",
+  "pantryDialogDismissTitle": "添加到购物清单",
   "pantryDialogTitle": "从储藏室删除项目",
   "pantryTitle": "储藏室",
   "quantityLabel": "数量",

@@ -108,7 +108,7 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
               context: context,
               builder: (_) {
                 return GlobalAlertDialog(
-                  title: S.of(context).pantryDialogTitle,
+                  title: S.of(context).pantryDialogDismissTitle,
                   content: S.of(context).pantryDialogDismissContent,
                   actionYes: S.of(context).pantryDialogActionYes,
                   actionNo: S.of(context).pantryDialogActionNo,

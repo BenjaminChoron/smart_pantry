@@ -101,6 +101,9 @@
   "@pantryDialogDismissContent": {
     "description": "Content for the dialog to add a pantry item to the pantry"
   },
+  "@pantryDialogDismissTitle": {
+    "description": "Title for the dialog to add a pantry item to the shopping list"
+  },
   "@pantryDialogTitle": {
     "description": "Title for the dialog to remove pantry item"
   },
@@ -233,7 +236,8 @@
   "pantryDialogActionNo": "No",
   "pantryDialogActionYes": "Yes",
   "pantryDialogConfirmContent": "Do you really want to remove this item from your pantry?",
-  "pantryDialogDismissContent": "Do you want to add this item to your pantry?",
+  "pantryDialogDismissContent": "Do you want to add this item to your shopping list?",
+  "pantryDialogDismissTitle": "Add to shopping list",
   "pantryDialogTitle": "Pantry Item Removal",
   "pantryTitle": "Pantry",
   "quantityLabel": "Quantity",

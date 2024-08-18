@@ -119,7 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "pantryDialogConfirmContent": MessageLookupByLibrary.simpleMessage(
             "Do you really want to remove this item from your pantry?"),
         "pantryDialogDismissContent": MessageLookupByLibrary.simpleMessage(
-            "Do you want to add this item to your pantry?"),
+            "Do you want to add this item to your shopping list?"),
+        "pantryDialogDismissTitle":
+            MessageLookupByLibrary.simpleMessage("Add to shopping list"),
         "pantryDialogTitle":
             MessageLookupByLibrary.simpleMessage("Pantry Item Removal"),
         "pantryTitle": MessageLookupByLibrary.simpleMessage("Pantry"),
