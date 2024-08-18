@@ -34,41 +34,29 @@ class _RecipeTimeFormInputState extends State<RecipeTimeFormInput> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          S.of(context).recipeTimeLabel,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
-                fontWeight: FontWeight.bold,
-              ),
+        SizedBox(
+          width: 70,
+          child: NumberFormInput(
+            initialValue: _hours,
+            label: S.of(context).hours,
+            onSaved: (value) {
+              _hours = value;
+              widget.onHoursSaved(_hours);
+            },
+          ),
         ),
-        Row(
-          children: [
-            SizedBox(
-              width: 100,
-              child: NumberFormInput(
-                initialValue: _hours,
-                label: S.of(context).hours,
-                onSaved: (value) {
-                  _hours = value;
-                  widget.onHoursSaved(_hours);
-                },
-              ),
-            ),
-            const SizedBox(width: 20),
-            SizedBox(
-              width: 100,
-              child: NumberFormInput(
-                initialValue: _minutes,
-                label: S.of(context).minutes,
-                onSaved: (value) {
-                  _minutes = value;
-                  widget.onMinutesSaved(_minutes);
-                },
-              ),
-            ),
-          ],
+        const SizedBox(width: 10),
+        SizedBox(
+          width: 70,
+          child: NumberFormInput(
+            initialValue: _minutes,
+            label: S.of(context).minutes,
+            onSaved: (value) {
+              _minutes = value;
+              widget.onMinutesSaved(_minutes);
+            },
+          ),
         ),
       ],
     );

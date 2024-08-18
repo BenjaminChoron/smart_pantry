@@ -55,38 +55,46 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
           ),
           const SizedBox(height: 20),
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               border: Border.all(
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
+                color: Theme.of(context).colorScheme.onSurface,
               ),
               borderRadius: BorderRadius.circular(5),
             ),
             child: Column(
               children: [
-                Text(
-                  S.of(context).recipeDescription,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: Theme.of(context).colorScheme.onSurface,
-                      fontWeight: FontWeight.bold),
-                ),
-                Divider(
-                  color:
-                      Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
-                  height: 20,
-                  thickness: 1,
-                ),
-                RecipeTypeDropdownFormInput(
-                  recipeType: _selectedRecipeType,
-                  onChanged: (value) {
-                    _selectedRecipeType = value;
-                  },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: RecipeTypeDropdownFormInput(
+                        recipeType: _selectedRecipeType,
+                        onChanged: (value) {
+                          _selectedRecipeType = value;
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: RecipeTimeFormInput(
+                        hours: _hours,
+                        minutes: _minutes,
+                        onHoursSaved: (value) {
+                          _hours = value;
+                        },
+                        onMinutesSaved: (value) {
+                          _minutes = value;
+                        },
+                      ),
+                    ),
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.4,
+                    Expanded(
                       child: RecipeCostDropdownFormInput(
                         recipeCost: _selectedRecipeCost,
                         onChanged: (value) {
@@ -94,8 +102,8 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
                         },
                       ),
                     ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.4,
+                    const SizedBox(width: 10),
+                    Expanded(
                       child: RecipeDifficultyDropdownFormInput(
                         recipeDifficulty: _selectedRecipeDifficulty,
                         onChanged: (value) {
@@ -104,17 +112,6 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
                       ),
                     ),
                   ],
-                ),
-                const SizedBox(height: 10),
-                RecipeTimeFormInput(
-                  hours: _hours,
-                  minutes: _minutes,
-                  onHoursSaved: (value) {
-                    _hours = value;
-                  },
-                  onMinutesSaved: (value) {
-                    _minutes = value;
-                  },
                 ),
               ],
             ),
