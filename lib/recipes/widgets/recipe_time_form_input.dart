@@ -38,6 +38,7 @@ class _RecipeTimeFormInputState extends State<RecipeTimeFormInput> {
         SizedBox(
           width: 70,
           child: NumberFormInput(
+            isNullable: true,
             initialValue: _hours,
             label: S.of(context).hours,
             onSaved: (value) {
@@ -50,6 +51,7 @@ class _RecipeTimeFormInputState extends State<RecipeTimeFormInput> {
         SizedBox(
           width: 70,
           child: NumberFormInput(
+            isNullable: true,
             initialValue: _minutes,
             label: S.of(context).minutes,
             onSaved: (value) {

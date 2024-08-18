@@ -7,11 +7,13 @@ class NumberFormInput extends StatelessWidget {
     required this.label,
     required this.onSaved,
     this.initialValue = 0,
+    this.isNullable = false,
   });
 
   final String label;
   final Function(int) onSaved;
   final int initialValue;
+  final bool isNullable;
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +39,10 @@ class NumberFormInput extends StatelessWidget {
       keyboardType: TextInputType.number,
       maxLength: 4,
       validator: (value) {
-        if (value == null ||
-            value.isEmpty ||
-            int.tryParse(value) == null ||
-            int.tryParse(value)! <= 0) {
+        if (value == null || value.isEmpty || int.tryParse(value) == null) {
+          return S.of(context).mustBePositive;
+        }
+        if (!isNullable && int.tryParse(value)! <= 0) {
           return S.of(context).mustBePositive;
         }
         return null;
