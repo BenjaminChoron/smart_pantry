@@ -94,11 +94,14 @@ class RecipeDetails extends StatelessWidget {
                       thickness: 0.2,
                       height: 20,
                     ),
-                    Text(
-                      recipe.steps,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: Theme.of(context).colorScheme.onSurface,
-                          ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        recipe.steps,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                      ),
                     ),
                   ],
                 ),
