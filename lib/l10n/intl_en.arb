@@ -86,6 +86,9 @@
   "@nameLabel": {
     "description": "Label for the name input field"
   },
+  "@newIngredientLabel": {
+    "description": "Label for the new ingredient input field"
+  },
   "@noItems": {
     "description": "Message displayed when there are no items in the list"
   },
@@ -185,6 +188,9 @@
   "@shoppingListTitle": {
     "description": "Title for the shopping list page"
   },
+  "@stepsLabel": {
+    "description": "Label for the recipe steps"
+  },
   "@storageName": {
     "description": "Name of the storage location"
   },
@@ -232,6 +238,7 @@
   "mustBePositive": "Must be a positive number",
   "mustHaveCharacters": "Must be between 1 and 30 characters",
   "nameLabel": "Name",
+  "newIngredientLabel": "New Ingredient",
   "noItems": "No items added yet.",
   "pantryDialogActionNo": "No",
   "pantryDialogActionYes": "Yes",
@@ -265,6 +272,7 @@
   "shoppingListRemoveDialogConfirmContent": "Do you really want to remove this item from your shopping list?",
   "shoppingListRemoveDialogTitle": "Shopping List Item Removal",
   "shoppingListTitle": "Shopping List",
+  "stepsLabel": "Steps",
   "storageName": "{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}",
   "store": "Store",
   "systemTheme": "System",

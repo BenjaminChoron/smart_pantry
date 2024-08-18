@@ -115,6 +115,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "mustHaveCharacters": MessageLookupByLibrary.simpleMessage(
             "Deve contenere tra 1 e 30 caratteri"),
         "nameLabel": MessageLookupByLibrary.simpleMessage("Nome"),
+        "newIngredientLabel":
+            MessageLookupByLibrary.simpleMessage("Nuovo ingrediente"),
         "noItems": MessageLookupByLibrary.simpleMessage(
             "Nessun elemento aggiunto al momento."),
         "pantryDialogActionNo": MessageLookupByLibrary.simpleMessage("No"),
@@ -159,6 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Articolo acquistato dalla lista della spesa"),
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Lista della spesa"),
+        "stepsLabel": MessageLookupByLibrary.simpleMessage("Passaggi"),
         "storageName": m5,
         "store": MessageLookupByLibrary.simpleMessage("Conserva"),
         "systemTheme": MessageLookupByLibrary.simpleMessage("Sistema"),

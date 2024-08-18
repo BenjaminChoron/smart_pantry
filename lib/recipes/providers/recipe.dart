@@ -1,6 +1,5 @@
 import 'package:path/path.dart' as path;
 import 'package:smart_pantry/globals/data/units.dart';
-import 'package:smart_pantry/globals/models/unit.dart';
 import 'package:smart_pantry/recipes/data/recipe_costs.dart';
 import 'package:smart_pantry/recipes/data/recipe_difficulties.dart';
 import 'package:smart_pantry/recipes/data/recipe_types.dart';
@@ -59,11 +58,7 @@ class RecipeNotifier extends StateNotifier<List<Recipe>> {
       'cost': newItem.description.cost.name,
       'type': newItem.description.type.name,
       'ingredients': newItem.ingredients.map((e) {
-        return {
-          'name': e.name,
-          'quantity': e.quantity,
-          'unit': e.unit.name,
-        };
+        return '${e.name}|${e.quantity}|${e.unit.name}';
       }).toString(),
       'steps': newItem.steps,
     });
@@ -92,7 +87,7 @@ class RecipeNotifier extends StateNotifier<List<Recipe>> {
                 (difficulty) => difficulty.name == row['difficulty'],
               ),
               time: RecipeTime(
-                // row['time] is this format => "hours|minutes"
+                // row['time] format => "hours|minutes"
                 hours: int.parse((row['time'] as String).split('|')[0]),
                 minutes: int.parse((row['time'] as String).split('|')[1]),
               ),
@@ -100,13 +95,21 @@ class RecipeNotifier extends StateNotifier<List<Recipe>> {
                 (type) => type.name == row['type'],
               ),
             ),
-            ingredients: [
-              RecipeIngredient(
-                name: 'Test',
-                quantity: 10,
-                unit: units[Units.gram]!,
-              ),
-            ],
+            // row['steps] format => (name|quantity|unitName, name|quantity|unitName)
+            ingredients: ((row['ingredients'] as String)
+                    .replaceAll('(', '')
+                    .replaceAll(')', '')
+                    .split(', '))
+                .map(
+                  (e) => RecipeIngredient(
+                    name: e.split('|')[0],
+                    quantity: double.parse(e.split('|')[1]),
+                    unit: units.values.firstWhere(
+                      (unit) => unit.name == e.split('|')[2],
+                    ),
+                  ),
+                )
+                .toList(),
             steps: row['steps'] as String,
           ),
         )

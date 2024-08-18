@@ -106,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "mustHaveCharacters":
             MessageLookupByLibrary.simpleMessage("必须包含1到30个字符"),
         "nameLabel": MessageLookupByLibrary.simpleMessage("名称"),
+        "newIngredientLabel": MessageLookupByLibrary.simpleMessage("新配料"),
         "noItems": MessageLookupByLibrary.simpleMessage("目前没有添加任何项目。"),
         "pantryDialogActionNo": MessageLookupByLibrary.simpleMessage("否"),
         "pantryDialogActionYes": MessageLookupByLibrary.simpleMessage("是"),
@@ -142,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "shoppingListAddToPantryDialogTitle":
             MessageLookupByLibrary.simpleMessage("购物清单购买的项目"),
         "shoppingListTitle": MessageLookupByLibrary.simpleMessage("购物清单"),
+        "stepsLabel": MessageLookupByLibrary.simpleMessage("步骤"),
         "storageName": m5,
         "store": MessageLookupByLibrary.simpleMessage("存放"),
         "systemTheme": MessageLookupByLibrary.simpleMessage("系统"),

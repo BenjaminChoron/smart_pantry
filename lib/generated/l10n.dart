@@ -354,6 +354,16 @@ class S {
     );
   }
 
+  /// `New Ingredient`
+  String get newIngredientLabel {
+    return Intl.message(
+      'New Ingredient',
+      name: 'newIngredientLabel',
+      desc: 'Label for the new ingredient input field',
+      args: [],
+    );
+  }
+
   /// `No items added yet.`
   String get noItems {
     return Intl.message(
@@ -698,6 +708,16 @@ class S {
       'Shopping List',
       name: 'shoppingListTitle',
       desc: 'Title for the shopping list page',
+      args: [],
+    );
+  }
+
+  /// `Steps`
+  String get stepsLabel {
+    return Intl.message(
+      'Steps',
+      name: 'stepsLabel',
+      desc: 'Label for the recipe steps',
       args: [],
     );
   }

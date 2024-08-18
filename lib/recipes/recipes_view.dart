@@ -1,105 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:smart_pantry/generated/l10n.dart';
-import 'package:smart_pantry/globals/data/units.dart';
-import 'package:smart_pantry/globals/models/unit.dart';
 import 'package:smart_pantry/globals/widgets/expiration_icon.dart';
+import 'package:smart_pantry/globals/widgets/global_alert_dialog.dart';
 import 'package:smart_pantry/pantry/pantry_view.dart';
 import 'package:smart_pantry/recipes/add_new_recipe_view.dart';
-import 'package:smart_pantry/recipes/data/recipe_costs.dart';
-import 'package:smart_pantry/recipes/data/recipe_difficulties.dart';
-import 'package:smart_pantry/recipes/data/recipe_types.dart';
 import 'package:smart_pantry/recipes/models/recipe.dart';
-import 'package:smart_pantry/recipes/models/recipe_cost.dart';
-import 'package:smart_pantry/recipes/models/recipe_description.dart';
-import 'package:smart_pantry/recipes/models/recipe_difficulty.dart';
-import 'package:smart_pantry/recipes/models/recipe_ingredient.dart';
-import 'package:smart_pantry/recipes/models/recipe_time.dart';
-import 'package:smart_pantry/recipes/models/recipe_type.dart';
+import 'package:smart_pantry/recipes/providers/recipe.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_card.dart';
 import 'package:smart_pantry/settings/settings_view.dart';
 import 'package:smart_pantry/shopping_list/shopping_list_view.dart';
 
-class RecipesView extends StatelessWidget {
+class RecipesView extends ConsumerStatefulWidget {
   const RecipesView({super.key});
 
   static const routeName = '/recipes';
 
   @override
+  ConsumerState<RecipesView> createState() => _RecipesViewState();
+}
+
+class _RecipesViewState extends ConsumerState<RecipesView> {
+  late Future<void> _allRecipes;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _allRecipes = ref.watch(recipeProvider.notifier).loadItems();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final items = [
-      Recipe(
-        name: 'Sandwich au poulet mariné',
-        description: RecipeDescription(
-          cost: recipeCosts[Costs.low]!,
-          difficulty: recipeDifficulties[Difficulties.easy]!,
-          time: RecipeTime(minutes: 30),
-          type: recipeTypes[Types.lunch]!,
-        ),
-        ingredients: [
-          RecipeIngredient(
-            name: 'Baguette',
-            quantity: 1,
-            unit: units[Units.piece]!,
+    final allRecipes = ref.watch(recipeProvider);
+
+    void onRemoveItem(Recipe recipe) async {
+      final index = allRecipes.indexOf(recipe);
+
+      setState(() {
+        allRecipes.remove(recipe);
+      });
+
+      final recipes = ref.read(recipeProvider.notifier);
+      final result = await recipes.removeItem(recipe);
+
+      if (!result) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(S.of(context).failedToRemoveItem),
+            backgroundColor: Theme.of(context).colorScheme.error,
+            duration: const Duration(seconds: 2),
           ),
-          RecipeIngredient(
-            name: 'Escalope de poulet',
-            quantity: 1,
-            unit: units[Units.piece]!,
-          ),
-          RecipeIngredient(
-            name: 'Huile d\'olive',
-            quantity: 20,
-            unit: units[Units.milliliter]!,
-          ),
-          RecipeIngredient(
-            name: 'Gousse d\'ail',
-            quantity: 1,
-            unit: units[Units.piece]!,
-          ),
-          RecipeIngredient(
-            name: 'Persil',
-            quantity: 20,
-            unit: units[Units.gram]!,
-          ),
-          RecipeIngredient(
-            name: 'Jus de citron',
-            quantity: 50,
-            unit: units[Units.milliliter]!,
-          ),
-          RecipeIngredient(
-            name: 'Mayonnaise',
-            quantity: 20,
-            unit: units[Units.gram]!,
-          ),
-          RecipeIngredient(
-            name: 'Feuilles de salade',
-            quantity: 4,
-            unit: units[Units.piece]!,
-          ),
-          RecipeIngredient(
-            name: 'Tomates séchées',
-            quantity: 6,
-            unit: units[Units.piece]!,
-          ),
-        ],
-        steps: [
-          'Hacher l\'ail.',
-          'Hacher le persil.',
-          'Mélanger le pot de tomates séchées avec le persil, l\'ail, l\'huile d\'olive et le jus de citron.',
-          'Faire mariner l\'escalope de poulet pendant au moins 15 minutes.',
-          'Faire griller à feu vif l\'escalope de poulet dans une poêle antiadhésive pendant environ 5 minutes.',
-          'Couper la baguette en deux.',
-          'Tartiner la mayonnaise sur les deux côtés de la baguette.',
-          'Disposer les feuilles de salade sur la baguette.',
-          'Ajouter l\'escalope de poulet grillée coupée en lamelles.',
-          'Ajouter la préparation de tomates séchées.',
-          'Ajouter les feuilles de salade.',
-          'Refermer la baguette.',
-          'Déguster !',
-        ],
-      ),
-    ];
+        );
+        setState(() {
+          allRecipes.insert(index, recipe);
+        });
+      }
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -187,16 +144,57 @@ class RecipesView extends StatelessWidget {
           ),
         ),
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ListView.builder(
-            itemCount: items.length,
-            itemBuilder: (context, index) {
-              return RecipeCard(recipe: items[index]);
-            },
-          ),
-        ),
+      body: FutureBuilder(
+        future: _allRecipes,
+        builder: (context, snapshot) => snapshot.connectionState ==
+                ConnectionState.waiting
+            ? const Center(child: CircularProgressIndicator())
+            : SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListView.builder(
+                    itemCount: allRecipes.length,
+                    itemBuilder: (context, index) {
+                      final item = allRecipes[index];
+                      return Dismissible(
+                        key: ValueKey(item.id),
+                        confirmDismiss: (_) async {
+                          return await showDialog(
+                            context: context,
+                            builder: (_) {
+                              return GlobalAlertDialog(
+                                title: S.of(context).pantryDialogTitle,
+                                content:
+                                    S.of(context).pantryDialogConfirmContent,
+                                actionYes: S.of(context).pantryDialogActionYes,
+                                actionNo: S.of(context).pantryDialogActionNo,
+                                doOnYesAction: () {
+                                  Navigator.of(context).pop(true);
+                                },
+                                doOnNoAction: () {
+                                  Navigator.of(context).pop(false);
+                                },
+                              );
+                            },
+                          );
+                        },
+                        onDismissed: (_) => onRemoveItem(item),
+                        direction: DismissDirection.endToStart,
+                        background: Container(
+                          alignment: Alignment.centerRight,
+                          padding: const EdgeInsets.only(right: 16),
+                          child: Icon(
+                            Icons.delete,
+                            color: Theme.of(context).colorScheme.error,
+                            size: 32,
+                          ),
+                        ),
+                        child: RecipeCard(recipe: item),
+                      );
+                    },
+                  ),
+                ),
+              ),
       ),
     );
   }

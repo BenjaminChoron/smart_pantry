@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/widgets/text_form_input.dart';
 import 'package:smart_pantry/recipes/data/recipe_costs.dart';
 import 'package:smart_pantry/recipes/data/recipe_difficulties.dart';
 import 'package:smart_pantry/recipes/data/recipe_types.dart';
 import 'package:smart_pantry/recipes/models/recipe_cost.dart';
+import 'package:smart_pantry/recipes/models/recipe_description.dart';
 import 'package:smart_pantry/recipes/models/recipe_difficulty.dart';
+import 'package:smart_pantry/recipes/models/recipe_ingredient.dart';
+import 'package:smart_pantry/recipes/models/recipe_time.dart';
 import 'package:smart_pantry/recipes/models/recipe_type.dart';
+import 'package:smart_pantry/recipes/providers/recipe.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_cost_dropdown_form_input.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_difficulty_dropdown_form_input.dart';
+import 'package:smart_pantry/recipes/widgets/recipe_ingredients_input_form.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_time_form_input.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_type_dropdown_form_input.dart';
 
-class NewRecipeForm extends StatefulWidget {
+class NewRecipeForm extends ConsumerStatefulWidget {
   const NewRecipeForm({super.key});
 
   @override
-  State<NewRecipeForm> createState() => _NewRecipeFormState();
+  ConsumerState<NewRecipeForm> createState() => _NewRecipeFormState();
 }
 
-class _NewRecipeFormState extends State<NewRecipeForm> {
+class _NewRecipeFormState extends ConsumerState<NewRecipeForm> {
   final _formKey = GlobalKey<FormState>();
   String _enteredName = '';
   RecipeType _selectedRecipeType = recipeTypes[Types.breakfast]!;
@@ -28,15 +34,52 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
   RecipeCost _selectedRecipeCost = recipeCosts[Costs.low]!;
   int _hours = 0;
   int _minutes = 0;
+  List<RecipeIngredient> _enteredIngredients = [];
+  String _enteredSteps = '';
 
-  void _saveRecipe() {
+  bool _stepsInputIsFocus = false;
+  bool _isSending = false;
+
+  void _saveRecipe() async {
     if (_formKey.currentState!.validate()) {
+      setState(() {
+        _isSending = true;
+      });
+
       _formKey.currentState!.save();
-      print('Name: $_enteredName');
-      print('Type: ${_selectedRecipeType.name}');
-      print('Difficulty: ${_selectedRecipeDifficulty.name}');
-      print('Cost: ${_selectedRecipeCost.name}');
-      print('Time: $_hours hours $_minutes minutes');
+
+      final result = await ref.read(recipeProvider.notifier).addItem(
+            _enteredName,
+            RecipeDescription(
+              type: _selectedRecipeType,
+              difficulty: _selectedRecipeDifficulty,
+              cost: _selectedRecipeCost,
+              time: RecipeTime(
+                hours: _hours,
+                minutes: _minutes,
+              ),
+            ),
+            _enteredIngredients,
+            _enteredSteps,
+          );
+
+      if (!result) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(S.of(context).failedToAddItem),
+            backgroundColor: Theme.of(context).colorScheme.error,
+            duration: const Duration(seconds: 2),
+          ),
+        );
+
+        return;
+      }
+
+      setState(() {
+        _isSending = false;
+      });
+
+      Navigator.of(context).pop();
     }
   }
 
@@ -117,27 +160,78 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
             ),
           ),
           const SizedBox(height: 20),
+          RecipeIngredientsInput(
+            initialValues: _enteredIngredients,
+            onValidate: (value) {
+              _enteredIngredients = value;
+            },
+          ),
+          const SizedBox(height: 20),
+          TextFormField(
+            initialValue: '',
+            onTap: () => setState(() {
+              _stepsInputIsFocus = true;
+            }),
+            onTapOutside: (event) => setState(() {
+              _stepsInputIsFocus = false;
+            }),
+            maxLines: _stepsInputIsFocus ? 10 : 1,
+            decoration: InputDecoration(
+              label: Text(
+                S.of(context).stepsLabel,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(color: Theme.of(context).colorScheme.onSurface),
+              ),
+              border: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+              ),
+            ),
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.onSurface,
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty || value.trim().length <= 1) {
+                return S.of(context).mustHaveCharacters;
+              }
+              return null;
+            },
+            onSaved: (value) {
+              _enteredSteps = value!;
+            },
+          ),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               TextButton(
                 onPressed: () {
                   _formKey.currentState!.reset();
+                  _enteredIngredients.clear();
                 },
                 child: Text(S.of(context).reset),
               ),
               const SizedBox(width: 12),
               ElevatedButton(
-                onPressed: () => _saveRecipe,
+                onPressed: _isSending ? null : _saveRecipe,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.primary,
                 ),
-                child: Text(
-                  S.of(context).add,
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        color: Theme.of(context).colorScheme.onPrimary,
+                child: _isSending
+                    ? const SizedBox(
+                        width: 16,
+                        height: 16,
+                        child: CircularProgressIndicator(),
+                      )
+                    : Text(
+                        S.of(context).add,
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                              color: Theme.of(context).colorScheme.onPrimary,
+                            ),
                       ),
-                ),
               ),
             ],
           ),

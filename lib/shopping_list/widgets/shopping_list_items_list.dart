@@ -65,7 +65,7 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
       storage = storages[Storages.fridge]!;
     }
 
-    void _onStoreItem() async {
+    void onStoreItem() async {
       final result = await pantry.addItem(
         item.name,
         storage,
@@ -123,7 +123,7 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
                   const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed: () {
-                      _onStoreItem();
+                      onStoreItem();
                       Navigator.of(context).pop(true);
                     },
                     style: ElevatedButton.styleFrom(
