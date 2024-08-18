@@ -18,5 +18,5 @@ class Recipe {
   final String name;
   final RecipeDescription description;
   final List<RecipeIngredient> ingredients;
-  final List<String> steps;
+  final String steps;
 }
