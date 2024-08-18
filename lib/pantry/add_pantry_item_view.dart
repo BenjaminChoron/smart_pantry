@@ -18,9 +18,13 @@ class _AddPantryItemViewState extends ConsumerState<AddPantryItemView> {
       appBar: AppBar(
         title: Text(S.of(context).addPantryItem),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16),
-        child: PantryItemForm(),
+      body: const SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16),
+            child: PantryItemForm(),
+          ),
+        ),
       ),
     );
   }

@@ -58,7 +58,7 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               border: Border.all(
-                color: Theme.of(context).colorScheme.onSurface,
+                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
               ),
               borderRadius: BorderRadius.circular(5),
             ),
@@ -71,7 +71,8 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
                       fontWeight: FontWeight.bold),
                 ),
                 Divider(
-                  color: Theme.of(context).colorScheme.onSurface,
+                  color:
+                      Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
                   height: 20,
                   thickness: 1,
                 ),
@@ -81,17 +82,28 @@ class _NewRecipeFormState extends State<NewRecipeForm> {
                     _selectedRecipeType = value;
                   },
                 ),
-                RecipeDifficultyDropdownFormInput(
-                  recipeDifficulty: _selectedRecipeDifficulty,
-                  onChanged: (value) {
-                    _selectedRecipeDifficulty = value;
-                  },
-                ),
-                RecipeCostDropdownFormInput(
-                  recipeCost: _selectedRecipeCost,
-                  onChanged: (value) {
-                    _selectedRecipeCost = value;
-                  },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      child: RecipeCostDropdownFormInput(
+                        recipeCost: _selectedRecipeCost,
+                        onChanged: (value) {
+                          _selectedRecipeCost = value;
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      child: RecipeDifficultyDropdownFormInput(
+                        recipeDifficulty: _selectedRecipeDifficulty,
+                        onChanged: (value) {
+                          _selectedRecipeDifficulty = value;
+                        },
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 10),
                 RecipeTimeFormInput(

@@ -30,42 +30,36 @@ class _RecipeTypeDropdownFormInputState
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
+    return DropdownButtonFormField(
+      value: _selectedRecipeType,
+      dropdownColor: Theme.of(context).colorScheme.surfaceBright,
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        label: Text(
           S.of(context).recipeTypeLabel,
           style: Theme.of(context).textTheme.bodyLarge!.copyWith(
               color: Theme.of(context).colorScheme.onSurface,
               fontWeight: FontWeight.bold),
         ),
-        SizedBox(
-          width: 200,
-          child: DropdownButtonFormField(
-            value: _selectedRecipeType,
-            dropdownColor: Theme.of(context).colorScheme.surfaceBright,
-            decoration: const InputDecoration(
-              border: InputBorder.none,
-            ),
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
-            items: recipeTypes.entries
-                .map((entry) => DropdownMenuItem(
-                      value: entry.value,
-                      child:
-                          Text(S.of(context).recipeTypeName(entry.value.name)),
-                    ))
-                .toList(),
-            onChanged: (value) {
-              setState(() {
-                _selectedRecipeType = value!;
-              });
-              widget.onChanged(value!);
-            },
-          ),
+        labelStyle: TextStyle(
+          color: Theme.of(context).colorScheme.primary,
         ),
-      ],
+      ),
+      style: TextStyle(
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+      items: recipeTypes.entries
+          .map((entry) => DropdownMenuItem(
+                value: entry.value,
+                child: Text(S.of(context).recipeTypeName(entry.value.name)),
+              ))
+          .toList(),
+      onChanged: (value) {
+        setState(() {
+          _selectedRecipeType = value!;
+        });
+        widget.onChanged(value!);
+      },
     );
   }
 }

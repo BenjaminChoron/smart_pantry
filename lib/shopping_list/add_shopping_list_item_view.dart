@@ -20,14 +20,18 @@ class AddShoppingListItemView extends StatelessWidget {
       appBar: AppBar(
         title: Text(S.of(context).addShoppingListItem),
       ),
-      body: Padding(
-          padding: const EdgeInsets.all(16),
-          child: isAddToShoppingAfterRemovedFromPantry
-              ? ShoppingListItemForm(
-                  isAddToShoppingAfterRemovedFromPantry: true,
-                  item: item,
-                )
-              : const ShoppingListItemForm()),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: isAddToShoppingAfterRemovedFromPantry
+                  ? ShoppingListItemForm(
+                      isAddToShoppingAfterRemovedFromPantry: true,
+                      item: item,
+                    )
+                  : const ShoppingListItemForm()),
+        ),
+      ),
     );
   }
 }

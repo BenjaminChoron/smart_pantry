@@ -30,42 +30,33 @@ class _RecipeCostDropdownFormInputState
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
+    return DropdownButtonFormField(
+      value: _selectedRecipeCost,
+      dropdownColor: Theme.of(context).colorScheme.surfaceBright,
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        label: Text(
           S.of(context).recipeCostLabel,
           style: Theme.of(context).textTheme.bodyLarge!.copyWith(
               color: Theme.of(context).colorScheme.onSurface,
               fontWeight: FontWeight.bold),
         ),
-        SizedBox(
-          width: 200,
-          child: DropdownButtonFormField(
-            value: _selectedRecipeCost,
-            dropdownColor: Theme.of(context).colorScheme.surfaceBright,
-            decoration: const InputDecoration(
-              border: InputBorder.none,
-            ),
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
-            items: recipeCosts.entries
-                .map((entry) => DropdownMenuItem(
-                      value: entry.value,
-                      child:
-                          Text(S.of(context).recipeCostName(entry.value.name)),
-                    ))
-                .toList(),
-            onChanged: (value) {
-              setState(() {
-                _selectedRecipeCost = value!;
-              });
-              widget.onChanged(value!);
-            },
-          ),
-        ),
-      ],
+      ),
+      style: TextStyle(
+        color: Theme.of(context).colorScheme.onSurface,
+      ),
+      items: recipeCosts.entries
+          .map((entry) => DropdownMenuItem(
+                value: entry.value,
+                child: Text(S.of(context).recipeCostName(entry.value.name)),
+              ))
+          .toList(),
+      onChanged: (value) {
+        setState(() {
+          _selectedRecipeCost = value!;
+        });
+        widget.onChanged(value!);
+      },
     );
   }
 }
