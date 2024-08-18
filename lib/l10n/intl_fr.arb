@@ -61,7 +61,9 @@
   "shoppingListRemoveDialogTitle": "Suppression d'un élément de la liste de courses",
   "shoppingListTitle": "Liste de courses",
   "storageName": "{name, select, All {Tous} Fridge {Réfrigérateur} Freezer {Congélateur} Cupboard {Placard}}",
+  "store": "Stocker",
   "systemTheme": "Système",
   "theme": "Thème",
-  "update": "Mettre à jour"
+  "update": "Mettre à jour",
+  "whereToStore": "Où voulez-vous stocker cet article ?"
 }

@@ -61,7 +61,9 @@
   "shoppingListDialogTitle": "Rimozione di un elemento dalla lista della spesa",
   "shoppingListTitle": "Lista della spesa",
   "storageName": "{name, select, All {Tutti} Fridge {Frigorifero} Freezer {Congelatore} Cupboard {Credenza}}",
+  "store": "Conserva",
   "systemTheme": "Sistema",
   "theme": "Tema",
-  "update": "Aggiorna"
+  "update": "Aggiorna",
+  "whereToStore": "Dove vuoi conservare questo articolo?"
 }

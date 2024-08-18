@@ -185,6 +185,9 @@
   "@storageName": {
     "description": "Name of the storage location"
   },
+  "@store": {
+    "description": "Button text to store an item"
+  },
   "@systemTheme": {
     "description": "Label for the system theme"
   },
@@ -193,6 +196,9 @@
   },
   "@update": {
     "description": "Button text to update an item"
+  },
+  "@whereToStore": {
+    "description": "Label for the storage location in the shopping list to pantry dialog"
   },
   "add": "Add",
   "addedToPantry": "Item added to pantry!",
@@ -256,7 +262,9 @@
   "shoppingListRemoveDialogTitle": "Shopping List Item Removal",
   "shoppingListTitle": "Shopping List",
   "storageName": "{name, select, All {All} Fridge {Fridge} Freezer {Freezer} Cupboard {Cupboard}}",
+  "store": "Store",
   "systemTheme": "System",
   "theme": "Theme",
-  "update": "Update"
+  "update": "Update",
+  "whereToStore": "Where do you want to store this item?"
 }

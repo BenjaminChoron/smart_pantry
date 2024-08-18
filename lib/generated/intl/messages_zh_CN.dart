@@ -141,8 +141,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("购物清单购买的项目"),
         "shoppingListTitle": MessageLookupByLibrary.simpleMessage("购物清单"),
         "storageName": m5,
+        "store": MessageLookupByLibrary.simpleMessage("存放"),
         "systemTheme": MessageLookupByLibrary.simpleMessage("系统"),
         "theme": MessageLookupByLibrary.simpleMessage("主题"),
-        "update": MessageLookupByLibrary.simpleMessage("更新")
+        "update": MessageLookupByLibrary.simpleMessage("更新"),
+        "whereToStore": MessageLookupByLibrary.simpleMessage("您想将此项目存放在哪里？")
       };
 }

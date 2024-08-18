@@ -6,6 +6,7 @@ import 'package:smart_pantry/globals/data/storages.dart';
 import 'package:smart_pantry/globals/models/category.dart';
 import 'package:smart_pantry/globals/models/storage.dart';
 import 'package:smart_pantry/globals/widgets/global_alert_dialog.dart';
+import 'package:smart_pantry/globals/widgets/storage_dropdown_form_input.dart';
 import 'package:smart_pantry/pantry/providers/user_pantry.dart';
 import 'package:smart_pantry/shopping_list/models/shopping_item.dart';
 import 'package:smart_pantry/shopping_list/providers/user_shopping_list.dart';
@@ -64,36 +65,82 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
       storage = storages[Storages.fridge]!;
     }
 
-    final result = await pantry.addItem(
-      item.name,
-      storage,
-      item.quantity,
-      item.unit,
-      null,
-    );
+    void _onStoreItem() async {
+      final result = await pantry.addItem(
+        item.name,
+        storage,
+        item.quantity,
+        item.unit,
+        null,
+      );
 
-    if (!result) {
+      if (!result) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(S.of(context).failedToAddItem),
+            backgroundColor: Theme.of(context).colorScheme.error,
+            duration: const Duration(seconds: 2),
+          ),
+        );
+        setState(() {
+          items.insert(index, item);
+        });
+      }
+
+      _onRemoveItem(item);
+
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(S.of(context).failedToAddItem),
-          backgroundColor: Theme.of(context).colorScheme.error,
+          content: Text(S.of(context).addedToPantry),
+          backgroundColor: Theme.of(context).colorScheme.primary,
           duration: const Duration(seconds: 2),
         ),
       );
-      setState(() {
-        items.insert(index, item);
-      });
     }
 
-    _onRemoveItem(item);
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(S.of(context).addedToPantry),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        duration: const Duration(seconds: 2),
-      ),
-    );
+    showDialog(
+        context: context,
+        builder: (_) {
+          return Dialog(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    S.of(context).whereToStore,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                  ),
+                  const SizedBox(height: 10),
+                  StorageDropdownFormInput(
+                    storage: storage,
+                    onChanged: (value) {
+                      storage = value;
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      _onStoreItem();
+                      Navigator.of(context).pop(true);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                    ),
+                    child: Text(
+                      S.of(context).store,
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            color: Theme.of(context).colorScheme.onPrimary,
+                          ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
   }
 
   void _showBottomSheet(ShoppingItem item) {

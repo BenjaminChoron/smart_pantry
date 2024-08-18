@@ -708,6 +708,16 @@ class S {
     );
   }
 
+  /// `Store`
+  String get store {
+    return Intl.message(
+      'Store',
+      name: 'store',
+      desc: 'Button text to store an item',
+      args: [],
+    );
+  }
+
   /// `System`
   String get systemTheme {
     return Intl.message(
@@ -734,6 +744,17 @@ class S {
       'Update',
       name: 'update',
       desc: 'Button text to update an item',
+      args: [],
+    );
+  }
+
+  /// `Where do you want to store this item?`
+  String get whereToStore {
+    return Intl.message(
+      'Where do you want to store this item?',
+      name: 'whereToStore',
+      desc:
+          'Label for the storage location in the shopping list to pantry dialog',
       args: [],
     );
   }

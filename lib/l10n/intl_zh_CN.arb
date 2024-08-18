@@ -61,7 +61,9 @@
   "shoppingListDialogTitle": "从购物清单删除项目",
   "shoppingListTitle": "购物清单",
   "storageName": "{name, select, All {所有} Fridge {冰箱} Freezer {冷冻柜} Cupboard {橱柜}}",
+  "store": "存放",
   "systemTheme": "系统",
   "theme": "主题",
-  "update": "更新"
+  "update": "更新",
+  "whereToStore": "您想将此项目存放在哪里？"
 }

@@ -158,8 +158,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "shoppingListTitle":
             MessageLookupByLibrary.simpleMessage("Lista della spesa"),
         "storageName": m5,
+        "store": MessageLookupByLibrary.simpleMessage("Conserva"),
         "systemTheme": MessageLookupByLibrary.simpleMessage("Sistema"),
         "theme": MessageLookupByLibrary.simpleMessage("Tema"),
-        "update": MessageLookupByLibrary.simpleMessage("Aggiorna")
+        "update": MessageLookupByLibrary.simpleMessage("Aggiorna"),
+        "whereToStore": MessageLookupByLibrary.simpleMessage(
+            "Dove vuoi conservare questo articolo?")
       };
 }

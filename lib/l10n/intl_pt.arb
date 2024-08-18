@@ -61,7 +61,9 @@
   "shoppingListDialogTitle": "Remoção de item da lista de compras",
   "shoppingListTitle": "Lista de compras",
   "storageName": "{name, select, All {Todos} Fridge {Geladeira} Freezer {Freezer} Cupboard {Armário}}",
+  "store": "Armazenar",
   "systemTheme": "Sistema",
   "theme": "Tema",
-  "update": "Atualizar"
+  "update": "Atualizar",
+  "whereToStore": "Onde você quer armazenar este item?"
 }
