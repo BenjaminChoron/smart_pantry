@@ -54,11 +54,15 @@ class _PantryItemsListState extends ConsumerState<PantryItemsList> {
     showModalBottomSheet(
       context: context,
       builder: (context) {
-        return Padding(
-          padding: const EdgeInsets.all(20),
-          child: PantryItemForm(
-            isUpdate: true,
-            item: item,
+        return SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: PantryItemForm(
+                isUpdate: true,
+                item: item,
+              ),
+            ),
           ),
         );
       },

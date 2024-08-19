@@ -147,11 +147,15 @@ class _ShoppingListItemsListState extends ConsumerState<ShoppingListItemsList> {
     showModalBottomSheet(
       context: context,
       builder: (context) {
-        return Padding(
-          padding: const EdgeInsets.all(20),
-          child: ShoppingListItemForm(
-            isUpdate: true,
-            item: item,
+        return SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: ShoppingListItemForm(
+                isUpdate: true,
+                item: item,
+              ),
+            ),
           ),
         );
       },
