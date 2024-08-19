@@ -12,11 +12,11 @@ import 'package:smart_pantry/recipes/models/recipe_ingredient.dart';
 import 'package:smart_pantry/recipes/models/recipe_time.dart';
 import 'package:smart_pantry/recipes/models/recipe_type.dart';
 import 'package:smart_pantry/recipes/providers/recipe.dart';
-import 'package:smart_pantry/recipes/widgets/recipe_cost_dropdown_form_input.dart';
-import 'package:smart_pantry/recipes/widgets/recipe_difficulty_dropdown_form_input.dart';
-import 'package:smart_pantry/recipes/widgets/recipe_ingredients_input_form.dart';
-import 'package:smart_pantry/recipes/widgets/recipe_time_form_input.dart';
-import 'package:smart_pantry/recipes/widgets/recipe_type_dropdown_form_input.dart';
+import 'package:smart_pantry/recipes/widgets/form/recipe_cost_dropdown_form_input.dart';
+import 'package:smart_pantry/recipes/widgets/form/recipe_difficulty_dropdown_form_input.dart';
+import 'package:smart_pantry/recipes/widgets/form/recipe_ingredients_input_form.dart';
+import 'package:smart_pantry/recipes/widgets/form/recipe_time_form_input.dart';
+import 'package:smart_pantry/recipes/widgets/form/recipe_type_dropdown_form_input.dart';
 
 class NewRecipeForm extends ConsumerStatefulWidget {
   const NewRecipeForm({super.key});

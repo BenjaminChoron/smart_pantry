@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/generated/l10n.dart';
-import 'package:smart_pantry/recipes/widgets/new_recipe_form.dart';
+import 'package:smart_pantry/recipes/widgets/form/new_recipe_form.dart';
 
 class AddNewRecipeView extends StatelessWidget {
   const AddNewRecipeView({super.key});
