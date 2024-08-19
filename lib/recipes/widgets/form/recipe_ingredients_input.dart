@@ -28,6 +28,10 @@ class _RecipeIngredientsInputState extends State<RecipeIngredientsInput> {
   final TextEditingController _newIngredientQuantityController =
       TextEditingController();
   Unit _selectedUnit = units[Units.gram]!;
+  bool _nameError = false;
+  bool _quantityError = false;
+
+  final RegExp _quantityRegExp = RegExp(r'^[0-9]+(\.[0-9]+)?$');
 
   @override
   void initState() {
@@ -117,9 +121,13 @@ class _RecipeIngredientsInputState extends State<RecipeIngredientsInput> {
                 maxLength: 30,
                 decoration: InputDecoration(
                   label: Text(
-                    S.of(context).newIngredientLabel,
+                    _nameError
+                        ? S.of(context).mustHaveCharacters
+                        : S.of(context).newIngredientLabel,
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: Theme.of(context).colorScheme.onSurface),
+                        color: _nameError
+                            ? Theme.of(context).colorScheme.error
+                            : Theme.of(context).colorScheme.onSurface),
                   ),
                   border: OutlineInputBorder(
                     borderSide: BorderSide(
@@ -140,13 +148,18 @@ class _RecipeIngredientsInputState extends State<RecipeIngredientsInput> {
                       controller: _newIngredientQuantityController,
                       decoration: InputDecoration(
                         label: Text(
-                          S.of(context).quantityLabel,
+                          _quantityError
+                              ? S.of(context).mustBePositive
+                              : S.of(context).quantityLabel,
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium!
                               .copyWith(
-                                  color:
-                                      Theme.of(context).colorScheme.onSurface),
+                                  color: _quantityError
+                                      ? Theme.of(context).colorScheme.error
+                                      : Theme.of(context)
+                                          .colorScheme
+                                          .onSurface),
                         ),
                         border: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -181,21 +194,40 @@ class _RecipeIngredientsInputState extends State<RecipeIngredientsInput> {
                   IconButton(
                     color: Theme.of(context).colorScheme.primary,
                     onPressed: () {
-                      if (_newIngredientController.value.text.isNotEmpty) {
+                      setState(() {
+                        _nameError = false;
+                        _quantityError = false;
+                      });
+
+                      if (_newIngredientController.value.text.isEmpty) {
                         setState(() {
-                          _ingredients.add(
-                            RecipeIngredient(
-                              name: _newIngredientController.value.text,
-                              quantity: double.parse(
-                                  _newIngredientQuantityController.value.text),
-                              unit: _selectedUnit,
-                            ),
-                          );
-                          _newIngredientController.clear();
-                          _newIngredientQuantityController.clear();
+                          _nameError = true;
                         });
-                        widget.onValidate(_ingredients);
+                        return;
                       }
+
+                      if (!_quantityRegExp.hasMatch(
+                              _newIngredientQuantityController.value.text) ||
+                          _newIngredientQuantityController.value.text.isEmpty) {
+                        setState(() {
+                          _quantityError = true;
+                        });
+                        return;
+                      }
+
+                      setState(() {
+                        _ingredients.add(
+                          RecipeIngredient(
+                            name: _newIngredientController.value.text,
+                            quantity: double.parse(
+                                _newIngredientQuantityController.value.text),
+                            unit: _selectedUnit,
+                          ),
+                        );
+                        _newIngredientController.clear();
+                        _newIngredientQuantityController.clear();
+                      });
+                      widget.onValidate(_ingredients);
                     },
                     icon: const Icon(Icons.add),
                   )
