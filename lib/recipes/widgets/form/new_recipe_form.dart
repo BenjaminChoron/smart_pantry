@@ -36,6 +36,7 @@ class _NewRecipeFormState extends ConsumerState<NewRecipeForm> {
   int _minutes = 0;
   List<RecipeIngredient> _enteredIngredients = [];
   String _enteredSteps = '';
+  bool _clearIngredients = false;
 
   bool _stepsInputIsFocus = false;
   bool _isSending = false;
@@ -165,6 +166,7 @@ class _NewRecipeFormState extends ConsumerState<NewRecipeForm> {
             onValidate: (value) {
               _enteredIngredients = value;
             },
+            clearIngredients: _clearIngredients,
           ),
           const SizedBox(height: 20),
           TextFormField(
@@ -211,6 +213,9 @@ class _NewRecipeFormState extends ConsumerState<NewRecipeForm> {
                 onPressed: () {
                   _formKey.currentState!.reset();
                   _enteredIngredients.clear();
+                  setState(() {
+                    _clearIngredients = true;
+                  });
                 },
                 child: Text(S.of(context).reset),
               ),

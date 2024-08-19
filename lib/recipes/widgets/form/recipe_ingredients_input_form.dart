@@ -10,10 +10,12 @@ class RecipeIngredientsInput extends StatefulWidget {
     super.key,
     required this.initialValues,
     required this.onValidate,
+    required this.clearIngredients,
   });
 
   final List<RecipeIngredient> initialValues;
   final Function(List<RecipeIngredient>) onValidate;
+  final bool clearIngredients;
 
   @override
   State<RecipeIngredientsInput> createState() => _RecipeIngredientsInputState();
@@ -35,8 +37,20 @@ class _RecipeIngredientsInputState extends State<RecipeIngredientsInput> {
     });
   }
 
+  void _clear() {
+    setState(() {
+      _ingredients.clear();
+      _newIngredientController.clear();
+      _newIngredientQuantityController.clear();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (widget.clearIngredients) {
+      _clear();
+    }
+
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
@@ -178,6 +192,7 @@ class _RecipeIngredientsInputState extends State<RecipeIngredientsInput> {
                             ),
                           );
                           _newIngredientController.clear();
+                          _newIngredientQuantityController.clear();
                         });
                         widget.onValidate(_ingredients);
                       }
