@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/generated/l10n.dart';
+
 import 'package:smart_pantry/recipes/models/recipe.dart';
+import 'package:smart_pantry/recipes/models/recipe_ingredient.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_description_line.dart';
+import 'package:smart_pantry/recipes/widgets/recipe_ingredients_list.dart';
 
 class RecipeDetails extends StatelessWidget {
-  const RecipeDetails({super.key, required this.recipe});
+  const RecipeDetails({
+    super.key,
+    required this.recipe,
+    required this.ingredientsStockedInGoodQuantity,
+    required this.notEnoughStock,
+    required this.missingIngredients,
+  });
 
   final Recipe recipe;
+  final List<RecipeIngredient> ingredientsStockedInGoodQuantity;
+  final List<RecipeIngredient> notEnoughStock;
+  final List<RecipeIngredient> missingIngredients;
 
   @override
   Widget build(BuildContext context) {
@@ -40,40 +52,19 @@ class RecipeDetails extends StatelessWidget {
                       height: 20,
                     ),
                     Column(
-                      children: recipe.ingredients
-                          .map(
-                            (ingredient) => Padding(
-                              padding: const EdgeInsets.only(bottom: 8),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    ingredient.name,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .onSurface,
-                                        ),
-                                  ),
-                                  const Spacer(),
-                                  Text(
-                                    '${ingredient.quantity} ${ingredient.unit.symbol}',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .onSurface,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                          .toList(),
+                      children: [
+                        RecipeIngredientsList(
+                          ingredients: ingredientsStockedInGoodQuantity,
+                        ),
+                        RecipeIngredientsList(
+                          ingredients: notEnoughStock,
+                          isNotEnough: true,
+                        ),
+                        RecipeIngredientsList(
+                          ingredients: missingIngredients,
+                          isMissing: true,
+                        ),
+                      ],
                     ),
                   ],
                 ),

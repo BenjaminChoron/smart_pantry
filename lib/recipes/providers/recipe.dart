@@ -137,6 +137,9 @@ class RecipeNotifier extends StateNotifier<List<Recipe>> {
               ),
             ),
             ingredients: ingredients
+                .where(
+                  (ingredient) => ingredient['recipeId'] == row['id'],
+                )
                 .map((ingredient) => RecipeIngredient(
                       name: ingredient['name'] as String,
                       quantity: double.parse(ingredient['quantity'].toString()),

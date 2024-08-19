@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pantry/recipes/models/recipe.dart';
+import 'package:smart_pantry/recipes/recipe_details_view.dart';
 import 'package:smart_pantry/recipes/widgets/recipe_description_line.dart';
-import 'package:smart_pantry/recipes/widgets/recipe_details.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({super.key, required this.recipe});
@@ -14,7 +14,7 @@ class RecipeCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => RecipeDetails(recipe: recipe),
+            builder: (context) => RecipeDetailsView(recipe: recipe),
           ),
         );
       },
