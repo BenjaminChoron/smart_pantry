@@ -121,7 +121,7 @@ class _ShoppingListItemFormState extends ConsumerState<ShoppingListItemForm> {
 
   @override
   Widget build(BuildContext context) {
-    if (isUpdate) {
+    if (isUpdate || item != null) {
       _enteredName = item!.name;
       _selectedCategory = item!.category;
       _enteredQuantity = item!.quantity;
