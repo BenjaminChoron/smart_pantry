@@ -10,6 +10,9 @@ import 'package:smart_pantry/recipes/models/recipe_time.dart';
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:sqflite/sqlite_api.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:uuid/uuid.dart';
+
+const uuid = Uuid();
 
 Future<Database> _getDatabase() async {
   final dbPath = await sql.getDatabasesPath();
@@ -17,7 +20,22 @@ Future<Database> _getDatabase() async {
     path.join(dbPath, 'recipe.db'),
     onCreate: (db, version) {
       return db.execute(
-        'CREATE TABLE recipe(id TEXT PRIMARY KEY, name TEXT, difficulty TEXT, time TEXT, cost TEXT, type TEXT, ingredients TEXT, steps TEXT)',
+        'CREATE TABLE recipe(id TEXT PRIMARY KEY, name TEXT, difficulty TEXT, time TEXT, cost TEXT, type TEXT, steps TEXT); CREATE TABLE ingredient(id TEXT PRIMARY KEY, name TEXT, quantity INT, unit TEXT, recipeId TEXT);',
+      );
+    },
+    version: 1,
+  );
+
+  return db;
+}
+
+Future<Database> _getIngredientsDatabase() async {
+  final dbPath = await sql.getDatabasesPath();
+  final db = await sql.openDatabase(
+    path.join(dbPath, 'ingredient.db'),
+    onCreate: (db, version) {
+      return db.execute(
+        'CREATE TABLE ingredient(id TEXT PRIMARY KEY, name TEXT, quantity INT, unit TEXT, recipeId TEXT);',
       );
     },
     version: 1,
@@ -48,6 +66,7 @@ class RecipeNotifier extends StateNotifier<List<Recipe>> {
     );
 
     final db = await _getDatabase();
+    final ingredientDb = await _getIngredientsDatabase();
 
     final result = await db.insert('recipe', {
       'id': newItem.id,
@@ -57,13 +76,32 @@ class RecipeNotifier extends StateNotifier<List<Recipe>> {
           '${newItem.description.time.hours}|${newItem.description.time.minutes}',
       'cost': newItem.description.cost.name,
       'type': newItem.description.type.name,
-      'ingredients': newItem.ingredients.map((e) {
-        return '${e.name}|${e.quantity}|${e.unit.name}';
-      }).toString(),
       'steps': newItem.steps,
     });
 
     if (result == 0) {
+      return false;
+    }
+
+    final errors = <int>[];
+    ingredients.forEach((ingredient) async {
+      final result = await ingredientDb.insert(
+        'ingredient',
+        {
+          'id': uuid.v4(),
+          'name': ingredient.name,
+          'quantity': ingredient.quantity,
+          'unit': ingredient.unit.name,
+          'recipeId': newItem.id,
+        },
+      );
+
+      if (result == 0) {
+        errors.add(1);
+      }
+    });
+
+    if (errors.isNotEmpty) {
       return false;
     }
 
@@ -73,8 +111,11 @@ class RecipeNotifier extends StateNotifier<List<Recipe>> {
 
   Future<void> loadItems() async {
     final db = await _getDatabase();
-    final data = await db.query('recipe');
-    final items = data
+    final ingredientDb = await _getIngredientsDatabase();
+
+    final recipe = await db.query('recipe');
+    final ingredients = await ingredientDb.query('ingredient');
+    final items = recipe
         .map(
           (row) => Recipe(
             id: row['id'] as String,
@@ -95,20 +136,13 @@ class RecipeNotifier extends StateNotifier<List<Recipe>> {
                 (type) => type.name == row['type'],
               ),
             ),
-            // row['steps] format => (name|quantity|unitName, name|quantity|unitName)
-            ingredients: ((row['ingredients'] as String)
-                    .replaceAll('(', '')
-                    .replaceAll(')', '')
-                    .split(', '))
-                .map(
-                  (e) => RecipeIngredient(
-                    name: e.split('|')[0],
-                    quantity: double.parse(e.split('|')[1]),
-                    unit: units.values.firstWhere(
-                      (unit) => unit.name == e.split('|')[2],
-                    ),
-                  ),
-                )
+            ingredients: ingredients
+                .map((ingredient) => RecipeIngredient(
+                      name: ingredient['name'] as String,
+                      quantity: double.parse(ingredient['quantity'].toString()),
+                      unit: units.values.firstWhere(
+                          (unit) => unit.name == ingredient['unit']),
+                    ))
                 .toList(),
             steps: row['steps'] as String,
           ),
