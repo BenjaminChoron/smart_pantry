@@ -139,6 +139,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Schwierigkeit"),
         "recipeDifficultyName": m3,
         "recipeIngredients": MessageLookupByLibrary.simpleMessage("Zutaten"),
+        "recipeRemoveDialogActionNo":
+            MessageLookupByLibrary.simpleMessage("Nein"),
+        "recipeRemoveDialogActionYes":
+            MessageLookupByLibrary.simpleMessage("Ja"),
+        "recipeRemoveDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage(
+                "Möchten Sie dieses Rezept wirklich löschen?"),
+        "recipeRemoveDialogTitle":
+            MessageLookupByLibrary.simpleMessage("Rezept löschen"),
         "recipeSteps": MessageLookupByLibrary.simpleMessage("Schritte"),
         "recipeTimeLabel": MessageLookupByLibrary.simpleMessage("Zeit"),
         "recipeTypeLabel": MessageLookupByLibrary.simpleMessage("Typ"),

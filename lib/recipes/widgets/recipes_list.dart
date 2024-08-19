@@ -30,10 +30,10 @@ class RecipesList extends StatelessWidget {
                   context: context,
                   builder: (_) {
                     return GlobalAlertDialog(
-                      title: S.of(context).pantryDialogTitle,
-                      content: S.of(context).pantryDialogConfirmContent,
-                      actionYes: S.of(context).pantryDialogActionYes,
-                      actionNo: S.of(context).pantryDialogActionNo,
+                      title: S.of(context).recipeRemoveDialogTitle,
+                      content: S.of(context).recipeRemoveDialogConfirmContent,
+                      actionYes: S.of(context).recipeRemoveDialogActionYes,
+                      actionNo: S.of(context).recipeRemoveDialogActionNo,
                       doOnYesAction: () {
                         Navigator.of(context).pop(true);
                       },

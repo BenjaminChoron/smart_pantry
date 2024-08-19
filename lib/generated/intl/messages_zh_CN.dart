@@ -127,6 +127,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "recipeDifficultyLabel": MessageLookupByLibrary.simpleMessage("难度"),
         "recipeDifficultyName": m3,
         "recipeIngredients": MessageLookupByLibrary.simpleMessage("配料"),
+        "recipeRemoveDialogActionNo": MessageLookupByLibrary.simpleMessage("否"),
+        "recipeRemoveDialogActionYes":
+            MessageLookupByLibrary.simpleMessage("是"),
+        "recipeRemoveDialogConfirmContent":
+            MessageLookupByLibrary.simpleMessage("您真的要删除此食谱吗？"),
+        "recipeRemoveDialogTitle": MessageLookupByLibrary.simpleMessage("删除食谱"),
         "recipeSteps": MessageLookupByLibrary.simpleMessage("步骤"),
         "recipeTimeLabel": MessageLookupByLibrary.simpleMessage("时间"),
         "recipeTypeLabel": MessageLookupByLibrary.simpleMessage("类型"),

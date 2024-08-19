@@ -140,6 +140,18 @@
   "@recipeIngredients": {
     "description": "Label for the recipe ingredients"
   },
+  "@recipeRemoveDialogActionNo": {
+    "description": "Button text to cancel the action"
+  },
+  "@recipeRemoveDialogActionYes": {
+    "description": "Button text to confirm the action"
+  },
+  "@recipeRemoveDialogConfirmContent": {
+    "description": "Content for the dialog to remove a recipe"
+  },
+  "@recipeRemoveDialogTitle": {
+    "description": "Title for the dialog to remove a recipe"
+  },
   "@recipeSteps": {
     "description": "Label for the recipe steps"
   },
@@ -256,6 +268,10 @@
   "recipeDifficultyLabel": "Difficulty",
   "recipeDifficultyName": "{name, select, Easy {Easy} Medium {Medium} Hard {Hard}}",
   "recipeIngredients": "Ingredients",
+  "recipeRemoveDialogActionNo": "No",
+  "recipeRemoveDialogActionYes": "Yes",
+  "recipeRemoveDialogConfirmContent": "Do you really want to remove this recipe?",
+  "recipeRemoveDialogTitle": "Remove recipe",
   "recipeSteps": "Steps",
   "recipesTitle": "Recipes",
   "recipeTimeLabel": "Time",

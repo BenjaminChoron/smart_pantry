@@ -544,6 +544,46 @@ class S {
     );
   }
 
+  /// `No`
+  String get recipeRemoveDialogActionNo {
+    return Intl.message(
+      'No',
+      name: 'recipeRemoveDialogActionNo',
+      desc: 'Button text to cancel the action',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get recipeRemoveDialogActionYes {
+    return Intl.message(
+      'Yes',
+      name: 'recipeRemoveDialogActionYes',
+      desc: 'Button text to confirm the action',
+      args: [],
+    );
+  }
+
+  /// `Do you really want to remove this recipe?`
+  String get recipeRemoveDialogConfirmContent {
+    return Intl.message(
+      'Do you really want to remove this recipe?',
+      name: 'recipeRemoveDialogConfirmContent',
+      desc: 'Content for the dialog to remove a recipe',
+      args: [],
+    );
+  }
+
+  /// `Remove recipe`
+  String get recipeRemoveDialogTitle {
+    return Intl.message(
+      'Remove recipe',
+      name: 'recipeRemoveDialogTitle',
+      desc: 'Title for the dialog to remove a recipe',
+      args: [],
+    );
+  }
+
   /// `Steps`
   String get recipeSteps {
     return Intl.message(
