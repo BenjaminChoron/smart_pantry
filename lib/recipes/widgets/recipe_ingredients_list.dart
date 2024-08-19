@@ -62,6 +62,7 @@ class RecipeIngredientsList extends StatelessWidget {
       children: ingredients
           .map(
             (ingredient) => InkWell(
+              borderRadius: BorderRadius.circular(8),
               onTap: () {
                 if (isMissing) {
                   _showBottomSheet(
@@ -80,7 +81,8 @@ class RecipeIngredientsList extends StatelessWidget {
                 }
               },
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: Row(
                   children: [
                     Text(
