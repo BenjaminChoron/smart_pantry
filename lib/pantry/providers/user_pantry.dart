@@ -30,7 +30,7 @@ class UserPantryNotifier extends StateNotifier<List<PantryItem>> {
   Future<bool> addItem(String name, Storage storage, int quantity, Unit unit,
       DateTime? expiration) async {
     final newItem = PantryItem(
-        name: name,
+        name: name.trim(),
         storage: storage,
         quantity: quantity,
         unit: unit,

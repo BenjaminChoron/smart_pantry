@@ -34,7 +34,7 @@ class UserShoppingListNotifier extends StateNotifier<List<ShoppingItem>> {
     Unit unit,
   ) async {
     final newItem = ShoppingItem(
-      name: name,
+      name: name.trim(),
       category: category,
       quantity: quantity,
       unit: unit,

@@ -218,7 +218,7 @@ class _RecipeIngredientsInputState extends State<RecipeIngredientsInput> {
                       setState(() {
                         _ingredients.add(
                           RecipeIngredient(
-                            name: _newIngredientController.value.text,
+                            name: _newIngredientController.value.text.trim(),
                             quantity: double.parse(
                                 _newIngredientQuantityController.value.text),
                             unit: _selectedUnit,
