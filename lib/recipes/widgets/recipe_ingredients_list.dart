@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/data/categories.dart';
 import 'package:smart_pantry/globals/models/category.dart';
+import 'package:smart_pantry/pantry/pantry_view.dart';
 import 'package:smart_pantry/recipes/models/recipe_ingredient.dart';
 import 'package:smart_pantry/shopping_list/models/shopping_item.dart';
 import 'package:smart_pantry/shopping_list/widgets/shopping_list_item_form.dart';
@@ -71,6 +72,11 @@ class RecipeIngredientsList extends StatelessWidget {
                       unit: ingredient.unit,
                     ),
                   );
+                }
+
+                if (isNotEnough) {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).popAndPushNamed(PantryView.routeName);
                 }
               },
               child: Padding(
