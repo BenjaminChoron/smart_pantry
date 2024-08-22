@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:smart_pantry/generated/l10n.dart';
 import 'package:smart_pantry/globals/widgets/global_alert_dialog.dart';
 import 'package:smart_pantry/recipes/data/recipe_costs.dart';
@@ -57,11 +59,28 @@ class _RecipesListState extends State<RecipesList> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              color: Theme.of(context).colorScheme.onSurface,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: SearchBar(
+                leading: Icon(
+                  Icons.search,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+                elevation: const WidgetStatePropertyAll(0),
+                backgroundColor: WidgetStatePropertyAll(
+                    Theme.of(context).colorScheme.surfaceContainerHigh),
+                onChanged: (String searchText) {
+                  setState(() {
+                    _shownRecipes = widget.allRecipes
+                        .where((recipe) => recipe.name
+                            .toLowerCase()
+                            .contains(searchText.toLowerCase()))
+                        .toList();
+                  });
+                },
+                onTapOutside: (event) => FocusScope.of(context).unfocus(),
+              ),
             ),
           ),
           IconButton(

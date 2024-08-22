@@ -48,7 +48,7 @@ class _ExpirationIconState extends ConsumerState<ExpirationIcon> {
         },
         icon: const Icon(
           Icons.warning,
-          color: Color.fromARGB(255, 255, 193, 7),
+          color: Color.fromARGB(255, 186, 145, 22),
         ),
       );
     }
