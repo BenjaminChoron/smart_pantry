@@ -57,7 +57,7 @@
   "recipesTitle": "Recetas",
   "recipeTimeLabel": "Tiempo",
   "recipeTypeLabel": "Tipo",
-  "recipeTypeName": "{name, select, Breakfast {Desayuno} Lunch {Almuerzo} Dinner {Cena} Snack {Merienda} Dessert {Postre}}",
+  "recipeTypeName": "{name, select, Breakfast {Desayuno} MainCourse {Plato principal} Starter {Entrante} Dessert {Postre} Snack {Aperitivo} Drink {Bebida}}",
   "reset": "Restablecer",
   "settingsTitle": "Configuraciones",
   "shoppingListAddToPantryDialogActionNo": "No",

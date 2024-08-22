@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 enum Types {
   breakfast,
-  lunch,
-  dinner,
+  mainCourse,
+  starter,
   snack,
   dessert,
+  drink,
 }
 
 class RecipeType {

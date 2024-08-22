@@ -51,10 +51,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m4(name) => "${Intl.select(name, {
             'Breakfast': 'Café da manhã',
-            'Lunch': 'Almoço',
-            'Dinner': 'Jantar',
-            'Snack': 'Lanche',
+            'MainCourse': 'Prato principal',
+            'Starter': 'Entrada',
             'Dessert': 'Sobremesa',
+            'Snack': 'Lanche',
+            'Drink': 'Bebida',
           })}";
 
   static String m5(name) => "${Intl.select(name, {

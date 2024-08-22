@@ -654,16 +654,17 @@ class S {
     );
   }
 
-  /// `{name, select, Breakfast {Breakfast} Lunch {Lunch} Dinner {Dinner} Snack {Snack} Dessert {Dessert}}`
+  /// `{name, select, Breakfast {Breakfast} MainCourse {Main Course} Starter {Stater} Snack {Snack} Dessert {Dessert} Drink {Drink}}`
   String recipeTypeName(Object name) {
     return Intl.select(
       name,
       {
         'Breakfast': 'Breakfast',
-        'Lunch': 'Lunch',
-        'Dinner': 'Dinner',
+        'MainCourse': 'Main Course',
+        'Starter': 'Stater',
         'Snack': 'Snack',
         'Dessert': 'Dessert',
+        'Drink': 'Drink',
       },
       name: 'recipeTypeName',
       desc: 'Name of the recipe type',

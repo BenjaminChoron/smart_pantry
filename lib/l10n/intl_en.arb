@@ -288,7 +288,7 @@
   "recipesTitle": "Recipes",
   "recipeTimeLabel": "Time",
   "recipeTypeLabel": "Type",
-  "recipeTypeName": "{name, select, Breakfast {Breakfast} Lunch {Lunch} Dinner {Dinner} Snack {Snack} Dessert {Dessert}}",
+  "recipeTypeName": "{name, select, Breakfast {Breakfast} MainCourse {Main Course} Starter {Stater} Snack {Snack} Dessert {Dessert} Drink {Drink}}",
   "reset": "Reset",
   "settingsTitle": "Settings",
   "shoppingListAddToPantryDialogActionNo": "No",

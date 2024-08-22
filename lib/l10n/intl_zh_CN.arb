@@ -57,7 +57,7 @@
   "recipesTitle": "食谱",
   "recipeTimeLabel": "时间",
   "recipeTypeLabel": "类型",
-  "recipeTypeName": "{name, select, Breakfast {早餐} Lunch {午餐} Dinner {晚餐} Snack {小吃} Dessert {甜点}}",
+  "recipeTypeName": "{name, select, Breakfast {早餐} MainCourse {主菜} Starter {开胃菜} Dessert {甜点} Snack {小吃} Drink {饮料}}",
   "reset": "重置",
   "settingsTitle": "设置",
   "shoppingListAddToPantryDialogActionNo": "否",

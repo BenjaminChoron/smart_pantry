@@ -6,13 +6,13 @@ final recipeTypes = {
     name: 'Breakfast',
     icon: Icons.bakery_dining,
   ),
-  Types.lunch: RecipeType(
-    name: 'Lunch',
-    icon: Icons.lunch_dining,
-  ),
-  Types.dinner: RecipeType(
-    name: 'Dinner',
+  Types.mainCourse: RecipeType(
+    name: 'MainCourse',
     icon: Icons.dinner_dining,
+  ),
+  Types.starter: RecipeType(
+    name: 'Starter',
+    icon: Icons.soup_kitchen,
   ),
   Types.snack: RecipeType(
     name: 'Snack',
@@ -21,5 +21,9 @@ final recipeTypes = {
   Types.dessert: RecipeType(
     name: 'Dessert',
     icon: Icons.icecream,
+  ),
+  Types.drink: RecipeType(
+    name: 'Drink',
+    icon: Icons.local_bar,
   ),
 };
