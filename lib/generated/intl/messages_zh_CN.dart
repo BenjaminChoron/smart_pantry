@@ -86,7 +86,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "appStorageInformationsTitle":
             MessageLookupByLibrary.simpleMessage("存储信息"),
         "appVersion": m0,
+        "applyFilters": MessageLookupByLibrary.simpleMessage("应用过滤器"),
         "categoryName": m1,
+        "clearFilters": MessageLookupByLibrary.simpleMessage("清除过滤器"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("深色"),
         "expirationLabel": MessageLookupByLibrary.simpleMessage("到期日期"),
         "expirationRange": MessageLookupByLibrary.simpleMessage("在5天内"),

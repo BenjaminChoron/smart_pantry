@@ -123,20 +123,6 @@ class _RecipesViewState extends ConsumerState<RecipesView> {
                       color: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.search,
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.filter_list,
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                  ),
                 ],
               )
             ],

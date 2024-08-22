@@ -91,7 +91,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "appStorageInformationsTitle":
             MessageLookupByLibrary.simpleMessage("Informations de stockage"),
         "appVersion": m0,
+        "applyFilters":
+            MessageLookupByLibrary.simpleMessage("Appliquer les filtres"),
         "categoryName": m1,
+        "clearFilters":
+            MessageLookupByLibrary.simpleMessage("Effacer les filtres"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Sombre"),
         "expirationLabel":
             MessageLookupByLibrary.simpleMessage("Date d\'expiration"),
@@ -106,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Impossible de supprimer l\'élément... Veuillez réessayer plus tard."),
         "failedToUpdateItem": MessageLookupByLibrary.simpleMessage(
             "Impossible de mettre à jour l\'élément... Veuillez réessayer plus tard."),
+        "filterBy": MessageLookupByLibrary.simpleMessage("Filtrer par"),
         "hours": MessageLookupByLibrary.simpleMessage("Heures"),
         "language": MessageLookupByLibrary.simpleMessage("Langue"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Clair"),

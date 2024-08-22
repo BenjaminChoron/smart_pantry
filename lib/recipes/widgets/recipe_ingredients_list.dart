@@ -31,7 +31,7 @@ class RecipeIngredientsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void _showBottomSheet(ShoppingItem item) {
+    void showBottomSheet(ShoppingItem item) {
       showModalBottomSheet(
         context: context,
         builder: (context) {
@@ -65,7 +65,7 @@ class RecipeIngredientsList extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               onTap: () {
                 if (isMissing) {
-                  _showBottomSheet(
+                  showBottomSheet(
                     ShoppingItem(
                       name: ingredient.name,
                       category: categories[Categories.other]!,

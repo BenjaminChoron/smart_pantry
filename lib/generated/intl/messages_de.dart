@@ -90,7 +90,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "appStorageInformationsTitle":
             MessageLookupByLibrary.simpleMessage("Informationen zum Speicher"),
         "appVersion": m0,
+        "applyFilters": MessageLookupByLibrary.simpleMessage("Filter anwenden"),
         "categoryName": m1,
+        "clearFilters": MessageLookupByLibrary.simpleMessage("Filter löschen"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dunkel"),
         "expirationLabel": MessageLookupByLibrary.simpleMessage("Ablaufdatum"),
         "expirationRange":
@@ -103,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Artikel konnte nicht entfernt werden... Bitte versuchen Sie es später noch einmal."),
         "failedToUpdateItem": MessageLookupByLibrary.simpleMessage(
             "Artikel konnte nicht aktualisiert werden... Bitte versuchen Sie es später noch einmal."),
+        "filterBy": MessageLookupByLibrary.simpleMessage("Filtern nach"),
         "hours": MessageLookupByLibrary.simpleMessage("Stunden"),
         "language": MessageLookupByLibrary.simpleMessage("Sprache"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Hell"),

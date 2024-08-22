@@ -150,6 +150,16 @@ class S {
     );
   }
 
+  /// `Apply filters`
+  String get applyFilters {
+    return Intl.message(
+      'Apply filters',
+      name: 'applyFilters',
+      desc: 'Button text to apply filters',
+      args: [],
+    );
+  }
+
   /// `This application uses local storage to save your data. This means that your data is stored on your device and is not shared with any third party. Warning, if you delete the app, you will lose all this data.`
   String get appStorageInformationsContent {
     return Intl.message(
@@ -201,6 +211,16 @@ class S {
       name: 'categoryName',
       desc: 'Name of the category',
       args: [name],
+    );
+  }
+
+  /// `Clear filters`
+  String get clearFilters {
+    return Intl.message(
+      'Clear filters',
+      name: 'clearFilters',
+      desc: 'Button text to clear filters',
+      args: [],
     );
   }
 
@@ -280,6 +300,16 @@ class S {
       'Failed to update item... Please try again later.',
       name: 'failedToUpdateItem',
       desc: 'Error message when an item cannot be updated',
+      args: [],
+    );
+  }
+
+  /// `Filter by`
+  String get filterBy {
+    return Intl.message(
+      'Filter by',
+      name: 'filterBy',
+      desc: 'Label for the filter by category',
       args: [],
     );
   }

@@ -29,6 +29,9 @@
   "@appInformationsButton": {
     "description": "Button text to display app informations"
   },
+  "@applyFilters": {
+    "description": "Button text to apply filters"
+  },
   "@appStorageInformationsContent": {
     "description": "Content for the storage information section"
   },
@@ -40,6 +43,9 @@
   },
   "@categoryName": {
     "description": "Name of the category"
+  },
+  "@clearFilters": {
+    "description": "Button text to clear filters"
   },
   "@darkTheme": {
     "description": "Label for the dark theme"
@@ -64,6 +70,9 @@
   },
   "@failedToUpdateItem": {
     "description": "Error message when an item cannot be updated"
+  },
+  "@filterBy": {
+    "description": "Label for the filter by category"
   },
   "@hours": {
     "description": "Label for the hours"
@@ -231,10 +240,12 @@
   "appExpirationDateManagementContent": "This application offers the display of products approaching their expiration date within five days before they expire. After the expiration date, they remain displayed in red on this list until they are removed.",
   "appExpirationDateManagementTitle": "Expiration date management",
   "appInformationsButton": "Informations",
+  "applyFilters": "Apply filters",
   "appStorageInformationsContent": "This application uses local storage to save your data. This means that your data is stored on your device and is not shared with any third party. Warning, if you delete the app, you will lose all this data.",
   "appStorageInformationsTitle": "Information related to storage",
   "appVersion": "Version {version}",
   "categoryName": "{name, select, All {All} Fruits {Fruits & Vegetables} Fish {Fish Shop} Butcher {Butcher Shop} Dairy {Dairy} Fresh {Fresh} Bakery {Bakery} Snacks {Snacks} Drinks {Drinks} Frozen {Frozen} Grocery {Grocery} Other {Other}}",
+  "clearFilters": "Clear filters",
   "darkTheme": "Dark",
   "expirationLabel": "Expiration Date",
   "expirationRange": "Within 5 days",
@@ -243,6 +254,7 @@
   "failedToAddItem": "Failed to add item... Please try again later.",
   "failedToRemoveItem": "Failed to remove item... Please try again later.",
   "failedToUpdateItem": "Failed to update item... Please try again later.",
+  "filterBy": "Filter by",
   "hours": "hours",
   "language": "Language",
   "lightTheme": "Light",

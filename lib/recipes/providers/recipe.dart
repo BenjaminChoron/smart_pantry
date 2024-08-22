@@ -4,9 +4,12 @@ import 'package:smart_pantry/recipes/data/recipe_costs.dart';
 import 'package:smart_pantry/recipes/data/recipe_difficulties.dart';
 import 'package:smart_pantry/recipes/data/recipe_types.dart';
 import 'package:smart_pantry/recipes/models/recipe.dart';
+import 'package:smart_pantry/recipes/models/recipe_cost.dart';
 import 'package:smart_pantry/recipes/models/recipe_description.dart';
+import 'package:smart_pantry/recipes/models/recipe_difficulty.dart';
 import 'package:smart_pantry/recipes/models/recipe_ingredient.dart';
 import 'package:smart_pantry/recipes/models/recipe_time.dart';
+import 'package:smart_pantry/recipes/models/recipe_type.dart';
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:sqflite/sqlite_api.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -153,6 +156,22 @@ class RecipeNotifier extends StateNotifier<List<Recipe>> {
         .toList();
 
     state = items;
+  }
+
+  void loadItemsFilteredByCost(RecipeCost cost) {
+    final items = state.where((element) => element.description.cost == cost);
+    state = items.toList();
+  }
+
+  void loadItemsFilteredByDifficulty(RecipeDifficulty difficulty) {
+    final items =
+        state.where((element) => element.description.difficulty == difficulty);
+    state = items.toList();
+  }
+
+  void loadItemsFilteredByType(RecipeType type) {
+    final items = state.where((element) => element.description.type == type);
+    state = items.toList();
   }
 
   Future<bool> removeItem(Recipe recipe) async {
